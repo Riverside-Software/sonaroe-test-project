@@ -1,0 +1,7 @@
+^\.sonar$
+^build$
+^buildDbg$
+^db$
+^profiler$
+^srcDbg$
+

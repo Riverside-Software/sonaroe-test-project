@@ -1,0 +1,1 @@
+message "Procedure in excluded directory".

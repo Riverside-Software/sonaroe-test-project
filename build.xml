@@ -1,0 +1,146 @@
+<?xml version="1.0" encoding="utf-8"?>
+
+<!-- How to execute : C:\Users\gquer_000\Projets\Sonar\sonar-abl-test> ant -lib ..\..\pct\dist\PCT.jar -DDLC=%DLC% -lib %USERPROFILE%\.m2\repository\com\google\guava\guava\10.0.1\guava-10.0.1.jar -lib %USERPROFILE%\.m2\repository\org\antlr\antlr4-runtime\4.5\antlr4-runtime-4.5.jar clean build -->
+<project name="TEST" default="build">
+  <taskdef resource="PCT.properties" />
+
+  <target name="init">
+    <mkdir dir="db" />
+    <mkdir dir="srcDbg" />
+    <mkdir dir="build" />
+    <mkdir dir="buildDbg" />
+    <mkdir dir="profiler" />
+    <mkdir dir="dump" />
+    <PCTVersion />
+    <ProgressVersion dlcHome="${DLC}" fullVersion="dlc.version.full" />
+    <echo message="${dlc.version.full}" />
+  </target>
+
+  <target name="clean">
+    <delete dir="db" />
+    <delete dir="srcDbg" />
+    <delete dir="build" />
+    <delete dir="buildDbg" />
+    <delete dir="profiler" />
+    <delete dir="dump" />
+  </target>
+
+  <target name="db" depends="init">
+    <sports2000 destDir="db" dbName="sp2k" />
+    <PCTDumpSchema destFile="dump/sp2k.df">
+      <PCTConnection dbName="sp2k" dbDir="db" singleUser="true" />
+    </PCTDumpSchema>
+  </target>
+
+  <target name="build" depends="db">
+    <!-- First pass : generate debug listing files -->
+    <PCTCompile destdir="buildDbg" dlcHome="${DLC}" cpinternal="utf-8" cpstream="utf-8" debugListing="true" flattenDebugListing="false" relativePaths="true">
+      <fileset dir="src/classes" includes="**/*.cls" />
+      <fileset dir="src/procedures" includes="**/*.p" />
+      <propath>
+        <pathelement location="src/classes" />
+        <pathelement location="src/procedures" />
+      </propath>
+      <PCTConnection dbName="sp2k" dbDir="db" singleUser="true" />
+    </PCTCompile>
+    <!-- Strip line numbers from debug listing files -->
+    <copy toDir="srcDbg">
+      <fileset dir="buildDbg/.dbg" />
+      <filterchain>
+        <filterreader classname="com.phenix.pct.DebugListingFilterReader" />
+      </filterchain>
+    </copy>
+    <!-- Clean build dir -->
+    <delete dir="buildDbg" />
+    <mkdir dir="buildDbg" />
+    <!-- Then build debug listing files -->
+    <PCTCompile destdir="buildDbg" dlcHome="${DLC}" cpinternal="utf-8" cpstream="utf-8" listing="true" xmlXref="true" keepXref="true" relativePaths="true" failOnError="false">
+      <fileset dir="srcDbg" />
+      <propath>
+        <pathelement location="srcDbg" />
+      </propath>
+      <PCTConnection dbName="sp2k" dbDir="db" singleUser="true" />
+    </PCTCompile>
+
+    <!-- Standard build -->
+    <PCTCompile destdir="build" dlcHome="${DLC}" cpinternal="utf-8" cpstream="utf-8" relativePaths="true">
+      <fileset dir="src/classes" includes="**/*.cls" />
+      <fileset dir="src/procedures" includes="**/*.p" />
+      <propath>
+        <pathelement location="src/classes" />
+        <pathelement location="src/procedures" />
+      </propath>
+      <PCTConnection dbName="sp2k" dbDir="db" singleUser="true" />
+    </PCTCompile>
+    <!-- Unit tests -->
+    <PCTRun procedure="sample/test5.p" dlcHome="${DLC}">
+      <propath location="build" />
+      <Profiler enabled="true" outputFile="profiler/profiler1.txt" coverage="true" />
+      <PCTConnection dbName="sp2k" dbDir="db" singleUser="true" />
+    </PCTRun>
+    <PCTRun procedure="sample/test6.p" dlcHome="${DLC}">
+      <propath location="build" />
+      <Profiler enabled="true" outputFile="profiler/profiler2.txt" coverage="true" />
+      <PCTConnection dbName="sp2k" dbDir="db" singleUser="true" />
+    </PCTRun>
+    <!-- Generate generic coverage report -->
+    <GenericCoverage destFile="profiler/profiler.xml">
+      <fileset dir="profiler" includes="*.txt" />
+      <propath>
+        <pathelement location="srcDbg" />
+      </propath>
+    </GenericCoverage>
+  </target>
+
+  <target name="dist">
+    <mkdir dir="dist" />
+    <copy todir="dist">
+      <fileset dir="build" includes="**/*.r" />
+      <fileset dir="build/.dbg" includes="*.w,*.p,*.cls" />
+    </copy>
+  </target>
+
+  <target name="lint">
+    <Prolint lintFile="lint.xml">
+      <fileset dir="src/classes" includes="**/*.cls" />
+      <fileset dir="src/procedures" includes="**/*.p" />
+      <propath>
+        <pathelement location="src/classes" />
+        <pathelement location="src/procedures" />
+      </propath>
+      <DBConnection dbName="sp2k" dbDir="db" singleUser="true" />
+    </Prolint>
+  </target>
+
+  <target name="sonar" depends="build">
+    <java classname="org.sonar.runner.Main" fork="true">
+      <jvmarg value="-Drunner.home=." />
+      <jvmarg value="-Dproject.home=." />
+      <jvmarg value="-Dproject.settings=sonar-project1.properties" />
+      <jvmarg value="-Dsonar.showSql=false" />
+      <jvmarg value="-Dsonar.showSqlResults=false" />
+      <jvmarg value="-Dsonar.verbose=false" />
+      <classpath location="sonar-runner.jar" />
+    </java>
+    <java classname="org.sonar.runner.Main" fork="true">
+      <jvmarg value="-Drunner.home=." />
+      <jvmarg value="-Dproject.home=." />
+      <jvmarg value="-Dproject.settings=sonar-project2.properties" />
+      <jvmarg value="-Dsonar.showSql=false" />
+      <jvmarg value="-Dsonar.showSqlResults=false" />
+      <jvmarg value="-Dsonar.verbose=false" />
+      <classpath location="sonar-runner.jar" />
+    </java>
+    <java classname="org.sonar.runner.Main" fork="true">
+      <jvmarg value="-Drunner.home=." />
+      <jvmarg value="-Dproject.home=." />
+      <jvmarg value="-Dproject.settings=sonar-project3.properties" />
+      <jvmarg value="-Dsonar.showSql=false" />
+      <jvmarg value="-Dsonar.showSqlResults=false" />
+      <jvmarg value="-Dsonar.verbose=false" />
+      <!-- <arg line="-X" /> -->
+      <classpath location="sonar-runner.jar" />
+    </java>
+  </target>
+
+</project>

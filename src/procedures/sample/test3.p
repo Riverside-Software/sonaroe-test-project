@@ -43,8 +43,8 @@ do transaction:
   disp customer.custnum.
 end.
 
-DEF VAR cls1 AS ConsultingWerk.InterfaceSample.Class1.
-cls1 = new ConsultingWerk.InterfaceSample.Class1().
+DEF VAR cls1 AS Consultingwerk.InterfaceSample.Class1.
+cls1 = new Consultingwerk.InterfaceSample.Class1().
 cls1:MethodFromInterface1().
 
 return '0'.

@@ -26,8 +26,8 @@
   </target>
 
   <target name="db" depends="init">
-    <sports2000 destDir="db" dbName="sp2k" />
-    <PCTDumpSchema destFile="dump/sp2k.df">
+    <sports2000 destDir="db" dbName="sp2k" dlcHome="${DLC}" />
+    <PCTDumpSchema destFile="dump/sp2k.df" dlcHome="${DLC}">
       <PCTConnection dbName="sp2k" dbDir="db" singleUser="true" />
     </PCTDumpSchema>
   </target>

@@ -1,15 +1,16 @@
 <?xml version="1.0" encoding="utf-8"?>
 
-<!-- How to execute : C:\Users\gquer_000\Projets\Sonar\sonar-abl-test> ant -lib ..\..\pct\dist\PCT.jar -DDLC=%DLC% -lib %USERPROFILE%\.m2\repository\com\google\guava\guava\10.0.1\guava-10.0.1.jar -lib %USERPROFILE%\.m2\repository\org\antlr\antlr4-runtime\4.5\antlr4-runtime-4.5.jar clean build -->
+<!-- How to execute : ant -lib ..\..\pct\dist\PCT.jar -DDLC=%DLC% -lib %USERPROFILE%\.m2\repository\com\google\guava\guava\10.0.1\guava-10.0.1.jar -lib %USERPROFILE%\.m2\repository\org\antlr\antlr4-runtime\4.5\antlr4-runtime-4.5.jar clean build -->
 <project name="TEST" default="build">
   <taskdef resource="PCT.properties" />
 
+  <!-- Default values for local development instance of SonarQube -->
   <property name="SONAR_URL" value="http://localhost:9000" />
-  <property name="JDBC_DRIVER" value="com.mysql.jdbc.Driver" />
+  <property name="JDBC_DRIVER" value="org.h2.Driver" />
   <property name="DB_SERVER" value="localhost" />
   <property name="DB_USER" value="sonar" />
   <property name="DB_PASSWORD" value="sonar" />
-  <condition property="JDBC_CONNECTION" value="jdbc:mysql://${DB_SERVER}:3306/sonar?useUnicode=true&amp;characterEncoding=utf8" else="jdbc:...">
+  <condition property="JDBC_CONNECTION" value="jdbc:mysql://${DB_SERVER}:3306/sonar?useUnicode=true&amp;characterEncoding=utf8" else="jdbc:h2:tcp://${DB_SERVER}/sonar">
     <equals arg1="${JDBC_DRIVER}" arg2="com.mysql.jdbc.Driver" />
   </condition>
   

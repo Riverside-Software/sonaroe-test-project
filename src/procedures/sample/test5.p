@@ -12,6 +12,10 @@ procedure foo :
 end procedure.
 
 message "Text1".
+define temp-table ttCustomers no-undo like customers.
+define new shared temp-table tt1 no-undo
+ field a as char
+ field b as char.
 
 do transaction:
   find first

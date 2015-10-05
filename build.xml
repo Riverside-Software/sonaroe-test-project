@@ -136,6 +136,7 @@
       <jvmarg value="-Dsonar.jdbc.username=${DB_USER}" />
       <jvmarg value="-Dsonar.jdbc.password=${DB_PASSWORD}" />
       <classpath location="sonar-runner.jar" />
+      <!-- <arg line="-X" /> -->
     </java>
     <java classname="org.sonar.runner.Main" fork="true" failOnError="true">
       <jvmarg value="-Drunner.home=." />
@@ -150,6 +151,7 @@
       <jvmarg value="-Dsonar.jdbc.username=${DB_USER}" />
       <jvmarg value="-Dsonar.jdbc.password=${DB_PASSWORD}" />
       <classpath location="sonar-runner.jar" />
+      <!-- <arg line="-X" /> -->
     </java>
     <java classname="org.sonar.runner.Main" fork="true" failOnError="true">
       <jvmarg value="-Drunner.home=." />
@@ -163,8 +165,8 @@
       <jvmarg value="-Dsonar.jdbc.driver=${JDBC_DRIVER}" />
       <jvmarg value="-Dsonar.jdbc.username=${DB_USER}" />
       <jvmarg value="-Dsonar.jdbc.password=${DB_PASSWORD}" />
-      <!-- <arg line="-X" /> -->
       <classpath location="sonar-runner.jar" />
+      <!-- <arg line="-X" /> -->
     </java>
   </target>
 

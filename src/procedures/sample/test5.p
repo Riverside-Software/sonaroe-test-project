@@ -12,7 +12,7 @@ procedure foo :
 end procedure.
 
 message "Text1".
-define temp-table ttCustomers no-undo like customers.
+define temp-table ttCustomers no-undo like customer.
 define new shared temp-table tt1 no-undo
  field a as char
  field b as char.

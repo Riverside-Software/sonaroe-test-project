@@ -28,4 +28,10 @@ DEF VAR cls1 AS Consultingwerk.InterfaceSample.Class1.
 cls1 = new Consultingwerk.InterfaceSample.Class1().
 cls1:MethodFromInterface1().
 
+1 = 0.
+
+for each customer by address:
+
+end.
+
 return '0'.

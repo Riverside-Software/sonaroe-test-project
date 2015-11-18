@@ -66,7 +66,7 @@
     </PCTCompile>
 
     <!-- Standard build -->
-    <PCTCompile destdir="build" dlcHome="${DLC}" cpinternal="utf-8" cpstream="utf-8" relativePaths="true" xmlXref="true">
+    <PCTCompile destdir="build" dlcHome="${DLC}" cpinternal="utf-8" cpstream="utf-8" relativePaths="true">
       <fileset dir="src/classes" includes="**/*.cls" />
       <fileset dir="src/procedures" includes="**/*.p" />
       <propath>
@@ -123,7 +123,7 @@
       <jvmarg value="-Dsonar.verbose=false" />
       <jvmarg value="-Dsonar.host.url=${SONAR_URL}" />
       <classpath location="sonar-runner.jar" />
-    </java>
+    </java> -->
     <java classname="org.sonar.runner.Main" fork="true" failOnError="true">
       <jvmarg value="-Drunner.home=." />
       <jvmarg value="-Dproject.home=." />

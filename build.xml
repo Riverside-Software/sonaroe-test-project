@@ -6,13 +6,6 @@
 
   <!-- Default values for local development instance of SonarQube -->
   <property name="SONAR_URL" value="http://localhost:9000" />
-  <property name="JDBC_DRIVER" value="org.h2.Driver" />
-  <property name="DB_SERVER" value="localhost" />
-  <property name="DB_USER" value="sonar" />
-  <property name="DB_PASSWORD" value="sonar" />
-  <condition property="JDBC_CONNECTION" value="jdbc:mysql://${DB_SERVER}:3306/sonar?useUnicode=true&amp;characterEncoding=utf8" else="jdbc:h2:tcp://${DB_SERVER}/sonar">
-    <equals arg1="${JDBC_DRIVER}" arg2="com.mysql.jdbc.Driver" />
-  </condition>
   
   <target name="init">
     <mkdir dir="db" />
@@ -73,7 +66,7 @@
     </PCTCompile>
 
     <!-- Standard build -->
-    <PCTCompile destdir="build" dlcHome="${DLC}" cpinternal="utf-8" cpstream="utf-8" relativePaths="true">
+    <PCTCompile destdir="build" dlcHome="${DLC}" cpinternal="utf-8" cpstream="utf-8" relativePaths="true" xmlXref="true">
       <fileset dir="src/classes" includes="**/*.cls" />
       <fileset dir="src/procedures" includes="**/*.p" />
       <propath>
@@ -123,51 +116,30 @@
   </target>
 
   <target name="sonar" depends="build">
-    <java classname="org.sonar.runner.Main" fork="true" failOnError="true">
+     <java classname="org.sonar.runner.Main" fork="true" failOnError="true">
       <jvmarg value="-Drunner.home=." />
       <jvmarg value="-Dproject.home=." />
       <jvmarg value="-Dproject.settings=sonar-project1.properties" />
-      <jvmarg value="-Dsonar.showSql=false" />
-      <jvmarg value="-Dsonar.showSqlResults=false" />
       <jvmarg value="-Dsonar.verbose=false" />
       <jvmarg value="-Dsonar.host.url=${SONAR_URL}" />
-      <jvmarg value="-Dsonar.jdbc.url=${JDBC_CONNECTION}" />
-      <jvmarg value="-Dsonar.jdbc.driver=${JDBC_DRIVER}" />
-      <jvmarg value="-Dsonar.jdbc.username=${DB_USER}" />
-      <jvmarg value="-Dsonar.jdbc.password=${DB_PASSWORD}" />
       <classpath location="sonar-runner.jar" />
-      <!-- <arg line="-X" /> -->
     </java>
     <java classname="org.sonar.runner.Main" fork="true" failOnError="true">
       <jvmarg value="-Drunner.home=." />
       <jvmarg value="-Dproject.home=." />
       <jvmarg value="-Dproject.settings=sonar-project2.properties" />
-      <jvmarg value="-Dsonar.showSql=false" />
-      <jvmarg value="-Dsonar.showSqlResults=false" />
       <jvmarg value="-Dsonar.verbose=false" />
       <jvmarg value="-Dsonar.host.url=${SONAR_URL}" />
-      <jvmarg value="-Dsonar.jdbc.url=${JDBC_CONNECTION}" />
-      <jvmarg value="-Dsonar.jdbc.driver=${JDBC_DRIVER}" />
-      <jvmarg value="-Dsonar.jdbc.username=${DB_USER}" />
-      <jvmarg value="-Dsonar.jdbc.password=${DB_PASSWORD}" />
       <classpath location="sonar-runner.jar" />
-      <!-- <arg line="-X" /> -->
     </java>
-    <java classname="org.sonar.runner.Main" fork="true" failOnError="true">
+    <!-- <java classname="org.sonar.runner.Main" fork="true" failOnError="true">
       <jvmarg value="-Drunner.home=." />
       <jvmarg value="-Dproject.home=." />
       <jvmarg value="-Dproject.settings=sonar-project3.properties" />
-      <jvmarg value="-Dsonar.showSql=false" />
-      <jvmarg value="-Dsonar.showSqlResults=false" />
       <jvmarg value="-Dsonar.verbose=false" />
       <jvmarg value="-Dsonar.host.url=${SONAR_URL}" />
-      <jvmarg value="-Dsonar.jdbc.url=${JDBC_CONNECTION}" />
-      <jvmarg value="-Dsonar.jdbc.driver=${JDBC_DRIVER}" />
-      <jvmarg value="-Dsonar.jdbc.username=${DB_USER}" />
-      <jvmarg value="-Dsonar.jdbc.password=${DB_PASSWORD}" />
       <classpath location="sonar-runner.jar" />
-      <!-- <arg line="-X" /> -->
-    </java>
+    </java> -->
   </target>
 
 </project>

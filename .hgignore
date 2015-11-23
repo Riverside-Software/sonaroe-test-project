@@ -2,6 +2,7 @@
 ^build$
 ^buildDbg$
 ^db$
+^dump$
 ^profiler$
 ^srcDbg$
 

@@ -23,3 +23,14 @@ define shared dataset ds1 for b1.
 
 { sample/inc/test.i} find first item exclusive-lock.
 disp item.itemnum.
+
+/* Comment level 1 /*
+
+Nested comment 1 */ Still level 1
+ RUN VALUE(foobar) Should be commented
+*/
+*/
+
+RUN VALUE("Hello !").
+
+/* One more comment /* Nested 1 */ Comment */

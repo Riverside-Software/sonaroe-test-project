@@ -29,7 +29,7 @@ disp item.itemnum.
 Nested comment 1 */ Still level 1
  RUN VALUE(foobar) Should be commented
 */
-*/
+
 
 RUN VALUE("Hello !").
 

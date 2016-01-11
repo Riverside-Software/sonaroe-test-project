@@ -36,8 +36,8 @@
   </target>
 
   <target name="build" depends="db">
-    <!-- First pass : generate debug listing files -->
-    <PCTCompile destdir="buildDbg" dlcHome="${DLC}" cpinternal="utf-8" cpstream="utf-8" debugListing="true" flattenDebugListing="false" relativePaths="true">
+    <!-- First pass : standard build and debug listing files generation -->
+    <PCTCompile destdir="build" dlcHome="${DLC}" cpinternal="utf-8" cpstream="utf-8" debugListing="true" flattenDebugListing="false" relativePaths="true">
       <fileset dir="src/classes" includes="**/*.cls" />
       <fileset dir="src/procedures" includes="**/*.p" />
       <propath>
@@ -48,14 +48,11 @@
     </PCTCompile>
     <!-- Strip line numbers from debug listing files -->
     <copy toDir="srcDbg">
-      <fileset dir="buildDbg/.dbg" />
+      <fileset dir="build/.dbg" />
       <filterchain>
         <filterreader classname="com.phenix.pct.DebugListingFilterReader" />
       </filterchain>
     </copy>
-    <!-- Clean build dir -->
-    <delete dir="buildDbg" />
-    <mkdir dir="buildDbg" />
     <!-- Then build debug listing files -->
     <PCTCompile destdir="buildDbg" dlcHome="${DLC}" cpinternal="utf-8" cpstream="utf-8" listing="true" xmlXref="true" keepXref="true" relativePaths="true" failOnError="false">
       <fileset dir="srcDbg" />
@@ -65,16 +62,6 @@
       <PCTConnection dbName="sp2k" dbDir="db" singleUser="true" />
     </PCTCompile>
 
-    <!-- Standard build -->
-    <PCTCompile destdir="build" dlcHome="${DLC}" cpinternal="utf-8" cpstream="utf-8" relativePaths="true">
-      <fileset dir="src/classes" includes="**/*.cls" />
-      <fileset dir="src/procedures" includes="**/*.p" />
-      <propath>
-        <pathelement location="src/classes" />
-        <pathelement location="src/procedures" />
-      </propath>
-      <PCTConnection dbName="sp2k" dbDir="db" singleUser="true" />
-    </PCTCompile>
     <!-- Unit tests -->
     <PCTRun procedure="sample/test5.p" dlcHome="${DLC}">
       <propath location="build" />

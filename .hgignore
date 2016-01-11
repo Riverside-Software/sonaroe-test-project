@@ -1,4 +1,5 @@
 ^\.sonar$
+^\.proparse$
 ^build$
 ^buildDbg$
 ^db$

@@ -103,7 +103,7 @@
   </target>
 
   <target name="sonar" depends="build">
-     <java classname="org.sonar.runner.Main" fork="true" failOnError="true">
+    <java classname="org.sonar.runner.Main" fork="true" failOnError="true">
       <jvmarg value="-Drunner.home=." />
       <jvmarg value="-Dproject.home=." />
       <jvmarg value="-Dproject.settings=sonar-project1.properties" />
@@ -119,16 +119,15 @@
       <jvmarg value="-Dsonar.verbose=false" />
       <jvmarg value="-Dsonar.host.url=${SONAR_URL}" />
       <classpath location="sonar-runner.jar" />
-      <!-- <arg line="-X" /> -->
     </java>
-    <!-- <java classname="org.sonar.runner.Main" fork="true" failOnError="true">
+    <java classname="org.sonar.runner.Main" fork="true" failOnError="true">
       <jvmarg value="-Drunner.home=." />
       <jvmarg value="-Dproject.home=." />
       <jvmarg value="-Dproject.settings=sonar-project3.properties" />
       <jvmarg value="-Dsonar.verbose=false" />
       <jvmarg value="-Dsonar.host.url=${SONAR_URL}" />
       <classpath location="sonar-runner.jar" />
-    </java> -->
+    </java>
   </target>
 
 </project>

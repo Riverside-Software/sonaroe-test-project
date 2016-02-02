@@ -37,6 +37,7 @@ end.
 &GLOBAL-DEFINE MYDEF 10
 
 { sample/inc/test3.i }
+ define buffer customer for customer.
 
 do transaction:
   find first customer exclusive-lock.

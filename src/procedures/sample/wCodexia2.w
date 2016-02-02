@@ -132,7 +132,7 @@ DEFINE VARIABLE COMBO-BOX-Application AS CHARACTER FORMAT "X(256)":U
      LABEL "Application" 
      VIEW-AS COMBO-BOX INNER-LINES 5
      DROP-DOWN-LIST
-     SIZE 77.4 BY 1 TOOLTIP "S‚lectionner l'application" NO-UNDO.
+     SIZE 77.4 BY 1 TOOLTIP "SÃ©lectionner l'application" NO-UNDO.
 
 DEFINE RECTANGLE RECT-27
      EDGE-PIXELS 2 GRAPHIC-EDGE  NO-FILL   
@@ -459,7 +459,7 @@ END PROCEDURE.
 &ANALYZE-SUSPEND _UIB-CODE-BLOCK _PROCEDURE CdxAfficheTitre wWin 
 PROCEDURE CdxAfficheTitre :
 /*------------------------------------------------------------------------------
-  Purpose: Affiche le titre de la fenˆtre    
+  Purpose: Affiche le titre de la fenÃªtre    
   Parameters:  <none>
   Notes:       
 ------------------------------------------------------------------------------*/
@@ -518,7 +518,7 @@ DEFINE VARIABLE cFormatZone AS CHARACTER  NO-UNDO.
 DEFINE VARIABLE iFormat     AS INTEGER    NO-UNDO.
 
 DO i = 1 TO NUM-ENTRIES(pcListeChampBrowse) :
-    /* modification du label si libell‚ renseign‚ */
+    /* modification du label si libellÃ© renseignÃ© */
     IF ENTRY(i,pcListeLabelBrowse) <> "" THEN
         DYNAMIC-FUNCTION('assignColumnLabel':U IN ph_dCatalogue,
                             INPUT ENTRY(i,pcListeChampBrowse),
@@ -532,7 +532,7 @@ DO i = 1 TO NUM-ENTRIES(pcListeChampBrowse) :
                                   INPUT 'DataType').
     CASE ENTRY(2,cDataType,CHR(4)) :
         WHEN "character" THEN 
-            /* Porte le format … x(80) lorsque par d‚faut il est … plus de 100 */
+            /* Porte le format Ã  x(80) lorsque par dÃ©faut il est Ã  plus de 100 */
             ASSIGN  iFormat    =  IF INT(ENTRY(i,pcListeFormatBrowse)) > 100 THEN 80 ELSE INT(ENTRY(i,pcListeFormatBrowse))
                     cFormatZone = "x(" + STRING(iFormat)  + ")".
         
@@ -602,7 +602,7 @@ DEFINE VARIABLE hBrowse AS HANDLE     NO-UNDO.
      END.
   END.
 
- /* resize par d‚faut sur la largeur de la  window */ 
+ /* resize par dÃ©faut sur la largeur de la  window */ 
  /* IF ttAppliGed.AffDossier  = 1 THEN DO:    
        ASSIGN hBrowse = DYNAMIC-FUNCTION('getbrowsehandle':U IN h_bCatalogue).
        IF piBrowseWidth  <> ? AND piBrowseWidth  <> 0 AND
@@ -612,7 +612,7 @@ DEFINE VARIABLE hBrowse AS HANDLE     NO-UNDO.
                   hBrowse:COL    = piBrowseCol
                   hBrowse:ROW    = piBrowseRow .            
        END.
-       ELSE DO :  /* par d‚faut */
+       ELSE DO :  /* par dÃ©faut */
            ASSIGN hBrowse:WIDTH  = 32.8 
                   hBrowse:HEIGHT = 12.60   
                   hBrowse:COL    = 1
@@ -685,7 +685,7 @@ DEFINE VARIABLE hBrowse AS HANDLE     NO-UNDO.
                   . 
        END.     
        ELSE DO : 
-             /* par d‚faut */
+             /* par dÃ©faut */
            ASSIGN hBrowse:WIDTH  = 65  /*51*/
                   hBrowse:HEIGHT = 8  
                   hBrowse:COL    = 1
@@ -810,7 +810,7 @@ RUN ref/cdxEcranPrincipal.p (INPUT cComApplication ,
 
 /*ASSIGN cNomEcran = SUBSTRING(cNomEcran, INDEX(cNomEcran, '/' ) + 1 , LENGTH(cNomEcran) - INDEX(cNomEcran, '/' )).*/
 
-/* récupère  la position des objets */
+/* rÃ©cupÃ¨re  la position des objets */
 RUN cdxPositionObjet IN  h_dCatalogue (INPUT         "LECTURE"     , 
                                      INPUT-OUTPUT  iViewerCol    ,
                                      INPUT-OUTPUT  iViewerRow    ,
@@ -827,7 +827,7 @@ RUN cdxPositionObjet2 IN  h_dCatalogue (INPUT         "LECTURE"     ,
                                      INPUT-OUTPUT  iBrowseWidth2 ,
                                      INPUT-OUTPUT  iBrowseHeight2 ) .
 /*-------- Affiche le browse ------------- */
-/* récupère les champs,labels et formats du browse codexia et mise et cr‚ation du browse */
+/* rÃ©cupÃ¨re les champs,labels et formats du browse codexia et mise et crÃ©ation du browse */
 RUN ref/cdxChampBrowseCodexia.p (INPUT  cCodeAppliGed     ,
                            INPUT  cNomEcran         ,
                            OUTPUT cListeChampBrowse ,
@@ -842,7 +842,7 @@ RUN cdxBrowseLabelformat (INPUT cListeChampBrowse ,
 ELSE
 ASSIGN cListeChampBrowse = "CodeCatalogue,LibCatalogue".
 
-/* Cr‚ation du browse */
+/* CrÃ©ation du browse */
 RUN CdxCreateBrowse(INPUT cListeChampBrowse,
                     INPUT iBrowseCol       ,
                     INPUT iBrowseRow       ,
@@ -850,7 +850,7 @@ RUN CdxCreateBrowse(INPUT cListeChampBrowse,
                     INPUT iBrowseHeight    ).
 
 /*-------- Affiche le browse ------------- */
-/* r‚cupŠre les champs,labels et formats du browse codexia et mise et cr‚ation du browse */
+/* rÃ©cupÃ¨re les champs,labels et formats du browse codexia et mise et crÃ©ation du browse */
 RUN ref/cdxChampBrowseCodexia.p (INPUT  cCodeAppliGed     ,
                            INPUT  "b2-" + cNomEcran         ,
                            OUTPUT cListeChampBrowse ,
@@ -874,7 +874,7 @@ IF NUM-ENTRIES (cListeChampBrowse)  > 0 THEN DO:
 END.
 DYNAMIC-FUNCTION('openQuery':U IN  h_dCatalogue2).
 
-/* Cr‚ation du browse */
+/* CrÃ©ation du browse */
 RUN CdxCreateBrowse2(INPUT cListeChampBrowse,
                   INPUT iBrowseCol2       ,
                   INPUT iBrowseRow2       ,
@@ -886,7 +886,7 @@ RUN CdxCreateBrowse2(INPUT cListeChampBrowse,
 
 /*---------- affichage du viewer -------------*/
 CASE ttAppliGed.AffDossier :
-  WHEN 1 THEN  /* si pr‚sentation tableau */
+  WHEN 1 THEN  /* si prÃ©sentation tableau */
   DO:
       RUN cdxCreateViewer (INPUT iViewerCol ,
                            INPUT iViewerRow,
@@ -898,7 +898,7 @@ CASE ttAppliGed.AffDossier :
       RUN viewObject   IN h_vCatalogue.
       RUN enableObject IN h_vCatalogue.
   END.
-  WHEN 2 THEN  /* pr‚sentation uniquement du browse */
+  WHEN 2 THEN  /* prÃ©sentation uniquement du browse */
   DO:
     RUN DisableObject IN h_vCatalogue. 
     RUN hideObject IN h_vCatalogue.
@@ -906,10 +906,10 @@ CASE ttAppliGed.AffDossier :
 END CASE.
 
 /*........Affichage des titres des panels de bouton du niveau 2 et niveau 3....*/
-/*........En fonction du paramétrage des cle, récupérer les libellé des........*/
-/*........niveau 2 et 3 dans le parametrage des champs métier..................*/
+/*........En fonction du paramÃ©trage des cle, rÃ©cupÃ©rer les libellÃ© des........*/
+/*........niveau 2 et 3 dans le parametrage des champs mÃ©tier..................*/
 
-/* Recherche de la valeur des clé 2 et 3 dans le cfginireg */
+/* Recherche de la valeur des clÃ© 2 et 3 dans le cfginireg */
 ASSIGN cSection = "wCodexia_" + cCodeAppliGed .
 
 RUN ref/Dllini3.p ( INPUT "LECTURE"         , INPUT ""                ,
@@ -933,7 +933,7 @@ END PROCEDURE.
 &ANALYZE-SUSPEND _UIB-CODE-BLOCK _PROCEDURE CdxListeDocuments wWin 
 PROCEDURE CdxListeDocuments :
 /*------------------------------------------------------------------------------
-  Purpose: lance la fenˆtre de liste des documents    
+  Purpose: lance la fenÃªtre de liste des documents    
   Parameters:  <none>
   Notes:       
 ------------------------------------------------------------------------------*/
@@ -962,8 +962,8 @@ DEFINE VARIABLE iNiveau         AS INTEGER NO-UNDO.
 
         iPageEnCours = DYNAMIC-FUNCTION('getCurrentPage':U).
         
-                /* Bug #1324 : suppression du lien Data dans wDocu1, recréé par initializeObject */
-                /* Correction pas belle du tout, à virer dès que possible (du genre migration ADM2) */
+                /* Bug #1324 : suppression du lien Data dans wDocu1, recrÃ©Ã© par initializeObject */
+                /* Correction pas belle du tout, Ã  virer dÃ¨s que possible (du genre migration ADM2) */
         RUN CdxRecupHandleSDO IN h_wDocu1  (OUTPUT h_dDocu1) .
         RUN removeLink IN h_wDocu1 (h_wDocu1, "DATA", h_dDocu1).
         CASE iNiveau :
@@ -1002,7 +1002,7 @@ DEFINE VARIABLE iNiveau         AS INTEGER NO-UNDO.
             WHEN 2 THEN RUN RemoveLink ( h_dCatalogue2 ,'Data' , h_wDocu1 ). 
         END CASE.
 
-        /* ---- En fonction du nouveau niveau on recré les liens data ---- */
+        /* ---- En fonction du nouveau niveau on recrÃ© les liens data ---- */
         CASE iNiveau :
             WHEN 1 THEN RUN addLink ( h_dCatalogue   ,'Data' , h_wDocu1 ).
             WHEN 2 THEN RUN addLink ( h_dCatalogue2  ,'Data' , h_wDocu1 ).
@@ -1058,14 +1058,14 @@ PROCEDURE cdxMajDossier :
     DEFINE VARIABLE cValeurCle1     AS CHARACTER  NO-UNDO.
     DEFINE VARIABLE cChampCle1      AS CHARACTER  NO-UNDO.
     DEFINE VARIABLE i               AS INTEGER    NO-UNDO.
-    /* Permet la gestion d'un écran <> entre creation et modification */
+    /* Permet la gestion d'un Ã©cran <> entre creation et modification */
     DEFINE VARIABLE cPrefixe        AS CHARACTER  NO-UNDO INIT "g2-".
 
 
     IF pcMaj AND DYNAMIC-FUNCTION('columnValue':U IN h_dCatalogue2, INPUT "NoDossier" ) = ? THEN
         RETURN .
 
-    /* Recherche de la valeur de la cl‚ dans le cfginireg */
+    /* Recherche de la valeur de la clÃ© dans le cfginireg */
     ASSIGN cSection = "wCodexia_" + cCodeAppliGed .
 
     RUN ref/Dllini3.p ( INPUT "LECTURE"         ,
@@ -1197,11 +1197,11 @@ PROCEDURE cdxMajDossier2 :
     DEFINE VARIABLE cValeurCle1     AS CHARACTER  NO-UNDO.
     DEFINE VARIABLE cChampCle1      AS CHARACTER  NO-UNDO.
     DEFINE VARIABLE i               AS INTEGER    NO-UNDO.
-     /* Permet la gestion d'un écran <> entre creation et modification */
+     /* Permet la gestion d'un Ã©cran <> entre creation et modification */
     DEFINE VARIABLE cPrefixe        AS CHARACTER  NO-UNDO INIT "g3-".
 
 
-    /* Recherche de la valeur de la cl‚ dans le cfginireg */
+    /* Recherche de la valeur de la clÃ© dans le cfginireg */
     ASSIGN cSection = "wCodexia_" + cCodeAppliGed .
 
     RUN ref/Dllini3.p ( INPUT "LECTURE"         ,
@@ -1317,7 +1317,7 @@ END PROCEDURE.
 &ANALYZE-SUSPEND _UIB-CODE-BLOCK _PROCEDURE cdxModifAppli wWin 
 PROCEDURE cdxModifAppli :
 /**
- * Changement d'application GED : vérification des droits et rechargement si OK
+ * Changement d'application GED : vÃ©rification des droits et rechargement si OK
  */
  
     DEFINE VARIABLE hwChoixUtilisateur_Rq AS HANDLE      NO-UNDO.
@@ -1343,7 +1343,7 @@ PROCEDURE cdxModifAppli :
             RETURN NO-APPLY.
         END.
         ELSE DO:
-            MESSAGE "Accès refusé à l'application"
+            MESSAGE "AccÃ¨s refusÃ© Ã  l'application"
                 VIEW-AS ALERT-BOX INFO BUTTONS OK.
         END.
     END.
@@ -1514,7 +1514,7 @@ END PROCEDURE.
 &ANALYZE-SUSPEND _UIB-CODE-BLOCK _PROCEDURE cdxSuiviDossier wWin 
 PROCEDURE cdxSuiviDossier :
 /*------------------------------------------------------------------------------
-  Purpose: lance la fenˆtre de suivi de dossier    
+  Purpose: lance la fenÃªtre de suivi de dossier    
   Parameters:  <none>
   Notes:       
 ------------------------------------------------------------------------------*/
@@ -1603,13 +1603,13 @@ DO:
     */
 
 
-   /*------------- Contr“le position objet-----------------------*/
-    /* Si viewer positionn‚ sur tool bar ou combo application */
+   /*------------- ContrÃ´le position objet-----------------------*/
+    /* Si viewer positionnÃ© sur tool bar ou combo application */
     /*IF iViewerRow < 3.86 THEN 
         ASSIGN lPositionObjet = FALSE .
     
     ELSE 
-    /* si browse positionn‚ sur viewer */
+    /* si browse positionnÃ© sur viewer */
         IF ( iBrowseCol >= iViewerCol  AND
              iBrowseCol <= (iViewerCol  + iViewerWidth) )
            AND
@@ -1646,7 +1646,7 @@ DO:
         THEN
             ASSIGN lPositionObjet = FALSE .
 
-     /* si viewer positionn‚ sur le browse */
+     /* si viewer positionnÃ© sur le browse */
      ELSE 
         IF ( iViewerCol >= iBrowseCol  AND
              iViewerCol <= (iBrowseCol  + iBrowseWidth) )
@@ -1715,7 +1715,7 @@ DO:
     END.
     ELSE
         DYNAMIC-FUNCTION("phxMessage",INPUT "Codexia"
-                                     ,INPUT 529  /* La position du tableau et le d‚tail du tableau est incorrecte */
+                                     ,INPUT 529  /* La position du tableau et le dÃ©tail du tableau est incorrecte */
                                      ,INPUT ""
                                      ,INPUT "INFORMATION"
                                      ,INPUT "OK"). 
@@ -1843,7 +1843,7 @@ DEFINE VARIABLE hSdoServer          AS HANDLE        NO-UNDO.
   
   RUN SUPER.
 
-  /* Positionnement de la fenêtre en haut à gauche */
+  /* Positionnement de la fenÃªtre en haut Ã  gauche */
   DEFINE VARIABLE iLeft   AS INTEGER     NO-UNDO.
   DEFINE VARIABLE iTop    AS INTEGER     NO-UNDO.
   DEFINE VARIABLE iWidth  AS INTEGER     NO-UNDO.
@@ -1858,7 +1858,7 @@ DEFINE VARIABLE hSdoServer          AS HANDLE        NO-UNDO.
       
       SESSION:SET-WAIT-STATE("GENERAL").
       
-      /* Recup‚rer la liste des code AppliGed */
+      /* RecupÃ©rer la liste des code AppliGed */
       ASSIGN hSdoServer = DYNAMIC-FUNCTION('getASHandle':U IN h_dCatalogue).
       RUN cdxListeAppliGed IN hSdoServer (OUTPUT clisteAppliGed,
                                           OUTPUT clisteLibAppliGed).
@@ -1920,7 +1920,7 @@ DEFINE VARIABLE hSdoServer          AS HANDLE        NO-UNDO.
          INPUT "TRUE" /* CHARACTER */,
          INPUT "=" /* CHARACTER */).  
       
-      /* ... tri d‚fini car non param‚trable ...*/
+      /* ... tri dÃ©fini car non paramÃ©rable ...*/
       ASSIGN cTri = "BY Catalogue.NoOrdreAff DESCENDING "  .              
 
      
@@ -1932,9 +1932,9 @@ DEFINE VARIABLE hSdoServer          AS HANDLE        NO-UNDO.
 
       RUN cdxInitAffichage.
 
-      /* si pas autoriser … modifier de dessign griser tout le menu popup */  
+      /* si pas autoriser Ã  modifier de dessign griser tout le menu popup */  
       ASSIGN ldroitDesign = DYNAMIC-FUNCTION("getDroitFonction", "DESIGN"). 
-      IF NOT ldroitDesign OR ttAppliGed.AffDossier = 2 /* pr‚sentation uniquement du browse */ THEN
+      IF NOT ldroitDesign OR ttAppliGed.AffDossier = 2 /* prÃ©sentation uniquement du browse */ THEN
       DO:
         ASSIGN hWidget = CURRENT-WINDOW:POPUP-MENU.
             hfils   = hWidget:FIRST-CHILD .

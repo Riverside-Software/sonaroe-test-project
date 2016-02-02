@@ -37,7 +37,7 @@
 
   <target name="build" depends="db">
     <!-- First pass : standard build and debug listing files generation -->
-    <PCTCompile destdir="build" dlcHome="${DLC}" cpinternal="utf-8" cpstream="utf-8" debugListing="true" flattenDebugListing="false" relativePaths="true">
+    <PCTCompile destdir="build" dlcHome="${DLC}" cpinternal="utf-8" cpstream="utf-8" debugListing="true" flattenDebugListing="false" relativePaths="true" xmlXref="true" keepXref="true">
       <fileset dir="src/classes" includes="**/*.cls" />
       <fileset dir="src/procedures" includes="**/*.p" />
       <propath>
@@ -116,15 +116,6 @@
       <jvmarg value="-Drunner.home=." />
       <jvmarg value="-Dproject.home=." />
       <jvmarg value="-Dproject.settings=sonar-project2.properties" />
-      <jvmarg value="-Dsonar.verbose=false" />
-      <jvmarg value="-Dsonar.host.url=${SONAR_URL}" />
-      <classpath location="sonar-runner.jar" />
-      <!-- <arg line="-X" /> -->
-    </java>
-    <java classname="org.sonar.runner.Main" fork="true" failOnError="true">
-      <jvmarg value="-Drunner.home=." />
-      <jvmarg value="-Dproject.home=." />
-      <jvmarg value="-Dproject.settings=sonar-project3.properties" />
       <jvmarg value="-Dsonar.verbose=false" />
       <jvmarg value="-Dsonar.host.url=${SONAR_URL}" />
       <classpath location="sonar-runner.jar" />

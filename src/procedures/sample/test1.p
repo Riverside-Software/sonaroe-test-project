@@ -24,6 +24,9 @@ define shared dataset ds1 for b1.
 { sample/inc/test.i} find first item exclusive-lock.
 disp item.itemnum.
 
+/* Backslash rule */
+message "C:\Temp\hello.txt".
+
 /* Comment level 1 /*
 
 Nested comment 1 */ Still level 1

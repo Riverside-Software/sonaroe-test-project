@@ -37,14 +37,17 @@
 
   <target name="build" depends="db">
     <!-- First pass : standard build and debug listing files generation -->
-    <PCTCompile destdir="build" dlcHome="${DLC}" cpinternal="utf-8" cpstream="utf-8" debugListing="true" flattenDebugListing="false" relativePaths="true" xmlXref="true" keepXref="true">
+    <PCTCompile destdir="build" dlcHome="${DLC}" cpinternal="utf-8" cpstream="utf-8" listing="true" debugListing="true" flattenDebugListing="false" relativePaths="true" xmlXref="true" keepXref="true">
       <fileset dir="src/classes" includes="**/*.cls" />
       <fileset dir="src/procedures" includes="**/*.p" />
       <propath>
         <pathelement location="src/classes" />
         <pathelement location="src/procedures" />
       </propath>
-      <PCTConnection dbName="sp2k" dbDir="db" singleUser="true" />
+      <PCTConnection dbName="sp2k" dbDir="db" singleUser="true" logicalName="abc">
+        <Alias name="sp2k" />
+        <Alias name="foobar" />
+      </PCTConnection>
     </PCTCompile>
     <!-- Strip line numbers from debug listing files -->
     <copy toDir="srcDbg">
@@ -59,19 +62,28 @@
       <propath>
         <pathelement location="srcDbg" />
       </propath>
-      <PCTConnection dbName="sp2k" dbDir="db" singleUser="true" />
+      <PCTConnection dbName="sp2k" dbDir="db" singleUser="true" logicalName="abc">
+        <PCTAlias name="sp2k" />
+        <PCTAlias name="foobar" />
+      </PCTConnection>
     </PCTCompile>
 
     <!-- Unit tests -->
     <PCTRun procedure="sample/test5.p" dlcHome="${DLC}">
       <propath location="build" />
       <Profiler enabled="true" outputFile="profiler/profiler1.txt" coverage="true" />
-      <PCTConnection dbName="sp2k" dbDir="db" singleUser="true" />
+      <PCTConnection dbName="sp2k" dbDir="db" singleUser="true" logicalName="abc">
+        <PCTAlias name="sp2k" />
+        <PCTAlias name="foobar" />
+      </PCTConnection>
     </PCTRun>
     <PCTRun procedure="sample/test6.p" dlcHome="${DLC}">
       <propath location="build" />
       <Profiler enabled="true" outputFile="profiler/profiler2.txt" coverage="true" />
-      <PCTConnection dbName="sp2k" dbDir="db" singleUser="true" />
+      <PCTConnection dbName="sp2k" dbDir="db" singleUser="true" logicalName="abc">
+        <PCTAlias name="sp2k" />
+        <PCTAlias name="foobar" />
+      </PCTConnection>
     </PCTRun>
     <!-- Generate generic coverage report -->
     <GenericCoverage destFile="profiler/profiler.xml">
@@ -109,6 +121,7 @@
       <jvmarg value="-Dproject.settings=sonar-project1.properties" />
       <jvmarg value="-Dsonar.verbose=false" />
       <jvmarg value="-Dsonar.host.url=${SONAR_URL}" />
+      <jvmarg value="-Dsonar.oe.dlc=${DLC}" />
       <classpath location="sonar-runner.jar" />
       <!-- <arg line="-X" /> -->
     </java>
@@ -118,6 +131,7 @@
       <jvmarg value="-Dproject.settings=sonar-project2.properties" />
       <jvmarg value="-Dsonar.verbose=false" />
       <jvmarg value="-Dsonar.host.url=${SONAR_URL}" />
+      <jvmarg value="-Dsonar.oe.dlc=${DLC}" />
       <classpath location="sonar-runner.jar" />
       <!-- <arg line="-X" /> -->
     </java>

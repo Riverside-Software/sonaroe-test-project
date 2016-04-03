@@ -33,6 +33,7 @@
     <PCTDumpSchema destFile="dump/sp2k.df" dlcHome="${DLC}">
       <PCTConnection dbName="sp2k" dbDir="db" singleUser="true" />
     </PCTDumpSchema>
+    <echo file="dump/empty.df" />
   </target>
 
   <target name="build" depends="db">

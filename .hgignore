@@ -1,0 +1,10 @@
+^\.sonar$
+^\.proparse$
+^\.tokens$
+^build$
+^buildDbg$
+^db$
+^dump$
+^profiler$
+^srcDbg$
+

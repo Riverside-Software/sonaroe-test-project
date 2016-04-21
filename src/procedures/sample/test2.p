@@ -26,6 +26,9 @@ define new shared temp-table tt1 no-undo
  field b as char.
 define new shared buffer b1 for tt1.
 define new shared dataset ds1 for b1.
+define work-table wt1
+ field a as char
+ field b as char.
 
 for each item :
   run proc1 (input item.itemnum).
@@ -41,5 +44,18 @@ procedure proc1:
      item.catpage.
   end.  
 end procedure.
+
+for each tt1:
+  display tt1.a tt1.b.
+end.
+for each b1:
+  display b1.a b1.b.
+end.
+for each b1 by b1.b descending:
+  display b1.a b1.b.
+end.
+for each wt1:
+  display wt1.a wt1.b.
+end.
 
 return '0'.

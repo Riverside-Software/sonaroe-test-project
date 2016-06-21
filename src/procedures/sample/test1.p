@@ -37,3 +37,29 @@ Nested comment 1 */ Still level 1
 RUN VALUE("Hello !").
 
 /* One more comment /* Nested 1 */ Comment */
+def var obj as progress.lang.object.
+DEFINE VARIABLE foobar AS CHARACTER NO-UNDO.
+obj = DYNAMIC-NEW foobar ().
+
+DEFINE FRAME DEFAULT-FRAME 
+    "Content of sample.txt" VIEW-AS TEXT
+          SIZE 25 BY .62 AT ROW 1.48 COL 24 WIDGET-ID 4
+          FONT 6
+    WITH 1 DOWN NO-BOX KEEP-TAB-ORDER OVERLAY 
+         SIDE-LABELS NO-UNDERLINE THREE-D 
+         AT COL 1 ROW 1
+         SIZE 73 BY 29.86 WIDGET-ID 100.
+DEFINE VARIABLE CtrlFrame AS WIDGET-HANDLE NO-UNDO.
+define variable obj2 as com-handle.
+CREATE CONTROL-FRAME CtrlFrame ASSIGN
+       FRAME           = FRAME DEFAULT-FRAME:HANDLE
+       ROW             = 21.95
+       COLUMN          = 3
+       HEIGHT          = 1.76
+       WIDTH           = 7
+       WIDGET-ID       = 28
+       HIDDEN          = yes
+       SENSITIVE       = yes.
+obj2:MyProperty:Yes = 2000.
+
+System.ComponentModel.BrowsableAttribute:No.

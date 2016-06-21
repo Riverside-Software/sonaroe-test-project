@@ -8,6 +8,7 @@ Et des caractères accentués
 procedure foo :
  def input param prm1 as int.
  def output param prm2 as int no-undo.
+ define variable cls1 as int no-undo.
 
  /* This is a very long line. This is a very long line. This is a very long line. This is a very long line. This is a very long line. This is a very long line. This is a very long line. This is a very long line. This is a very long line. This is a very long line. This is a very long line. This is a very long line. */
  for each customer where customer.custnum eq prm1 no-lock:

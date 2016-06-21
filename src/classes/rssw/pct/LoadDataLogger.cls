@@ -5,7 +5,7 @@ USING OpenEdge.DataAdmin.Binding.ITableDataMonitor FROM PROPATH.
 
 CLASS rssw.pct.LoadDataLogger IMPLEMENTS ITableDataMonitor: 
   define stream sErr.
-  DEFINE VARIABLE errors AS LONGCHAR NO-UNDO.
+  DEFINE public VARIABLE errors AS LONGCHAR NO-UNDO.
 
     define public property loadException as logical initial false no-undo
         get.

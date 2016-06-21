@@ -29,8 +29,11 @@
   <target name="db" depends="init">
     <sports2000 destDir="db" dbName="sp2k" dlcHome="${DLC}" />
     <PCTDumpSchema destFile="dump/sp2k.df" dlcHome="${DLC}">
-      <PCTConnection dbName="sp2k" dbDir="db" singleUser="true" />
+      <DBConnection dbName="sp2k" dbDir="db" singleUser="true" />
     </PCTDumpSchema>
+    <PCTLoadSchema srcFile="src/tables/altdb.df" dlcHome="${DLC}">
+      <DBConnection dbName="sp2k" dbDir="db" singleUser="true" />
+    </PCTLoadSchema>
     <echo file="dump/empty.df" />
   </target>
 
@@ -57,7 +60,7 @@
     </copy>
 
     <!-- Unit tests -->
-    <PCTRun procedure="sample/test5.p" dlcHome="${DLC}">
+    <PCTRun procedure="sample/test3.p" dlcHome="${DLC}">
       <propath location="build" />
       <Profiler enabled="true" outputFile="profiler/profiler1.txt" coverage="true" />
       <PCTConnection dbName="sp2k" dbDir="db" singleUser="true" logicalName="abc">
@@ -65,9 +68,17 @@
         <PCTAlias name="foobar" />
       </PCTConnection>
     </PCTRun>
-    <PCTRun procedure="sample/test6.p" dlcHome="${DLC}">
+    <PCTRun procedure="sample/test5.p" dlcHome="${DLC}">
       <propath location="build" />
       <Profiler enabled="true" outputFile="profiler/profiler2.txt" coverage="true" />
+      <PCTConnection dbName="sp2k" dbDir="db" singleUser="true" logicalName="abc">
+        <PCTAlias name="sp2k" />
+        <PCTAlias name="foobar" />
+      </PCTConnection>
+    </PCTRun>
+    <PCTRun procedure="sample/test6.p" dlcHome="${DLC}">
+      <propath location="build" />
+      <Profiler enabled="true" outputFile="profiler/profiler3.txt" coverage="true" />
       <PCTConnection dbName="sp2k" dbDir="db" singleUser="true" logicalName="abc">
         <PCTAlias name="sp2k" />
         <PCTAlias name="foobar" />
@@ -78,6 +89,8 @@
       <fileset dir="profiler" includes="*.txt" />
       <propath>
         <pathelement location="srcDbg" />
+        <!-- <pathelement location="src/procedures" />
+        <pathelement location="src/classes" /> -->
       </propath>
     </GenericCoverage>
   </target>

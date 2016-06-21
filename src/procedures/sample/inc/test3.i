@@ -5,3 +5,5 @@ do transaction:
   find first item exclusive-lock.
   disp customer.custnum item.itemnum.
 end.
+
+&GLOBAL-DEFINE PPVAR1 100

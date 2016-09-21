@@ -108,7 +108,7 @@
       <jvmarg value="-Drunner.home=." />
       <jvmarg value="-Dproject.home=." />
       <jvmarg value="-Dproject.settings=sonar-project1.properties" />
-      <jvmarg value="-Dsonar.projectVersion=${BUILD_ID}" />
+      <jvmarg value="-Dsonar.projectVersion=105" />
       <jvmarg value="-Dsonar.verbose=false" />
       <jvmarg value="-Dsonar.host.url=${SONAR_URL}" />
       <jvmarg value="-Dsonar.oe.dlc=${DLC}" />
@@ -119,7 +119,7 @@
       <jvmarg value="-Drunner.home=." />
       <jvmarg value="-Dproject.home=." />
       <jvmarg value="-Dproject.settings=sonar-project2.properties" />
-      <jvmarg value="-Dsonar.projectVersion=${BUILD_ID}" />
+      <jvmarg value="-Dsonar.projectVersion=105" />
       <jvmarg value="-Dsonar.verbose=false" />
       <jvmarg value="-Dsonar.host.url=${SONAR_URL}" />
       <jvmarg value="-Dsonar.oe.dlc=${DLC}" />

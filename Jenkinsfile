@@ -6,13 +6,13 @@ node ('EC2-EU1B') {
   checkout scm
   echo " Branch: ${env.BRANCH_NAME}"
   withEnv(["PATH+ANT=${tool name: 'Ant 1.9', type: 'hudson.tasks.Ant$AntInstallation'}/bin"]) {
-    sh "ant -DDLC=Z:\\Progress\\OpenEdge-11.7 -lib Z:\\Tools\\PCT\\PCT-latest.jar build"
+    bat "ant -DDLC=Z:\\Progress\\OpenEdge-11.7 -lib Z:\\Tools\\PCT\\PCT-latest.jar build"
   }
   if ("master" == env.BRANCH_NAME) {
-    sh "Z:\\Tools\\sonar-scanner\\bin\\sonar-scanner.bar -Dproject.settings=sonar-project1.properties"
+    bat "Z:\\Tools\\sonar-scanner\\bin\\sonar-scanner.bar -Dproject.settings=sonar-project1.properties"
   } else {
     withCredentials([[$class: 'UsernamePasswordMultiBinding', credentialsId: 'GitHub-GQuerret', usernameVariable: 'GH_LOGIN', passwordVariable: 'GH_PASSWORD']]) {
-      sh "Z:\\Tools\\sonar-scanner\\bin\\sonar-scanner.bar -Dproject.settings=sonar-project2.properties -Dsonar.analysis.mode=issues -Dsonar.github.pullRequest=${env.BRANCH_NAME.substring(3)} -Dsonar.github.repository=Riverside-Software/sonaroe-test-project -Dsonar.github.oauth=${env.GH_PASSWORD}"
+      bat "Z:\\Tools\\sonar-scanner\\bin\\sonar-scanner.bar -Dproject.settings=sonar-project2.properties -Dsonar.analysis.mode=issues -Dsonar.github.pullRequest=${env.BRANCH_NAME.substring(3)} -Dsonar.github.repository=Riverside-Software/sonaroe-test-project -Dsonar.github.oauth=${env.GH_PASSWORD}"
     }
   }
 }

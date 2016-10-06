@@ -9,7 +9,7 @@ node ('EC2-EU1B') {
     bat "ant -DDLC=Z:\\Progress\\OpenEdge-11.7 -lib Z:\\Tools\\PCT\\PCT-latest.jar build"
   }
   if ("master" == env.BRANCH_NAME) {
-    bat "Z:\\Tools\\sonar-scanner\\bin\\sonar-scanner.bar -Dproject.settings=sonar-project1.properties"
+    bat "Z:\\Tools\\sonar-scanner-2.8\\bin\\sonar-scanner.bar -Dproject.settings=sonar-project1.properties"
   } else {
     withCredentials([[$class: 'UsernamePasswordMultiBinding', credentialsId: 'GitHub-GQuerret', usernameVariable: 'GH_LOGIN', passwordVariable: 'GH_PASSWORD']]) {
       bat "Z:\\Tools\\sonar-scanner-2.8\\bin\\sonar-scanner.bar -Dproject.settings=sonar-project2.properties -Dsonar.analysis.mode=issues -Dsonar.github.pullRequest=${env.BRANCH_NAME.substring(3)} -Dsonar.github.repository=Riverside-Software/sonaroe-test-project -Dsonar.github.oauth=${env.GH_PASSWORD}"

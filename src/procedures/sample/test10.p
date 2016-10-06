@@ -60,3 +60,6 @@ CREATE CONTROL-FRAME CtrlFrame ASSIGN
 obj2:MyProperty:Yes = 2000.
 
 System.ComponentModel.BrowsableAttribute:No.
+
+/* Test */
+

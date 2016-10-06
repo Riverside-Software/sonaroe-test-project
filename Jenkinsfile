@@ -6,7 +6,8 @@ node ('EC2-EU1B') {
   checkout scm
   echo " Branch: ${env.BRANCH_NAME}"
   withEnv(["PATH+ANT=${tool name: 'Ant 1.9', type: 'hudson.tasks.Ant$AntInstallation'}/bin"]) {
-    sh "ant -DDLC=Z:\\Progress\\OpenEdge-11.7 -lib Z:\\Tools\\PCT\\PCT-latest.jar build" 
+    sh "ant -DDLC=Z:\\Progress\\OpenEdge-11.7 -lib Z:\\Tools\\PCT\\PCT-latest.jar build"
+  }
   if ("master" == env.BRANCH_NAME) {
     sh "Z:\\Tools\\sonar-scanner\\bin\\sonar-scanner.bar -Dproject.settings=sonar-project1.properties"
   } else {

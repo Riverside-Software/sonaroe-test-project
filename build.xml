@@ -9,7 +9,6 @@
   
   <target name="init">
     <mkdir dir="db" />
-    <mkdir dir="srcDbg" />
     <mkdir dir="build" />
     <mkdir dir="profiler" />
     <mkdir dir="dump" />
@@ -20,7 +19,6 @@
 
   <target name="clean">
     <delete dir="db" />
-    <delete dir="srcDbg" />
     <delete dir="build" />
     <delete dir="profiler" />
     <delete dir="dump" />
@@ -31,14 +29,10 @@
     <PCTDumpSchema destFile="dump/sp2k.df" dlcHome="${DLC}">
       <DBConnection dbName="sp2k" dbDir="db" singleUser="true" />
     </PCTDumpSchema>
-    <PCTLoadSchema srcFile="src/tables/altdb.df" dlcHome="${DLC}">
-      <DBConnection dbName="sp2k" dbDir="db" singleUser="true" />
-    </PCTLoadSchema>
     <echo file="dump/empty.df" />
   </target>
 
   <target name="build" depends="db">
-    <!-- First pass : standard build and debug listing files generation -->
     <PCTCompile destdir="build" dlcHome="${DLC}" cpinternal="utf-8" cpstream="utf-8" listing="true" debugListing="true" flattenDebugListing="false" relativePaths="true" xmlXref="true" keepXref="true">
       <fileset dir="src/classes" includes="**/*.cls" />
       <fileset dir="src/procedures" includes="**/*.p" />
@@ -51,18 +45,11 @@
         <Alias name="foobar" />
       </PCTConnection>
     </PCTCompile>
-    <!-- Strip line numbers from debug listing files -->
-    <copy toDir="srcDbg">
-      <fileset dir="build/.dbg" />
-      <filterchain>
-        <filterreader classname="com.phenix.pct.DebugListingFilterReader" />
-      </filterchain>
-    </copy>
 
     <!-- Unit tests -->
     <PCTRun procedure="sample/test3.p" dlcHome="${DLC}">
       <propath location="build" />
-      <Profiler enabled="true" outputFile="profiler/profiler1.txt" coverage="true" />
+      <Profiler enabled="true" outputDir="profiler" coverage="true" />
       <PCTConnection dbName="sp2k" dbDir="db" singleUser="true" logicalName="abc">
         <PCTAlias name="sp2k" />
         <PCTAlias name="foobar" />
@@ -70,7 +57,7 @@
     </PCTRun>
     <PCTRun procedure="sample/test5.p" dlcHome="${DLC}">
       <propath location="build" />
-      <Profiler enabled="true" outputFile="profiler/profiler2.txt" coverage="true" />
+      <Profiler enabled="true" outputDir="profiler" coverage="true" />
       <PCTConnection dbName="sp2k" dbDir="db" singleUser="true" logicalName="abc">
         <PCTAlias name="sp2k" />
         <PCTAlias name="foobar" />
@@ -78,21 +65,12 @@
     </PCTRun>
     <PCTRun procedure="sample/test6.p" dlcHome="${DLC}">
       <propath location="build" />
-      <Profiler enabled="true" outputFile="profiler/profiler3.txt" coverage="true" />
+      <Profiler enabled="true" outputDir="profiler" coverage="true" />
       <PCTConnection dbName="sp2k" dbDir="db" singleUser="true" logicalName="abc">
         <PCTAlias name="sp2k" />
         <PCTAlias name="foobar" />
       </PCTConnection>
     </PCTRun>
-    <!-- Generate generic coverage report -->
-    <GenericCoverage destFile="profiler/profiler.xml">
-      <fileset dir="profiler" includes="*.txt" />
-      <propath>
-        <pathelement location="srcDbg" />
-        <!-- <pathelement location="src/procedures" />
-        <pathelement location="src/classes" /> -->
-      </propath>
-    </GenericCoverage>
   </target>
 
   <target name="dist">
@@ -103,28 +81,16 @@
     </copy>
   </target>
 
-  <target name="sonar" depends="build">
+  <target name="sonar" >
     <java classname="org.sonarsource.scanner.cli.Main" fork="true" failOnError="true">
       <jvmarg value="-Drunner.home=." />
       <jvmarg value="-Dproject.home=." />
       <jvmarg value="-Dproject.settings=sonar-project1.properties" />
-      <jvmarg value="-Dsonar.projectVersion=105" />
+      <jvmarg value="-Dsonar.projectVersion=1.0" />
       <jvmarg value="-Dsonar.verbose=false" />
       <jvmarg value="-Dsonar.host.url=${SONAR_URL}" />
       <jvmarg value="-Dsonar.oe.dlc=${DLC}" />
       <classpath location="sonar-scanner-cli-2.5.1.jar" />
-      <!-- <arg line="-X" /> -->
-    </java>
-    <java classname="org.sonarsource.scanner.cli.Main" fork="true" failOnError="true">
-      <jvmarg value="-Drunner.home=." />
-      <jvmarg value="-Dproject.home=." />
-      <jvmarg value="-Dproject.settings=sonar-project2.properties" />
-      <jvmarg value="-Dsonar.projectVersion=105" />
-      <jvmarg value="-Dsonar.verbose=false" />
-      <jvmarg value="-Dsonar.host.url=${SONAR_URL}" />
-      <jvmarg value="-Dsonar.oe.dlc=${DLC}" />
-      <classpath location="sonar-scanner-cli-2.5.1.jar" />
-      <!-- <arg line="-X" /> -->
     </java>
   </target>
 

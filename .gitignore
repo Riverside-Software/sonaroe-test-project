@@ -1,0 +1,7 @@
+.sonar
+.proparse
+.tokens
+build
+db
+dump
+profiler

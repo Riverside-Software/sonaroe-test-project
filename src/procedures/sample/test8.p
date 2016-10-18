@@ -1,2 +1,2 @@
-find first currency.
-display currency.currency column-label "NewLabel".
+find first salesrep.
+display salesrep.salesrep column-label "NewLabel".

@@ -22,6 +22,7 @@ CLASS Consultingwerk.InterfaceSample.Class1 IMPLEMENTS Interface2, Interface3:
          Notes:   Interface1 is not directly implemented by the class, but it's the 
                   SUPER-Interface of Interface2
      ------------------------------------------------------------------------------*/
+	@Progress.Lang.Generated.
 	METHOD PUBLIC VOID MethodFromInterface1 ():
 		MESSAGE "Foo".
 		THIS-OBJECT:MethodFromInterface2().
@@ -73,5 +74,13 @@ CLASS Consultingwerk.InterfaceSample.Class1 IMPLEMENTS Interface2, Interface3:
     METHOD PUBLIC STATIC VOID MethodInNoInterface3 (  ):
         message "gilles".
     END METHOD.
-    
+
+    METHOD PUBLIC STATIC VOID MethodInNoInterface4 (  ):
+        message "gilles".
+    END METHOD.
+
+    METHOD PUBLIC STATIC VOID MethodInNoInterface5 (  ):
+        message "gilles".
+    END METHOD.
+
 END CLASS.

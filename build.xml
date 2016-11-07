@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="utf-8"?>
 
-<!-- How to execute : ant -lib ..\pct\dist\PCT.jar -DDLC=%DLC% -lib %USERPROFILE%\.m2\repository\com\google\guava\guava\19.0\guava-19.0.jar -lib %USERPROFILE%\.m2\repository\org\antlr\antlr4-runtime\4.5.2-1\antlr4-runtime-4.5.2-1.jar clean build sonar -->
+<!-- How to execute : ant -lib ..\pct\dist\PCT.jar -DDLC=%DLC% clean build sonar -->
 <project name="TEST" default="build">
   <taskdef resource="PCT.properties" />
 
@@ -73,14 +73,6 @@
     </PCTRun>
   </target>
 
-  <target name="dist">
-    <mkdir dir="dist" />
-    <copy todir="dist">
-      <fileset dir="build" includes="**/*.r" />
-      <fileset dir="build/.dbg" includes="*.w,*.p,*.cls" />
-    </copy>
-  </target>
-
   <target name="sonar" >
     <java classname="org.sonarsource.scanner.cli.Main" fork="true" failOnError="true">
       <jvmarg value="-Drunner.home=." />
@@ -90,6 +82,8 @@
       <jvmarg value="-Dsonar.verbose=false" />
       <jvmarg value="-Dsonar.host.url=${SONAR_URL}" />
       <jvmarg value="-Dsonar.oe.dlc=${DLC}" />
+      <!-- Uncomment to activate verbose mode in Sonar -->
+      <!-- <arg line="-X" /> -->
       <classpath location="sonar-scanner-cli-2.5.1.jar" />
     </java>
   </target>

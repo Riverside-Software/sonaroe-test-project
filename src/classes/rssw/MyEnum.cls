@@ -7,4 +7,5 @@ ENUM rssw.MyEnum FLAGS:
                 Create
                 Delete
                 Execute.
+
 END ENUM.

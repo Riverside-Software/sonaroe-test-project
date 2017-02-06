@@ -34,7 +34,7 @@ Nested comment 1 */ Still level 1
 */
 
 
-RUN VALUE("Hello !").
+RUN VALUE("Hello World !").
 
 /* One more comment /* Nested 1 */ Comment */
 def var obj as progress.lang.object.

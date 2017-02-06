@@ -10,7 +10,7 @@ procedure foo :
  def output param prm2 as int no-undo.
 
  for each customer where customer.custnum eq prm1 no-lock:
-    prm2 = custnum 'ABC'.
+    prm2 = custnum + 'ABC'.
  end.
  
 end procedure.

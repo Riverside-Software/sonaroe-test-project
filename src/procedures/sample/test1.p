@@ -63,3 +63,10 @@ CREATE CONTROL-FRAME CtrlFrame ASSIGN
 obj2:MyProperty:Yes = 2000.
 
 System.ComponentModel.BrowsableAttribute:No.
+
+&IF OPSYS = "WIN32" &THEN
+ MESSAGE "Win32".
+&ENDIF
+&IF OPSYS = "UNIX" &THEN
+ MESSAGE "Unix".
+&ENDIF

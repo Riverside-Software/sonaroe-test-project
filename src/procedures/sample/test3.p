@@ -49,4 +49,12 @@ DEF VAR cls1 AS Consultingwerk.InterfaceSample.Class1.
 cls1 = new Consultingwerk.InterfaceSample.Class1().
 cls1:MethodFromInterface1().
 
+
+&IF OPSYS = "WIN32" &THEN
+ MESSAGE "Win32".
+&ENDIF
+&IF OPSYS = "UNIX" &THEN
+ MESSAGE "Unix".
+&ENDIF
+
 return '0'.

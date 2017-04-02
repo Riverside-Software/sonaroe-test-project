@@ -3,6 +3,7 @@
 find first customer.
 if customer.custnum < 0 then do:
   message "msg".
+  message "gilles".
 end.
 
 DEF NEW SHARED VAR var1        AS INTEGER NO-UNDO.

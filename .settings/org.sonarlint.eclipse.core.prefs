@@ -1,5 +1,5 @@
 autoEnabled=true
 eclipse.preferences.version=1
-extraProperties=
+extraProperties=sonar.oe.propath\=src,src/procedures,src/classes\r\nsonar.oe.databases\=dump/sp2k.df
 moduleKey=RSSW\:TestProject
-serverId=sonar
+serverId=localhost

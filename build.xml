@@ -77,12 +77,11 @@
     <java classname="org.sonarsource.scanner.cli.Main" fork="true" failOnError="true">
       <jvmarg value="-Drunner.home=." />
       <jvmarg value="-Dproject.home=." />
-      <jvmarg value="-Dproject.settings=sonar-project1.properties" />
       <jvmarg value="-Dsonar.host.url=${SONAR_URL}" />
       <jvmarg value="-Dsonar.oe.dlc=${DLC}" />
       <!-- Uncomment to activate verbose mode in Sonar -->
       <!-- <arg line="-X" /> -->
-      <classpath location="sonar-scanner-cli-2.5.1.jar" />
+      <classpath location="sonar-scanner-cli-3.0.3.778.jar" />
     </java>
   </target>
 

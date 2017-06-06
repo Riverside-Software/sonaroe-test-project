@@ -48,7 +48,7 @@ end.
 DEF VAR cls1 AS Consultingwerk.InterfaceSample.Class1.
 cls1 = new Consultingwerk.InterfaceSample.Class1().
 cls1:MethodFromInterface1().
-
+cls1:overloaded1("abc").
 
 &IF OPSYS = "WIN32" &THEN
  MESSAGE "Win32".

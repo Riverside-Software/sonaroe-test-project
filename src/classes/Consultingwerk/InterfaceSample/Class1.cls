@@ -83,4 +83,14 @@ CLASS Consultingwerk.InterfaceSample.Class1 IMPLEMENTS Interface2, Interface3:
         message "gilles".
     END METHOD.
 
+    method public  void overloaded1():
+      message "test".    
+    end method.
+    method public  void overloaded1(prm1 as char):
+      message "test".    
+    end method.
+    method public void overloaded1(prm1 as char, prm2 as int):
+      message "test".    
+    end method.
+
 END CLASS.

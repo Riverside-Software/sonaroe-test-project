@@ -21,7 +21,8 @@ define shared temp-table tt1 no-undo
 define shared buffer b1 for tt1.
 define shared dataset ds1 for b1.
 
-{ sample/inc/test.i} find first item exclusive-lock.
+{ sample/inc/test.i}
+find first item exclusive-lock.
 disp item.itemnum.
 
 /* Backslash rule */

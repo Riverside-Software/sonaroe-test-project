@@ -1,0 +1,7 @@
+&IF DEFINED(COV1) > 0 &THEN
+  MESSAGE "xxx".
+&ENDIF
+
+&IF DEFINED(COV2) > 0 &THEN
+  MESSAGE "xxx".
+&ENDIF

@@ -44,4 +44,7 @@ DEF VAR cls1 AS Consultingwerk.InterfaceSample.Class1.
 cls1 = new Consultingwerk.InterfaceSample.Class1().
 cls1:MethodFromInterface1().
 
+{ sample/inc/coverage.i }
+run p2.
+
 return '0'.

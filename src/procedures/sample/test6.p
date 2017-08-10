@@ -11,8 +11,6 @@ procedure foo :
  
 end procedure.
 
-
-
 message "Text2".
 
 
@@ -33,5 +31,8 @@ cls1:MethodFromInterface1().
 for each customer by address:
 
 end.
+
+{ sample/inc/coverage.i }
+run p1.
 
 return '0'.

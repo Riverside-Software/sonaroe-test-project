@@ -35,7 +35,7 @@
   </target>
 
   <target name="build" depends="db">
-    <PCTCompile destdir="build" dlcHome="${DLC}" cpinternal="utf-8" cpstream="utf-8" listing="true" relativePaths="true" xmlXref="true" keepXref="true" requireFullKeywords="true" requireFullNames="true" requireFieldQualifiers="true">
+    <PCTCompile destdir="build" dlcHome="${DLC}" cpinternal="utf-8" cpstream="utf-8" listing="true" relativePaths="true" xmlXref="true" keepXref="true" requireFullKeywords="false" requireFullNames="true" requireFieldQualifiers="true">
       <fileset dir="src/classes" includes="**/*.cls" />
       <fileset dir="src/procedures" includes="**/*.p" />
       <fileset dir="src/tests" includes="**/*.p,**/*.cls" />
@@ -112,6 +112,12 @@
       <jvmarg value="-Dproject.home=." />
       <jvmarg value="-Dsonar.host.url=${SONAR_URL}" />
       <jvmarg value="-Dsonar.oe.dlc=${DLC}" />
+
+      <!-- <jvmarg value="-Xdebug" />
+      <jvmarg value="-Xnoagent" />
+      <jvmarg value="-Djava.compiler=NONE" />
+      <jvmarg value="-Xrunjdwp:transport=dt_socket,server=y,suspend=y,address=8000" /> -->
+
       <!-- Uncomment to activate verbose mode in Sonar -->
       <!-- <arg line="-X" /> -->
       <classpath location="sonar-scanner-cli-3.0.3.778.jar" />

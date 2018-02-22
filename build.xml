@@ -104,6 +104,10 @@
       <propath location="build" />
       <Profiler enabled="true" outputDir="profiler" coverage="true" />
     </PCTRun>
+    <PCTRun procedure="sample/test20.p" dlcHome="${DLC}">
+      <propath location="build" />
+      <Profiler enabled="true" outputDir="profiler" coverage="true" />
+    </PCTRun>
   </target>
 
   <target name="sonar" >

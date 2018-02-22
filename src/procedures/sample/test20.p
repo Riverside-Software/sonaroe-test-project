@@ -4,3 +4,5 @@ end.
 finally:
   message "world".
 end.
+return '0'.
+

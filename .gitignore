@@ -8,3 +8,5 @@ db
 dump
 profiler
 test-output
+*.r
+

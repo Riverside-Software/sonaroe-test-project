@@ -5,6 +5,8 @@
   <taskdef resource="PCT.properties" />
   <taskdef name="xmltask" classname="com.oopsconsultancy.xmltask.ant.XmlTask" />
 
+  <property environment="env" />
+  <property name="DLC" value="${env.DLC}" />
   <!-- Default values for local development instance of SonarQube -->
   <property name="SONAR_URL" value="http://localhost:9000" />
 

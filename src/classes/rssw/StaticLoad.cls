@@ -3,7 +3,7 @@ block-level on error undo, throw.
 class rssw.StaticLoad:
   define variable lIsInitialized as logical no-undo.
 
-  constructor public StaticLoad():
+  constructor pulic StaticLoad():
     // Nothing
   end constructor.
 

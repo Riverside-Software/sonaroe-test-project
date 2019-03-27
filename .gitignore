@@ -2,11 +2,13 @@
 .sonar
 .sonarlint
 .proparse
+.settings
 .tokens
 build
 db
 dump
 profiler
+sonarlint-report.txt
 test-output
 *.r
 

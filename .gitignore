@@ -6,7 +6,6 @@
 .tokens
 build
 db
-dump
 profiler
 sonarlint-report.txt
 test-output

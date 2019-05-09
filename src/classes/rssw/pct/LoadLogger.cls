@@ -1,7 +1,7 @@
 ROUTINE-LEVEL ON ERROR UNDO, THROW.
 
 USING Progress.Lang.*.
-USING OpenEdge.DataAdmin.Binding.IDataDefinitionLoader FROM PROPATH. 
+USING OpenEdge.DataAdmin.Binding.IDataDefinitionLoader FROM PROPATH.
 
 CLASS rssw.pct.LoadLogger INHERITS rssw.pct.AbstractLoadLogger:
   DEFINE PUBLIC PROPERTY numErrors AS INTEGER NO-UNDO INITIAL 0 GET. PRIVATE SET.
@@ -36,13 +36,13 @@ CLASS rssw.pct.LoadLogger INHERITS rssw.pct.AbstractLoadLogger:
     MESSAGE pcText.
     errors = errors + pcText + "~n".
   END METHOD.
-    
+
   METHOD PUBLIC OVERRIDE VOID AddPhase2Error( pcText as char ) :
     THIS-OBJECT:numErrors = THIS-OBJECT:numErrors + 1.
     MESSAGE pcText.
     errors = errors + pcText + "~n".
   END METHOD.
-    
+
   METHOD PUBLIC OVERRIDE VOID AddWarning( pcText as char ) :
     THIS-OBJECT:numWarnings = THIS-OBJECT:numWarnings + 1.
     MESSAGE pcText.

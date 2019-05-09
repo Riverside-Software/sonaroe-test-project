@@ -1,13 +1,13 @@
 ROUTINE-LEVEL ON ERROR UNDO, THROW.
 
 USING Progress.Lang.*.
-USING OpenEdge.DataAdmin.Binding.IDataDefinitionLoader FROM PROPATH. 
+USING OpenEdge.DataAdmin.Binding.IDataDefinitionLoader FROM PROPATH.
 
 CLASS rssw.pct.AbstractLoadLogger IMPLEMENTS IDataDefinitionLoader ABSTRACT:
   DEFINE PUBLIC PROPERTY IsReader AS LOGICAL  NO-UNDO INIT TRUE GET. PROTECTED SET.
   DEFINE PUBLIC PROPERTY Error    AS AppError NO-UNDO GET. PRIVATE SET.
   DEFINE PUBLIC PROPERTY Warning  AS AppError NO-UNDO GET. PRIVATE SET.
-  DEFINE PUBLIC PROPERTY AddingChildToNewTable AS LOGICAL NO-UNDO GET. SET. 
+  DEFINE PUBLIC PROPERTY AddingChildToNewTable AS LOGICAL NO-UNDO GET. SET.
 
   METHOD PUBLIC LOGICAL EXTENT CurrentTableAttributes():
 
@@ -44,15 +44,15 @@ CLASS rssw.pct.AbstractLoadLogger IMPLEMENTS IDataDefinitionLoader ABSTRACT:
   METHOD PUBLIC VOID AddIndex(pcAction as char, pcTable as char, h as handle, piArea as int, piPrimary as log):
 
   END METHOD.
-  
+
   METHOD PUBLIC VOID AddField(pcAction as char, pcTable as char, h as handle, piArea as int):
 
   END METHOD.
-    
+
   METHOD PUBLIC LOGICAL IsNewTable(pcTable as char):
     RETURN TRUE.
-  END METHOD. 
-    
+  END METHOD.
+
   METHOD PUBLIC VOID RenameTable(pcname as char,pcNewname as char):
 
   END METHOD.
@@ -67,7 +67,7 @@ CLASS rssw.pct.AbstractLoadLogger IMPLEMENTS IDataDefinitionLoader ABSTRACT:
 
   METHOD PUBLIC VOID RenameSequence(pcname as char,pcNewname as char):
 
-  END METHOD. 
+  END METHOD.
 
   METHOD PUBLIC CHAR TableOldName(pcNewname as char):
 
@@ -103,7 +103,7 @@ CLASS rssw.pct.AbstractLoadLogger IMPLEMENTS IDataDefinitionLoader ABSTRACT:
 
   METHOD PUBLIC AppError RemoveWarning ():
     RETURN ?.
-  END METHOD. 
+  END METHOD.
 
   METHOD PUBLIC AppError RemoveError ():
     RETURN ?.

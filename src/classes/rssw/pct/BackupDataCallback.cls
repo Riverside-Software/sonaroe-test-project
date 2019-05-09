@@ -29,7 +29,7 @@ class rssw.pct.BackupDataCallback inherits rssw.pct.AbstractLoadDataCallback:
   end method.
 
   method private integer backupTable(ipFileName as character):
-    define variable hFile    as handle  no-undo.  
+    define variable hFile    as handle  no-undo.
     define variable hQuery   as handle  no-undo.
     define variable opDelCount as integer no-undo.
 
@@ -43,7 +43,7 @@ class rssw.pct.BackupDataCallback inherits rssw.pct.AbstractLoadDataCallback:
     repeat transaction:
       hQuery:get-next(exclusive-lock).
       IF hQuery:query-off-end then leave.
-      if (ipFileName > '') then 
+      if (ipFileName > '') then
         put stream sBackup unformatted exportRecord(input hFile, input " ") skip.
       hFile:buffer-delete().
       assign opDelCount = opDelCount + 1.
@@ -87,23 +87,23 @@ END method.
           END.
           NEXT.
       END.
-      
+
       IF hFld:EXTENT = 0 THEN DO:
          IF hFld:BUFFER-VALUE = ? then cTmp = "?".
-            ELSE 
-         
+            ELSE
+
          CASE hFld:DATA-TYPE:
               WHEN "character"      THEN cTmp = QUOTER(hFld:BUFFER-VALUE).
               WHEN "raw"            THEN cTmp = '"' + STRING(hFld:BUFFER-VALUE) + '"'.
-              WHEN "datetime" OR 
+              WHEN "datetime" OR
                  WHEN "datetime-tz" THEN cTmp = string(year(hFld:BUFFER-VALUE),"9999") + "-" + string(month(hFld:BUFFER-VALUE),"99") + "-" + string(day(hFld:BUFFER-VALUE),"99") + "T" + substring(string(hFld:BUFFER-VALUE),12).
              OTHERWISE                cTmp = STRING(hFld:BUFFER-VALUE).
          END CASE.
-         
+
          cResult = cResult + cTmp + cDelim.
       END.
       ELSE DO:
-          cArray = "".   
+          cArray = "".
           DO iExtnt = 1 TO hFld:EXTENT:
               IF hFld:BUFFER-VALUE(iExtnt) = ? THEN cTmp = "?".
                  ELSE
@@ -111,7 +111,7 @@ END method.
               CASE hFld:DATA-TYPE:
                   WHEN "character"      THEN cTmp = QUOTER(hFld:BUFFER-VALUE(iExtnt)).
                   WHEN "raw"            THEN cTmp = '"' + STRING(hFld:BUFFER-VALUE(iExtnt)) + '"'.
-                  WHEN "datetime" OR 
+                  WHEN "datetime" OR
                   WHEN "datetime-tz"    THEN cTmp = string(year(hFld:BUFFER-VALUE(iExtnt)),"9999") + "-" + string(month(hFld:BUFFER-VALUE(iExtnt)),"99") + "-" + string(day(hFld:BUFFER-VALUE(iExtnt)),"99") + "T" + substring(string(hFld:BUFFER-VALUE(iExtnt)),12).
                  OTHERWISE                cTmp = STRING(hFld:BUFFER-VALUE(iExtnt)).
               END CASE.

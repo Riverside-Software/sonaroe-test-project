@@ -1,0 +1,2 @@
+{ sample/stmt.i }
+

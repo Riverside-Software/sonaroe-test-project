@@ -16,12 +16,12 @@ stage ('Build') {
 
 stage ('SonarQube') {
   node ('windows') {
-    withEnv(["DLC=${tool name: 'OpenEdge-11.7', type: 'jenkinsci.plugin.openedge.OpenEdgeInstallation'}"]) {
-      withCredentials([string(credentialsId: 'AdminTokenSonarQube', variable: 'SQ_TOKEN')]) {
+    withEnv(["PATH+SCAN=${tool name: 'SQScanner4', type: 'hudson.plugins.sonar.SonarRunnerInstallation'}/bin", "DLC=${tool name: 'OpenEdge-11.7', type: 'openedge'}"]) {
+      withSonarQubeEnv('RSSW') {
         if ('master' == env.BRANCH_NAME) {
-          bat "Z:\\Tools\\sonar-scanner-2.8\\bin\\sonar-scanner.bat -Dsonar.host.url=http://sonar.riverside-software.fr  -Dsonar.login=${env.SQ_TOKEN} -Dsonar.branch.name=${env.BRANCH_NAME} -Dsonar.oe.dlc=%DLC% -X"
+          bat "sonar-scanner -Dsonar.oe.dlc=%DLC% -Dsonar.branch.name=%BRANCH_NAME%"
         } else {
-          bat "Z:\\Tools\\sonar-scanner-2.8\\bin\\sonar-scanner.bat -Dsonar.host.url=http://sonar.riverside-software.fr  -Dsonar.login=${env.SQ_TOKEN} -Dsonar.branch.name=${env.BRANCH_NAME} -Dsonar.branch.target=master -Dsonar.oe.dlc=%DLC%"
+          bat "sonar-scanner -Dsonar.oe.dlc=%DLC% -Dsonar.branch.name=%BRANCH_NAME% -Dsonar.branch.target=master"
         }
       }
     }

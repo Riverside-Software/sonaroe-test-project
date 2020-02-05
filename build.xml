@@ -37,7 +37,7 @@
   </target>
 
   <target name="build" depends="db">
-    <PCTCompile destdir="build" dlcHome="${DLC}" cpinternal="utf-8" cpstream="utf-8" cpcoll="basic" cpcase="basic" listing="true" relativePaths="true" xmlXref="true" keepXref="true" requireFullKeywords="false" requireFullNames="true" requireFieldQualifiers="true">
+    <PCTCompile destdir="build" dlcHome="${DLC}" cpinternal="utf-8" cpstream="utf-8" cpcoll="basic" cpcase="basic" listing="true" relativePaths="true" xmlXref="true" keepXref="true" requireFullKeywords="false" requireFullNames="true" requireFieldQualifiers="true" requireReturnValues="true">
       <fileset dir="src/classes" includes="**/*.cls" />
       <fileset dir="src/procedures" includes="**/*.p" />
       <fileset dir="src/tests" includes="**/*.p,**/*.cls" />

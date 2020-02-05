@@ -86,10 +86,10 @@
         <PCTAlias name="foobar" />
       </PCTConnection>
     </PCTRun> -->
-    <PCTRun procedure="sample/cov.p" dlcHome="${DLC}">
+    <!-- <PCTRun procedure="sample/cov.p" dlcHome="${DLC}">
       <propath location="build" />
       <Profiler enabled="true" outputDir="profiler" coverage="true" />
-    </PCTRun>
+    </PCTRun> -->
     <PCTRun procedure="sample/test20.p" dlcHome="${DLC}">
       <propath location="build" />
       <Profiler enabled="true" outputDir="profiler" coverage="true" />

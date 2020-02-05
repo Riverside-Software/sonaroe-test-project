@@ -64,7 +64,7 @@ CREATE CONTROL-FRAME CtrlFrame ASSIGN
        SENSITIVE       = yes.
 obj2:MyProperty:Yes = 2000 no-error.
 
-System.ComponentModel.BrowsableAttribute:No.
+// System.ComponentModel.BrowsableAttribute:No.
 
 &IF OPSYS = "WIN32" &THEN
  MESSAGE "Win32".

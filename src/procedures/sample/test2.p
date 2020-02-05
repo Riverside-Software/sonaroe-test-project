@@ -34,6 +34,14 @@ for each item :
   run proc1 (input item.itemnum).
 end.
 
+FUNCTION f1 RETURNS CHARACTER (ipVal AS LOGICAL):
+  IF ipVal THEN DO:
+    // Logic here
+    RETURN "XYZ".
+  END.
+  // If condition evaluates to false, then ? will be returned
+END FUNCTION.
+
 procedure proc1:
   DEF INPUT PARAMETER prm1 as INTEGER.
 

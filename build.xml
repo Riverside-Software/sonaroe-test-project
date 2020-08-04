@@ -46,7 +46,7 @@
         <pathelement location="src/procedures" />
         <pathelement location="src/tests" />
       </propath>
-      <PCTConnection dbName="sp2k" dbDir="db" singleUser="true" logicalName="abc">
+      <PCTConnection dbName="sp2k" dbDir="db" singleUser="true">
         <Alias name="sp2k" />
         <Alias name="foobar" />
       </PCTConnection>
@@ -63,7 +63,7 @@
         <pathelement location="src/tests" />
       </propath>
       <Profiler enabled="true" outputDir="profiler" coverage="true" />
-      <PCTConnection dbName="sp2k" dbDir="db" singleUser="true" logicalName="abc">
+      <PCTConnection dbName="sp2k" dbDir="db" singleUser="true">
         <PCTAlias name="sp2k" />
         <PCTAlias name="foobar" />
       </PCTConnection>
@@ -82,7 +82,7 @@
     <PCTRun procedure="sample/test1.p" dlcHome="${DLC}">
       <propath location="build" />
       <Profiler enabled="true" outputDir="profiler" coverage="true" />
-      <PCTConnection dbName="sp2k" dbDir="db" singleUser="true" logicalName="abc">
+      <PCTConnection dbName="sp2k" dbDir="db" singleUser="true">
         <PCTAlias name="sp2k" />
         <PCTAlias name="foobar" />
       </PCTConnection>

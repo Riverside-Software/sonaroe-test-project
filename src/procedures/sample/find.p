@@ -14,3 +14,9 @@ open query qry1 for each invoice where invoice.invoicedate >= date(1, 1, 2020)
                                    and shipCharge LT 10
                                    and invoice.custnum = 54
                                  use-index invoiceNum by amount.
+
+
+
+
+define temp-table ttCustomer no-undo like customer
+   index ttCustPK as primary unique custnum.

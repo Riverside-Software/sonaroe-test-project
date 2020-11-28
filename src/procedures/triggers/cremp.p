@@ -1,0 +1,4 @@
+TRIGGER PROCEDURE FOR CREATE OF Employee.
+
+ASSIGN Employee.EmpNum = NEXT-VALUE(NextEmpNum).
+   

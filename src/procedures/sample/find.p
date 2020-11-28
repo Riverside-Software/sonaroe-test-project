@@ -9,8 +9,8 @@ end.
 
 define variable qry1 as handle no-undo.
 create query qry1.
-open query qry1 for each invoice where invoice.invoicedate >= DATE(1, 1, 2020)
-                                   and invoice.invoicedate <= DATE(31, 1, 2020)
+open query qry1 for each invoice where invoice.invoicedate >= date(1, 1, 2020)
+                                   and invoice.invoicedate <= date(31, 1, 2020)
                                    and shipCharge LT 10
                                    and invoice.custnum = 54
-                                 by amount.
+                                 use-index invoiceNum by amount.

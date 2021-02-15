@@ -10,7 +10,7 @@ define input parameter ipSelect as char.
 if ipSelect eq '' then do:
   if dynamic-function('getTaxAmnt', input custNum, input invNum, input cntry) > int(ipSelect) then do:
     return dynamic-function('getTaxAmnt2' in hPrc, input custNum).
-    if valid-handle(hPrc2) then delete procedure hPc2.
+    if valid-handle(hPrc2) then delete procedure hPrc2.
   end.
 end.
 else

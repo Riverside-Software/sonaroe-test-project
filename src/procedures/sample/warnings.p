@@ -5,7 +5,7 @@ define variable invNum as int.
 define variable cntry as int.
 
 
-define input parameter ipSelect as char.
+define input parameter ipSelect as char no-undo.
 
 if ipSelect eq '' then do:
   if dynamic-function('getTaxAmnt', input custNum, input invNum, input cntry) > int(ipSelect) then do:

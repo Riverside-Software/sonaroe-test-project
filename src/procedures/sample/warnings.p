@@ -14,7 +14,7 @@ if ipSelect eq '' then do:
   end.
 end.
 else
-  return false.
+  return ''.
 
 
 

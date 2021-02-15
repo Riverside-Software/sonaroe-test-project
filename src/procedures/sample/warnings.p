@@ -26,7 +26,7 @@ end.
 
 
 if can-find (first customer where customer.custnum = custNum) 
-   and can-find (first invoice where invoice.invnum = invNum) then false.
+   and can-find (first invoice where invoice.invoicenum = invNum) then false.
 else true.
 
 

@@ -1,6 +1,8 @@
 <?xml version="1.0" encoding="utf-8"?>
 
-<!-- How to execute : ant -lib ..\pct\dist\PCT.jar -DDLC=%DLC% clean build sonar -->
+<!-- Add sonar.login and sonar.password properties to sonar-project.properties file -->
+<!-- If SonarQube is not running locally, modify SONAR_URL at line 13 (in this file) -->
+<!-- Then execute : ant -lib PCT.jar -lib xmltask.jar -DDLC=C:\Progress\OpenEdge-12.2 clean build sonar -->
 <project name="TEST" default="build">
   <taskdef resource="PCT.properties" />
   <taskdef name="xmltask" classname="com.oopsconsultancy.xmltask.ant.XmlTask" />
@@ -24,20 +26,16 @@
     <delete dir="db" />
     <delete dir="build" />
     <delete dir="profiler" />
-    <delete dir="dump" />
     <delete dir="test-output" />
   </target>
 
   <target name="db" depends="init">
     <sports2000 destDir="db" dbName="sp2k" dlcHome="${DLC}" />
-    <PCTDumpSchema destFile="dump/sp2k.df" dlcHome="${DLC}">
-      <DBConnection dbName="sp2k" dbDir="db" singleUser="true" />
-    </PCTDumpSchema>
     <echo file="dump/empty.df" />
   </target>
 
   <target name="build" depends="db">
-    <PCTCompile destdir="build" dlcHome="${DLC}" cpinternal="utf-8" cpstream="utf-8" cpcoll="basic" cpcase="basic" listing="true" relativePaths="true" xmlXref="true" keepXref="true" requireFullKeywords="false" requireFullNames="true" requireFieldQualifiers="true" requireReturnValues="true">
+    <PCTCompile destdir="build" dlcHome="${DLC}" cpinternal="utf-8" cpstream="utf-8" cpcoll="basic" cpcase="basic" listing="true" relativePaths="true" xmlXref="false" keepXref="true" requireFullKeywords="false" requireFullNames="true" requireFieldQualifiers="true" requireReturnValues="true">
       <fileset dir="src/classes" includes="**/*.cls" />
       <fileset dir="src/procedures" includes="**/*.p" />
       <fileset dir="src/tests" includes="**/*.p,**/*.cls" />
@@ -45,8 +43,9 @@
         <pathelement location="src/classes" />
         <pathelement location="src/procedures" />
         <pathelement location="src/tests" />
+        <pathelement location="${DLC}/tty/netlib/OpenEdge.net.pl" />
       </propath>
-      <PCTConnection dbName="sp2k" dbDir="db" singleUser="true" logicalName="abc">
+      <PCTConnection dbName="sp2k" dbDir="db" singleUser="true">
         <Alias name="sp2k" />
         <Alias name="foobar" />
       </PCTConnection>
@@ -63,7 +62,7 @@
         <pathelement location="src/tests" />
       </propath>
       <Profiler enabled="true" outputDir="profiler" coverage="true" />
-      <PCTConnection dbName="sp2k" dbDir="db" singleUser="true" logicalName="abc">
+      <PCTConnection dbName="sp2k" dbDir="db" singleUser="true">
         <PCTAlias name="sp2k" />
         <PCTAlias name="foobar" />
       </PCTConnection>
@@ -79,14 +78,14 @@
       <attr path="//testCase" attr="duration" value="0" />
     </xmltask>
 
-    <PCTRun procedure="sample/test1.p" dlcHome="${DLC}">
+    <!-- <PCTRun procedure="sample/test1.p" dlcHome="${DLC}">
       <propath location="build" />
       <Profiler enabled="true" outputDir="profiler" coverage="true" />
-      <PCTConnection dbName="sp2k" dbDir="db" singleUser="true" logicalName="abc">
+      <PCTConnection dbName="sp2k" dbDir="db" singleUser="true">
         <PCTAlias name="sp2k" />
         <PCTAlias name="foobar" />
       </PCTConnection>
-    </PCTRun>
+    </PCTRun> -->
     <PCTRun procedure="sample/cov.p" dlcHome="${DLC}">
       <propath location="build" />
       <Profiler enabled="true" outputDir="profiler" coverage="true" />
@@ -98,6 +97,7 @@
   </target>
 
   <target name="sonar" >
+    <!-- Don't copy/paste that in your script, use https://docs.sonarqube.org/latest/analysis/scan/sonarscanner/ -->
     <java classname="org.sonarsource.scanner.cli.Main" fork="true" failOnError="true">
       <jvmarg value="-Drunner.home=." />
       <jvmarg value="-Dproject.home=." />
@@ -111,7 +111,7 @@
 
       <!-- Uncomment to activate verbose mode in Sonar -->
       <!-- <arg line="-X" /> -->
-      <classpath location="sonar-scanner-cli-3.0.3.778.jar" />
+      <classpath location="sonar-scanner-cli-4.6.2.2472.jar" />
     </java>
   </target>
 

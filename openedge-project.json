@@ -1,0 +1,15 @@
+{
+  "version": "12.2",
+  "graphicalMode": true,
+  "extraParameters": "",
+  "buildPath": [
+    { "type": "source", "path": "src/procedures" },
+    { "type": "source", "path": "src/classes" },
+    { "type": "propath", "path": "OpenEdge.net.pl" }
+  ],
+  "buildDirectory": "build",
+  "dumpFiles": ["dump/sp2k.df"],
+  "numThreads": 1,
+  "dbConnections": ["-db db/sp2k -RO"],
+  "aliases": "sp2k,foo,bar"
+}

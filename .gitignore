@@ -1,3 +1,4 @@
+.builder
 .scannerwork
 .sonar
 .sonarlint
@@ -7,6 +8,7 @@
 build
 db
 profiler
+sonar-output.txt
 sonarlint-report.txt
 test-output
 *.r

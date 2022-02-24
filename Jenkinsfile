@@ -9,7 +9,7 @@ stage ('Build') {
       userRemoteConfigs: scm.userRemoteConfigs
     ])
     withEnv(["PATH+ANT=${tool name: 'Ant 1.9', type: 'hudson.tasks.Ant$AntInstallation'}/bin", "DLC=${tool name: 'OpenEdge-12.2', type: 'jenkinsci.plugin.openedge.OpenEdgeInstallation'}", "TERM=xterm"]) {
-      sh "ant -DDLC=$DLC -lib /opt/pct/latest.jar -lib /opt/pct/xmltask.jar build"
+      sh "ant -DDLC=$DLC -lib PCT.jar -lib xmltask.jar build"
     }
   }
 }

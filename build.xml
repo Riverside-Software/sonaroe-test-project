@@ -78,14 +78,14 @@
       <attr path="//testCase" attr="duration" value="0" />
     </xmltask>
 
-    <!-- <PCTRun procedure="sample/test1.p" dlcHome="${DLC}">
+    <PCTRun procedure="sample/test1.p" dlcHome="${DLC}">
       <propath location="build" />
       <Profiler enabled="true" outputDir="profiler" coverage="true" />
       <PCTConnection dbName="sp2k" dbDir="db" singleUser="true">
         <PCTAlias name="sp2k" />
         <PCTAlias name="foobar" />
       </PCTConnection>
-    </PCTRun> -->
+    </PCTRun>
     <PCTRun procedure="sample/cov.p" dlcHome="${DLC}">
       <propath location="build" />
       <Profiler enabled="true" outputDir="profiler" coverage="true" />

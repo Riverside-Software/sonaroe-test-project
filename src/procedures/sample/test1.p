@@ -25,7 +25,7 @@ define new shared buffer b1 for tt1.
 define new shared dataset ds1 for b1.
 
 { sample/inc/test.i}
-find first item exclusive-lock.
+find first item exclusive-lock. 
 disp item.itemnum.
 
 /* Backslash rule */
@@ -43,6 +43,7 @@ def var obj as progress.lang.object.
 DEFINE VARIABLE foobar AS CHARACTER NO-UNDO initial "Progress.Lang.Object".
 obj = DYNAMIC-NEW foobar ().
 
+&IF OPSYS = "WIN32" &THEN
 DEFINE FRAME DEFAULT-FRAME 
     "Content of sample.txt" VIEW-AS TEXT
           SIZE 25 BY .62 AT ROW 1.48 COL 24 WIDGET-ID 4
@@ -63,11 +64,7 @@ CREATE CONTROL-FRAME CtrlFrame ASSIGN
        HIDDEN          = yes
        SENSITIVE       = yes.
 obj2:MyProperty:Yes = 2000 no-error.
-
-// System.ComponentModel.BrowsableAttribute:No.
-
-&IF OPSYS = "WIN32" &THEN
- MESSAGE "Win32".
+MESSAGE "Win32".
 &ENDIF
 &IF OPSYS = "UNIX" &THEN
  MESSAGE "Unix".

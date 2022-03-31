@@ -1,6 +1,8 @@
 {
-  "version": "12.2",
-  "graphicalMode": true,
+  "name": "Test Project",
+  "version": "1.0",
+  "oeversion": "12.2",
+  "graphicalMode": false,
   "extraParameters": "",
   "buildPath": [
     { "type": "source", "path": "src/procedures" },

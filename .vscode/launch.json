@@ -1,0 +1,26 @@
+{
+  "version": "0.2.0",
+  "configurations": [
+    {
+      "name": "Attach to AVM",
+      "type": "abl",
+      "request": "attach",
+      "hostname": "127.0.0.1",
+      "mode": "legacy",
+      "port": "8888",
+      "localRoot": "${workspaceFolder}",
+      "remoteRoot": "path to remote files",
+      "sourceMap": {
+        "Z:\\path\\to\\remote\\files\\**": "c:\\path\\to\\local\\src\\**"
+      }
+    },
+    {
+      "name": "Debug current program / Interactive GUI",
+      "type": "abl",
+      "request": "launch",
+      "program": "${file}",
+      "cwd": "${workspaceFolder}",
+      "graphicalMode": true
+    }
+  ]
+}

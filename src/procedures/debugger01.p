@@ -1,0 +1,36 @@
+DEFINE TEMP-TABLE tt1 
+  FIELD fld1   AS CHARACTER.
+DEFINE TEMP-TABLE tt2 
+  FIELD fld1   AS CHARACTER
+  FIELD fld2 AS INT64
+  FIELD fld3 AS RAW.
+DEFINE TEMP-TABLE tt3 
+  FIELD fld4   AS CHARACTER
+  FIELD fld5 AS DECIMAL.
+
+DEFINE DATASET ds1 FOR tt1, tt2, tt3.
+
+DEF VAR c1  AS CHAR.
+DEF VAR c2  AS CHAR.
+DEF VAR i1  AS INT.
+DEF VAR i2  AS INT. 
+DEF VAR i3 AS INT EXTENT 10.
+
+i1 = 1.
+i2 = 10000000.
+c1 = "Test Unicode ắ Γ é à". // Unicode
+c2 = FILL('--', 20).
+
+CREATE tt1.
+ASSIGN tt1.fld1 = "foobar".
+CREATE tt1.
+ASSIGN tt1.fld1 = "foobar2".
+ 
+MESSAGE THIS-PROCEDURE   SESSION.
+i3[1] = 111.
+i3[2] = 222.
+i3[4] = 444.
+
+RUN debugger02.p (INPUT 1, INPUT 2, OUTPUT c1).
+
+RETURN.

@@ -1,0 +1,30 @@
+{
+  "activeRules": [
+    {
+      "name": "UnusedVariable",
+      "class": "eu.rssw.antlr.proparse.checks.UnusedVariable"
+    },
+    {
+      "name": "VariableAssignedButNotRead",
+      "class": "eu.rssw.antlr.proparse.checks.VariableAssignedButNotRead"
+    },
+    {
+      "name": "VariableReadButNotAssigned",
+      "class": "eu.rssw.antlr.proparse.checks.VariableReadButNotAssigned"
+    },
+    {
+      "name": "VariableOverflow",
+      "class": "eu.rssw.antlr.proparse.checks.VariableOverflow"
+    },
+    {
+      "name": "AbbreviatedKeywords",
+      "class": "eu.rssw.antlr.proparse.checks.AbbreviatedKeywords",
+      "parameters": [
+        {
+          "name": "excludedKeywords",
+          "value": "DEFINE,VARIABLE,INTEGER"
+        }
+      ]
+    }
+  ]
+}

@@ -1,0 +1,9 @@
+version: '3'
+services:
+  code:
+    image: docker.rssw.eu/vscode/abl:latest
+    restart: always
+    ports:
+    - 18080:8080
+    volumes:
+    - ./:/home/coder/ws

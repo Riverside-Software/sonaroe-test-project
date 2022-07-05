@@ -1,17 +1,26 @@
 {
   "name": "Test Project",
   "version": "1.0",
+  "charset": "iso8859-15",
   "oeversion": "12.2",
   "graphicalMode": false,
   "extraParameters": "",
   "buildPath": [
-    { "type": "source", "path": "src/procedures" },
+    { "type": "source", "path": "src/procedures", "excludes": "sample/excl/**" },
     { "type": "source", "path": "src/classes" },
-    { "type": "propath", "path": "OpenEdge.net.pl" }
+    { "type": "propath", "path": "${DLC}/gui/netlib/OpenEdge.Net.pl" },
+    { "type": "propath", "path": "${DLC}/gui/OpenEdge.Core.pl" }
   ],
   "buildDirectory": "build",
-  "dumpFiles": ["dump/sp2k.df"],
   "numThreads": 1,
-  "dbConnections": ["-db db/sp2k -RO"],
-  "aliases": "sp2k,foo,bar"
+  "dbConnections": [
+    { "name": "sp2k", "connect": "-db db/sp2k -RO", "dumpFile": "dump/sp2k.df", "aliases": [ "foo", "bar"] }
+  ],
+  "profiles": [
+    {
+      "name": "dmfqjkgl", "inherits": "default", "value": {
+        "graphicalMode": false
+      }
+    }
+  ]
 }

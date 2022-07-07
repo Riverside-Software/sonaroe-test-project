@@ -43,7 +43,7 @@
         <pathelement location="src/classes" />
         <pathelement location="src/procedures" />
         <pathelement location="src/tests" />
-        <pathelement location="${DLC}/tty/netlib/OpenEdge.net.pl" />
+        <pathelement location="${DLC}/tty/netlib/OpenEdge.Net.pl" />
       </propath>
       <PCTConnection dbName="sp2k" dbDir="db" singleUser="true">
         <Alias name="sp2k" />

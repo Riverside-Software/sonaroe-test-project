@@ -5,6 +5,7 @@ def output parameter opOut1 as char.
 // define variable zzz as rssw.MyClass.
 define variable xxx as int.
 define variable oProxy as OpenEdge.Net.URI.
+define variable oSimple as rssw.SimpleObject.
 
 define buffer Benefits for Benefits.
 
@@ -16,7 +17,8 @@ message "Next statement in an include file" view-as alert-box.
 // zzz:method1(8).
 oProxy = new OpenEdge.Net.URI('http', "localhost", 1000).
 message oProxy:toString().
-
+oSimple = new rssw.SimpleObject().
+oSimple:method1(1).
 
 opOut1 = string(ipIn1).
 opOut1 = opOut1 + " ".

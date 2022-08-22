@@ -26,11 +26,12 @@ ASSIGN tt1.fld1 = "foobar".
 CREATE tt1.
 ASSIGN tt1.fld1 = "foobar2".
  
-MESSAGE THIS-PROCEDURE   SESSION.
+MESSAGE THIS-PROCEDURE SESSION.
 i3[1] = 111.
 i3[2] = 222.
 i3[4] = 444.
 
 RUN debugger02.p (INPUT 1, INPUT 2, OUTPUT c1).
+RUN sample/coverage2.p.
 
 RETURN.

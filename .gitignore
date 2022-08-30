@@ -5,6 +5,7 @@
 .proparse
 .settings
 .tokens
+.vscode
 build
 db
 profiler

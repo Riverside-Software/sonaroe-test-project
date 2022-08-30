@@ -4,7 +4,7 @@
   "charset": "iso8859-15",
   "oeversion": "12.2",
   "graphicalMode": false,
-  "extraParameters": "",
+  "extraParameters": "-ttwrdrul 0",
   "buildPath": [
     { "type": "source", "path": "src/procedures", "excludes": "sample/excl/**" },
     { "type": "source", "path": "src/classes" },

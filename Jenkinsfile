@@ -24,10 +24,10 @@ pipeline {
         withEnv(["PATH+SCAN=${tool name: 'SQScanner4', type: 'hudson.plugins.sonar.SonarRunnerInstallation'}/bin", "DLC=${tool name: 'OpenEdge-12.2', type: 'openedge'}"]) {
           withSonarQubeEnv('RSSW') {
             script {
-              if ('master' == env.BRANCH_NAME) {
+              if ('main' == env.BRANCH_NAME) {
                 sh "sonar-scanner -Dsonar.oe.dlc=$DLC -Dsonar.branch.name=$BRANCH_NAME"
               } else {
-                sh "sonar-scanner -Dsonar.oe.dlc=$DLC -Dsonar.branch.name=$BRANCH_NAME -Dsonar.branch.target=master"
+                sh "sonar-scanner -Dsonar.oe.dlc=$DLC -Dsonar.branch.name=$BRANCH_NAME -Dsonar.branch.target=main"
               }
             }
           }

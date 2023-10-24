@@ -12,6 +12,8 @@ pipeline {
       agent { label 'linux' }
       steps {
         checkout([$class: 'GitSCM', branches: scm.branches, extensions: scm.extensions + [[$class: 'CleanCheckout']], userRemoteConfigs: scm.userRemoteConfigs])
+        checkout([$class: 'GitSCM', branches: scm.branches, extensions: scm.extensions + [[$class: 'CleanCheckout']], userRemoteConfigs: [[credentialsId: scm.userRemoteConfigs.credentialsId[0], url: scm.userRemoteConfigs.url[0], refspec: '+refs/heads/main:refs/remotes/origin/main']] ])
+
         withEnv(["PATH+ANT=${tool name: 'Ant 1.9', type: 'hudson.tasks.Ant$AntInstallation'}/bin", "DLC=${tool name: 'OpenEdge-12.2', type: 'jenkinsci.plugin.openedge.OpenEdgeInstallation'}", "TERM=xterm"]) {
           sh "ant -DDLC=$DLC -lib PCT.jar -lib xmltask.jar build"
         }

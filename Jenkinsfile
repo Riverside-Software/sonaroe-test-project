@@ -27,7 +27,7 @@ pipeline {
               if ('main' == env.BRANCH_NAME) {
                 sh "sonar-scanner -Dsonar.oe.dlc=$DLC -Dsonar.branch.name=$BRANCH_NAME"
               } else {
-                sh "sonar-scanner -Dsonar.oe.dlc=$DLC -Dsonar.branch.name=$BRANCH_NAME -Dsonar.branch.target=main -Dsonar.oe.skipUnchanged=true"
+                sh "sonar-scanner -Dsonar.oe.dlc=$DLC -Dsonar.pullrequest.branch=$BRANCH_NAME -Dsonar.pullrequest.base=main -Dsonar.pullrequest.key=$BRANCH_NAME -Dsonar.oe.skipUnchanged=true"
               }
             }
           }

@@ -8,8 +8,8 @@
   "buildPath": [
     { "type": "source", "path": "src/procedures", "excludes": "sample/excl/**" },
     { "type": "source", "path": "src/classes" },
-    { "type": "propath", "path": "${DLC}/tty/netlib/OpenEdge.Net.pl" },
-    { "type": "propath", "path": "${DLC}/tty/OpenEdge.Core.pl" }
+    { "type": "propath", "path": "${DLC}/tty/netlib/OpenEdge.Net.pl", "documentation": "doc/netlib.json" },
+    { "type": "propath", "path": "${DLC}/tty/OpenEdge.Core.pl", "documentation": "doc/corelib.json" }
   ],
   "buildDirectory": "build",
   "numThreads": 1,

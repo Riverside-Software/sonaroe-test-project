@@ -4,7 +4,7 @@
   "charset": "iso8859-15",
   "oeversion": "12.2",
   "graphicalMode": false,
-  "extraParameters": "-ttwrdrul 0",
+  "extraParameters": "",
   "buildPath": [
     { "type": "source", "path": "src/procedures", "excludes": "sample/excl/**" },
     { "type": "source", "path": "src/classes" },
@@ -22,6 +22,15 @@
       "inherits": "default",
       "value": {
         "graphicalMode": true
+      }
+    },
+    {
+      "name": "DevContainer",
+      "inherits": "default",
+      "value": {
+        "dbConnections": [
+          { "name": "sp2k", "connect": "-db db/sp2kcont -ld sp2k -RO", "dumpFile": "dump/sp2k.df", "aliases": [ "foo", "bar"] }
+        ]
       }
     }
   ]

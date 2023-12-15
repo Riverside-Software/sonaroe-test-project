@@ -13,4 +13,5 @@ sonar-output.txt
 sonarlint-report.txt
 test-output
 *.r
-
+build.config
+assemblies.xml

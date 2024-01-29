@@ -7,12 +7,9 @@
       "request": "attach",
       "hostname": "127.0.0.1",
       "mode": "legacy",
-      "port": "8888",
+      "port": 3099,
       "localRoot": "${workspaceFolder}",
-      "remoteRoot": "path to remote files",
-      "sourceMap": {
-        "Z:\\path\\to\\remote\\files\\**": "c:\\path\\to\\local\\src\\**"
-      }
+      "pause": true
     },
     {
       "name": "Debug current program / Interactive GUI",

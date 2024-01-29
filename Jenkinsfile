@@ -14,7 +14,7 @@ pipeline {
         checkout([$class: 'GitSCM', branches: scm.branches, extensions: scm.extensions + [[$class: 'CleanCheckout']], userRemoteConfigs: scm.userRemoteConfigs])
         checkout([$class: 'GitSCM', branches: scm.branches, extensions: scm.extensions + [[$class: 'CleanCheckout']], userRemoteConfigs: [[credentialsId: scm.userRemoteConfigs.credentialsId[0], url: scm.userRemoteConfigs.url[0], refspec: '+refs/heads/main:refs/remotes/origin/main']] ])
 
-        withEnv(["DLC=${tool name: 'OpenEdge-12.2', type: 'openedge'}", "TERM=xterm"]) {
+        withEnv(["DLC=${tool name: 'OpenEdge-12.8', type: 'openedge'}", "TERM=xterm"]) {
           sh "$DLC/ant/bin/ant -DDLC=$DLC -lib $DLC/pct/PCT.jar -lib xmltask.jar build"
         }
       }
@@ -23,7 +23,7 @@ pipeline {
     stage ('SonarQube') {
       agent { label 'linux' }
       steps {
-        withEnv(["PATH+SCAN=${tool name: 'SQScanner4', type: 'hudson.plugins.sonar.SonarRunnerInstallation'}/bin", "DLC=${tool name: 'OpenEdge-12.2', type: 'openedge'}"]) {
+        withEnv(["PATH+SCAN=${tool name: 'SQScanner4', type: 'hudson.plugins.sonar.SonarRunnerInstallation'}/bin", "DLC=${tool name: 'OpenEdge-12.8', type: 'openedge'}"]) {
           withSonarQubeEnv('RSSW') {
             script {
               if ('main' == env.BRANCH_NAME) {

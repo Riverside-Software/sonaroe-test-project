@@ -2,7 +2,7 @@
 
 <!-- Add sonar.login and sonar.password properties to sonar-project.properties file -->
 <!-- If SonarQube is not running locally, modify SONAR_URL at line 13 (in this file) -->
-<!-- Then execute : ant -lib PCT.jar -lib xmltask.jar -DDLC=C:\Progress\OpenEdge-12.2 clean build sonar -->
+<!-- Then execute : ant -lib PCT.jar -lib xmltask.jar -DDLC=C:\Progress\OpenEdge-12.8 clean build sonar -->
 <project name="TEST" default="build">
   <taskdef resource="PCT.properties" />
   <taskdef name="xmltask" classname="com.oopsconsultancy.xmltask.ant.XmlTask" />

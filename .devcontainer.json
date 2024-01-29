@@ -1,5 +1,5 @@
 {
-  "image": "docker.rssw.eu/progress/vscode:12.2",
+  "image": "docker.rssw.eu/progress/vscode:12.8",
   "customizations": {
     "vscode": {
       "extensions": ["RiversideSoftware.openedge-abl-lsp"]

@@ -2,6 +2,17 @@
   "version": "0.2.0",
   "configurations": [
     {
+      "name": "Attach to PASOE",
+      "type": "abl",
+      "request": "attach",
+      "mode": "pasoe",
+      "hostname": "127.0.0.1",
+      "port": 8891,
+      "appName": "pasoe1",
+      "password": "",
+      "localRoot": "${workspaceFolder}"
+    },
+    {
       "name": "Attach to AVM",
       "type": "abl",
       "request": "attach",

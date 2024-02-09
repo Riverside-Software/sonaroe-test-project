@@ -1,0 +1,26 @@
+version: '3.8'
+
+volumes:
+  database:
+
+services:
+  devcontainer:
+    image: docker.rssw.eu/progress/vscode:12.8
+    platform: linux/amd64
+    volumes:
+      - ../../:/workspaces/
+    command: /bin/sh -c "sleep infinity"
+  sports2020:
+    image: docker.rssw.eu/progress/sp2k:12.8
+    platform: linux/amd64
+    hostname: dbserver
+    volumes:
+      - database:/app/db
+  pasoe:
+    image: docker.rssw.eu/progress/pasoe1:12.8
+    platform: linux/amd64
+    hostname: pasoe
+    ports:
+      - 8810
+    volumes:
+      - ../build:/app/pasoe/pasoe1/openedge

@@ -1,16 +1,12 @@
 <?xml version="1.0" encoding="utf-8"?>
 
-<!-- Add sonar.login and sonar.password properties to sonar-project.properties file -->
-<!-- If SonarQube is not running locally, modify SONAR_URL at line 13 (in this file) -->
-<!-- Then execute : ant -lib PCT.jar -lib xmltask.jar -DDLC=C:\Progress\OpenEdge-12.8 clean build sonar -->
+<!-- Then execute : ant -lib %DLC%\pct\PCT.jar -lib xmltask.jar -DDLC=C:\Progress\OpenEdge-12.8 clean build -->
 <project name="TEST" default="build">
   <taskdef resource="PCT.properties" />
   <taskdef name="xmltask" classname="com.oopsconsultancy.xmltask.ant.XmlTask" />
 
   <property environment="env" />
   <property name="DLC" value="${env.DLC}" />
-  <!-- Default values for local development instance of SonarQube -->
-  <property name="SONAR_URL" value="http://localhost:9000" />
 
   <target name="init">
     <mkdir dir="db" />
@@ -45,10 +41,10 @@
         <pathelement location="src/tests" />
         <pathelement location="${DLC}/tty/netlib/OpenEdge.Net.pl" />
       </propath>
-      <PCTConnection dbName="sp2k" dbDir="db" singleUser="true">
+      <DBConnection dbName="sp2k" dbDir="db" singleUser="true" logicalName="sports">
         <Alias name="sp2k" />
         <Alias name="foobar" />
-      </PCTConnection>
+      </DBConnection>
     </PCTCompile>
 
     <!-- Unit tests -->
@@ -62,10 +58,10 @@
         <pathelement location="src/tests" />
       </propath>
       <Profiler enabled="true" outputDir="profiler" coverage="true" />
-      <PCTConnection dbName="sp2k" dbDir="db" singleUser="true">
-        <PCTAlias name="sp2k" />
-        <PCTAlias name="foobar" />
-      </PCTConnection>
+      <DBConnection dbName="sp2k" dbDir="db" singleUser="true" logicalName="sports">
+        <Alias name="sp2k" />
+        <Alias name="foobar" />
+      </DBConnection>
     </ABLUnit>
     <xmltask source="test-output/results.xml" dest="test-output/sonar.xml">
       <rename path="//testsuites" to="testExecutions" />
@@ -81,10 +77,10 @@
     <PCTRun procedure="sample/test1.p" dlcHome="${DLC}">
       <propath location="build" />
       <Profiler enabled="true" outputDir="profiler" coverage="true" />
-      <PCTConnection dbName="sp2k" dbDir="db" singleUser="true">
-        <PCTAlias name="sp2k" />
-        <PCTAlias name="foobar" />
-      </PCTConnection>
+      <DBConnection dbName="sp2k" dbDir="db" singleUser="true" logicalName="sports">
+        <Alias name="sp2k" />
+        <Alias name="foobar" />
+      </DBConnection>
     </PCTRun>
     <PCTRun procedure="sample/cov.p" dlcHome="${DLC}">
       <propath location="build" />
@@ -94,25 +90,6 @@
       <propath location="build" />
       <Profiler enabled="true" outputDir="profiler" coverage="true" />
     </PCTRun>
-  </target>
-
-  <target name="sonar" >
-    <!-- Don't copy/paste that in your script, use https://docs.sonarqube.org/latest/analysis/scan/sonarscanner/ -->
-    <java classname="org.sonarsource.scanner.cli.Main" fork="true" failOnError="true">
-      <jvmarg value="-Drunner.home=." />
-      <jvmarg value="-Dproject.home=." />
-      <jvmarg value="-Dsonar.host.url=${SONAR_URL}" />
-      <jvmarg value="-Dsonar.oe.dlc=${DLC}" />
-
-      <!-- <jvmarg value="-Xdebug" />
-      <jvmarg value="-Xnoagent" />
-      <jvmarg value="-Djava.compiler=NONE" />
-      <jvmarg value="-Xrunjdwp:transport=dt_socket,server=y,suspend=y,address=8000" /> -->
-
-      <!-- Uncomment to activate verbose mode in Sonar -->
-      <!-- <arg line="-X" /> -->
-      <classpath location="sonar-scanner-cli-4.6.2.2472.jar" />
-    </java>
   </target>
 
 </project>

@@ -10,6 +10,8 @@
       "args": [
         "-db",
         "db/sp2k",
+        "-ld",
+        "sports",
         "-RO",
         "-ininame",
         "conf/gui.ini",
@@ -25,7 +27,8 @@
       "presentation": {
         "reveal": "silent",
         "panel": "new",
-        "focus": true
+        "focus": true,
+        "close": true
       },
       "options": {
         "env": {

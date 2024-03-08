@@ -16,6 +16,8 @@ DEF VAR i1  AS INT  NO-UNDO.
 DEF VAR i2  AS INT  NO-UNDO. 
 DEF VAR i3 AS INT EXTENT 10 NO-UNDO.
 
+{ xtrainc01.i }
+
 i1 = 1.
 i2 = 10000000.
 c1 = "Test Unicode ắ Γ é à". // Unicode

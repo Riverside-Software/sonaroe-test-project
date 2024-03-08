@@ -14,5 +14,6 @@ IF FALSE THEN
   MESSAGE "xxx".
 
 { sample/inc/coverage.i }
+{ sample/zzz01.i }
 
 RETURN.

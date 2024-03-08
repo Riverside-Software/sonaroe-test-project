@@ -20,7 +20,7 @@ DEF NEW SHARED VAR var12       AS INTEGER NO-UNDO.
 DEF NEW SHARED VAR var13       AS INTEGER NO-UNDO.
 DEF NEW SHARED VAR var14       AS INTEGER NO-UNDO.
 DEF NEW SHARED VAR var15       AS INTEGER NO-UNDO.
-
+message "hllo".
 define new shared temp-table tt1 no-undo
  field a as char
  field b as char.

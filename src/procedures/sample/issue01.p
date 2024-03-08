@@ -9,3 +9,4 @@ DEFINE VARIABLE iVar2 AS INT64   NO-UNDO.
 ASSIGN iVar1 = NEXT-VALUE(NextCustNum). // Sequences return 64 bits int
 ASSIGN iVar1 = 1.2 * iVar2. // Total can be longer than 2^32 
 
+{ sample/inc/test.i }

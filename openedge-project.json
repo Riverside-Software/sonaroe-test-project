@@ -14,7 +14,7 @@
   "buildDirectory": "build",
   "numThreads": 1,
   "dbConnections": [
-    { "name": "sports", "connect": "-db db/sp2k -ld sports -RO", "dumpFile": "dump/sports.df", "aliases": [ "foo", "bar"] }
+    { "name": "sports", "connect": "-db db/sp2k -ld sports -RO", "schemaFile": "dump/sports.df", "aliases": [ "foo", "bar"] }
   ],
   "profiles": [
     { 
@@ -29,7 +29,7 @@
       "inherits": "default",
       "value": {
         "dbConnections": [
-          { "name": "sports", "connect": "-db db/sp2kcont -ld sports -RO", "dumpFile": "dump/sports.df", "aliases": [ "foo", "bar"] }
+          { "name": "sports", "connect": "-db db/sp2kcont -ld sports -RO", "schemaFile": "dump/sports.df", "aliases": [ "foo", "bar"] }
         ]
       }
     }

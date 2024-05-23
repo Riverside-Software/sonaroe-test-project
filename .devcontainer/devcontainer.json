@@ -5,7 +5,17 @@
   "workspaceFolder": "/workspaces/${localWorkspaceFolderBasename}",
   "customizations": {
     "vscode": {
-      "extensions": ["RiversideSoftware.openedge-abl-lsp@prerelease"]
+      "extensions": ["RiversideSoftware.openedge-abl-lsp@prerelease"],
+      "settings": {
+        "extensions.verifySignature": false,
+        "abl.configuration.runtimes": [
+          {
+            "name": "12.8",
+            "path": "/opt/progress/dlc",
+            "default": true
+          }
+        ]
+      }
     }
   },
   "features": {

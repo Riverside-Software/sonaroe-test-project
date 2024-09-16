@@ -1,5 +1,9 @@
 {
   "[abl]":{
     "files.encoding": "utf8"
+  },
+  "sonarlint-abl.connectedMode.project": {
+    "connectionId": "https-sonar3-riverside-software-fr",
+    "projectKey": "RSSW:TestProject"
   }
 }

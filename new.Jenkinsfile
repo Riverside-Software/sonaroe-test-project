@@ -4,7 +4,18 @@ pipeline {
   stages {
     stage ('Build') {
       steps {
-        echo "Create DB, execute Ant / PCT, generate ZIP file on ${NODE_NAME}"
+        script {
+          echo "Create DB, execute Ant / PCT, generate ZIP file"
+          withAnt(installation: 'Ant 1.10') {
+            withEnv(["DLC=${tool name: 'OpenEdge-12.8', type: 'openedge'}"]) {
+              if (isUnix()) {
+                sh 'ant -lib xmltask.jar -lib $DLC/pct/PCT.jar -DDLC=$DLC build'
+              } else {
+                bat 'ant -lib xmltask.jar -lib %DLC%\\pct\\PCT.jar -DDLC=%DLC% build'
+              }
+            }
+          }
+        }
       }
     }
 

@@ -1,6 +1,13 @@
 pipeline {
   agent any
 
+  parameters {
+    string(name: 'name', defaultValue: 'Jenkins',
+          description: 'Target name')
+    choice(name: 'environment', choices: 'UAT1,UAT2,QA1,QA2',
+          description: 'Target environment')
+  }
+
   stages {
     stage ('Build') {
       steps {
@@ -68,11 +75,11 @@ pipeline {
     stage ('Deploy') {
       when {
         expression {
-          BRANCH_NAME == 'main'
+          BRANCH_NAME == 'Test'
         }
       }
       steps {
-        echo "Deployment to test environment"
+        echo "We'll deploy to environment ${environment} - With parameter ${name}"
       }
     }
 

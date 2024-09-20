@@ -15,7 +15,14 @@ pipeline {
             println "Boohooo..."
           }
 
-          // def versionNumber = java.time.LocalDateTime.now().format(java.time.format.DateTimeFormatter.ofPattern('YYYY.M.')) + ((days * 86400) + seconds) + suffix;
+          def suffix = env.BRANCH_NAME.contains("foobar") ? "XX" : "YY"
+          long days = Long.parseLong(java.time.LocalDateTime.now().format(
+            java.time.format.DateTimeFormatter.ofPattern('d')))
+          long seconds = Long.parseLong(java.time.LocalDateTime.now().format(
+            java.time.format.DateTimeFormatter.ofPattern('A'))) / 1000
+          def artifactVersionNumber = java.time.LocalDateTime.now().format(
+            java.time.format.DateTimeFormatter.ofPattern('YYYY.M.')) + ((days * 86400) + seconds) + suffix;
+          println "Version number: ${artifactVersionNumber}"
 
           withAnt(installation: 'Ant 1.10') {
             withEnv(["DLC=${tool name: 'OpenEdge-12.8', type: 'openedge'}"]) {

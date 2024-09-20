@@ -4,7 +4,7 @@ pipeline {
   parameters {
     string(name: 'name', defaultValue: 'Jenkins',
           description: 'Target name')
-    choice(name: 'environment', choices: 'UAT1,UAT2,QA1,QA2',
+    choice(name: 'environment', choices: ['UAT1', 'UAT2', 'QA1', 'QA2'],
           description: 'Target environment')
   }
 

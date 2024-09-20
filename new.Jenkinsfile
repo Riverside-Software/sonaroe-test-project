@@ -3,14 +3,20 @@ pipeline {
 
   stages {
     stage ('Build') {
-      when {
-        expression {
-          BRANCH_NAME == 'Test'
-        }
-      }
       steps {
         script {
           echo "Create DB, execute Ant / PCT, generate ZIP file"
+
+          bat "> git.txt git rev-parse --short HEAD"
+          def commit = readFile('git.txt').trim()
+          if (commit.startsWith("1")) {
+            println "Commit ID starts with 1"
+          } else {
+            println "Boohooo..."
+          }
+
+          // def versionNumber = java.time.LocalDateTime.now().format(java.time.format.DateTimeFormatter.ofPattern('YYYY.M.')) + ((days * 86400) + seconds) + suffix;
+
           withAnt(installation: 'Ant 1.10') {
             withEnv(["DLC=${tool name: 'OpenEdge-12.8', type: 'openedge'}"]) {
               echo "${BRANCH_NAME} --- ${BUILD_NUMBER}"

@@ -24,6 +24,9 @@ pipeline {
             java.time.format.DateTimeFormatter.ofPattern('YYYY.M.')) + ((days * 86400) + seconds) + suffix;
           println "Version number: ${artifactVersionNumber}"
 
+          def ext = load("script.groovy")
+          ext.prettyMessage(artifactVersionNumber)
+
           withAnt(installation: 'Ant 1.10') {
             withEnv(["DLC=${tool name: 'OpenEdge-12.8', type: 'openedge'}"]) {
               echo "${BRANCH_NAME} --- ${BUILD_NUMBER}"

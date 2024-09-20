@@ -79,7 +79,8 @@ pipeline {
         }
       }
       steps {
-        echo "We'll deploy to environment ${environment} - With parameter ${name}"
+        echo "We'll deploy to environment ${params.environment}"
+        echo "   with parameter ${params.name}"
       }
     }
 

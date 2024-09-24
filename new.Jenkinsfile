@@ -35,8 +35,8 @@ pipeline {
           ext.prettyMessage(artifactVersionNumber)
 
           withAnt(installation: 'Ant 1.10') {
-            withOpenEdge(installation: 'OpenEdge-12.8') {
-            // withEnv(["DLC=${tool name: 'OpenEdge-12.8', type: 'openedge'}"]) {
+            // withOpenEdge(installation: 'OpenEdge-12.8') {
+            withEnv(["DLC=${tool name: 'OpenEdge-12.8', type: 'openedge'}"]) {
               echo "${BRANCH_NAME} --- ${BUILD_NUMBER}"
               if (isUnix()) {
                 bat 'echo $BRANCH_NAME - $BUILD_NUMBER $JENKINS_HOME ${BRANCH_NAME}'

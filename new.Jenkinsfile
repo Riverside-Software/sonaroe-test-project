@@ -80,6 +80,7 @@ pipeline {
         }
       }
       steps {
+        echo "Test"
         // echo "We'll deploy to environment ${params.environment}"
         // echo "   with parameter ${params.name}"
       }

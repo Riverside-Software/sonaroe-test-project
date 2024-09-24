@@ -34,6 +34,18 @@ pipeline {
           def ext = load("script.groovy")
           ext.prettyMessage(artifactVersionNumber)
 
+          withCredentials([usernamePassword(credentialsId: 'APP1',
+                          usernameVariable: 'USERNAME',
+                          passwordVariable: 'PASSWORD')]) {
+            echo 'app login param -u $USERNAME -p $PASSWORD'
+          }
+
+          withCredentials([usernamePassword(credentialsId: 'APP1',
+                          usernameVariable: 'USERNAME',
+                          passwordVariable: 'PASSWORD')]) {
+            echo "app login param -u $USERNAME -p $PASSWORD"
+          }
+
           withAnt(installation: 'Ant 1.10') {
             // withOpenEdge(installation: 'OpenEdge-12.8') {
             withEnv(["DLC=${tool name: 'OpenEdge-12.8', type: 'openedge'}"]) {

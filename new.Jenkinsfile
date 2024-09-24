@@ -1,12 +1,12 @@
 pipeline {
   agent any
 
-  parameters {
+  /* parameters {
     string(name: 'name', defaultValue: 'Jenkins',
           description: 'Target name')
     choice(name: 'environment', choices: ['UAT1', 'UAT2', 'QA1', 'QA2'],
           description: 'Target environment')
-  }
+  } */
 
   stages {
     stage ('Build') {
@@ -35,7 +35,8 @@ pipeline {
           ext.prettyMessage(artifactVersionNumber)
 
           withAnt(installation: 'Ant 1.10') {
-            withEnv(["DLC=${tool name: 'OpenEdge-12.8', type: 'openedge'}"]) {
+            withOpenEdge(installation: 'OpenEdge-12.8') {
+            // withEnv(["DLC=${tool name: 'OpenEdge-12.8', type: 'openedge'}"]) {
               echo "${BRANCH_NAME} --- ${BUILD_NUMBER}"
               if (isUnix()) {
                 bat 'echo $BRANCH_NAME - $BUILD_NUMBER $JENKINS_HOME ${BRANCH_NAME}'
@@ -79,8 +80,8 @@ pipeline {
         }
       }
       steps {
-        echo "We'll deploy to environment ${params.environment}"
-        echo "   with parameter ${params.name}"
+        // echo "We'll deploy to environment ${params.environment}"
+        // echo "   with parameter ${params.name}"
       }
     }
 

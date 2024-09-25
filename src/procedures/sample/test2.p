@@ -30,6 +30,12 @@ define work-table wt1
  field a as char
  field b as char.
 
+for each customer where
+  customer.address = "Mornant"
+  no-lock:
+  //
+end.
+
 for each item :
   run proc1 (input item.itemnum).
 end.

@@ -19,7 +19,7 @@ DEF VAR i3 AS INT EXTENT 10 NO-UNDO.
 i1 = 1.
 i2 = 10000000.
 c1 = "Test Unicode ắ Γ é à". // Unicode
-c2 = FILL('--', 20).
+// c2 = FILL('--', 20).
 
 CREATE tt1.
 ASSIGN tt1.fld1 = "foobar".

@@ -32,7 +32,8 @@ define work-table wt1
 
 for each customer where
   customer.address = "Mornant"
-  no-lock:
+  no-lock
+  by Customer.EmailAddress:
   //
 end.
 

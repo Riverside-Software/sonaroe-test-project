@@ -5,24 +5,18 @@
   "tasks": [
     {
       "label": "GUI Debugger01",
-      "type": "process",
-      "command": "/path/to/nowhere",
+      "type": "shell",
+      "command": "${command:abl.getDlcDirectory}/bin/_progres",
       "args": [
-        "-db",
-        "db/sp2k",
-        "-ld",
-        "sports",
-        "-RO",
-        "-ininame",
-        "conf/gui.ini",
-        "-p",
-        "debugger01.p",
+        "-db", "db/sp2k", "-ld", "sports", "-RO",
+        "-ininame", "conf/gui.ini",
+        "-p", "debugger01.p",
         "-nosplash",
-        "-debugReady",
-        "3099"
+        "-debugReady", "3099",
+        "-zdlc", "${command:abl.getDlcDirectory}"
       ],
       "windows": {
-        "command": "C:\\Progress\\OpenEdge-12.8\\bin\\prowin.exe"
+        "command": "${command:abl.getDlcDirectory}\\bin\\prowin.exe"
       },
       "presentation": {
         "reveal": "silent",
@@ -32,7 +26,7 @@
       },
       "options": {
         "env": {
-          "DLC": "C:\\Progress\\OpenEdge-12.8"
+          
         }
       },
       "problemMatcher": []

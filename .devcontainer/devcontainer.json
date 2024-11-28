@@ -1,8 +1,8 @@
 {
-  // "image": "docker.rssw.eu/progress/vscode:12.8",
   "dockerComposeFile": "docker-compose.yml",
   "service": "devcontainer",
   "workspaceFolder": "/workspaces/${localWorkspaceFolderBasename}",
+  "forwardPorts": [ "pasoe:8810"],
   "customizations": {
     "vscode": {
       "extensions": ["RiversideSoftware.openedge-abl-lsp@prerelease"],

@@ -6,20 +6,17 @@ using Progress.Json.ObjectModel.JsonObject.
 
 block-level on error undo, throw.
 
-class rssw.EchoHandler2 inherits WebHandler:
+class rssw.CustomerHandler2 inherits WebHandler:
 
     define temp-table ttCustomer like Customer.
     define dataset dsCustomer for ttCustomer.
 
     method override protected integer HandleGet( input poRequest as OpenEdge.Web.IWebRequest ):
 
-        define variable oBody     as OpenEdge.Core.String            no-undo.
         define variable oResponse as OpenEdge.Net.HTTP.IHttpResponse no-undo.
         define variable oWriter   as OpenEdge.Web.WebResponseWriter  no-undo.
 
-        define variable httEmployee    as handle     no-undo.
-        define variable lcjsonEmployee as longchar   no-undo.
-        define variable ipause         as integer    no-undo.
+        define variable lcJson as longchar   no-undo.
 
         for each customer no-lock:
           create ttCustomer.
@@ -29,12 +26,12 @@ class rssw.EchoHandler2 inherits WebHandler:
         assign
              oResponse            = new OpenEdge.Web.WebResponse()
              .
-        buffer ttCustomer:write-json('LONGCHAR', lcjsonEmployee, true).
+        buffer ttCustomer:write-json('LONGCHAR', lcJson, true).
 
         assign
-             oResponse:Entity        = new OpenEdge.Core.String(lcjsonEmployee)
+             oResponse:Entity        = new OpenEdge.Core.String(lcJson)
              oResponse:ContentType   = 'application/json':u
-             oResponse:ContentLength = length(lcjsonEmployee)
+             oResponse:ContentLength = length(lcJson)
              oResponse:StatusCode    = integer(StatusCodeEnum:OK)
              .
 

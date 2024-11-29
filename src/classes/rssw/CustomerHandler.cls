@@ -6,34 +6,33 @@ using Progress.Json.ObjectModel.JsonObject.
 
 block-level on error undo, throw.
 
-class rssw.EchoHandler inherits WebHandler:
+class rssw.CustomerHandler inherits WebHandler:
 
     define temp-table ttCustomer like Customer.
     define dataset dsCustomer for ttCustomer.
 
     method override protected integer HandleGet( input poRequest as OpenEdge.Web.IWebRequest ):
-        define variable oBody     as OpenEdge.Core.String            no-undo.
+
         define variable oResponse as OpenEdge.Net.HTTP.IHttpResponse no-undo.
         define variable oWriter   as OpenEdge.Web.WebResponseWriter  no-undo.
 
-        define variable httEmployee    as handle     no-undo.
-        define variable lcjsonEmployee as longchar   no-undo.
-        define variable ipause         as integer    no-undo.
+        define variable lcJson as longchar   no-undo.
+        define variable iNum   as integer    no-undo.
 
-        ipause = integer(poRequest:getPathParameter("pause")) no-error.
-        find first customer where custnum = ipause no-lock.
+        iNum = integer(poRequest:getPathParameter("num")) no-error.
+        find first customer where custnum = iNum no-lock.
         create ttCustomer.
         buffer-copy customer to ttCustomer.
 
         assign
              oResponse            = new OpenEdge.Web.WebResponse()
              .
-        buffer ttCustomer:write-json('LONGCHAR', lcjsonEmployee, true).
+        buffer ttCustomer:write-json('LONGCHAR', lcJson, true).
 
         assign
-             oResponse:Entity        = new OpenEdge.Core.String(lcjsonEmployee)
+             oResponse:Entity        = new OpenEdge.Core.String(lcJson)
              oResponse:ContentType   = 'application/json':u
-             oResponse:ContentLength = length(lcjsonEmployee)
+             oResponse:ContentLength = length(lcJson)
              oResponse:StatusCode    = integer(StatusCodeEnum:OK)
              .
 

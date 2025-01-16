@@ -9342,8 +9342,10 @@
           "- IsFinal/NotFinal",
           "- IsType/NotType",
           "- IsSerializable/NotSerializable",
+          "Asserts that the given type is an interface.",
           "",
-          "@param Progress.Lang.Class the type to check"
+          "@param Progress.Lang.Class the type to check",
+          "@throws AssertionFailedError Error thrown if the type is not an interface"
         ],
         "parameters": [
           {
@@ -9363,8 +9365,10 @@
         "extent": 0,
         "modifier": "public",
         "comments": [
+          "Asserts that the given type is not an interface.",
           "",
-          "@param Progress.Lang.Class the type to check"
+          "@param Progress.Lang.Class the type to check",
+          "@throws AssertionFailedError Error thrown if the type is an interface"
         ],
         "parameters": [
           {
@@ -9384,8 +9388,10 @@
         "extent": 0,
         "modifier": "public",
         "comments": [
+          "Asserts that the given type is an abstract.",
           "",
-          "@param Progress.Lang.Class the type to check"
+          "@param Progress.Lang.Class the type to check",
+          "@throws AssertionFailedError Error thrown if the type is not abstract"
         ],
         "parameters": [
           {
@@ -9405,8 +9411,10 @@
         "extent": 0,
         "modifier": "public",
         "comments": [
+          "Asserts that the given type is not an abstract.",
           "",
-          "@param Progress.Lang.Class the type to check"
+          "@param Progress.Lang.Class the type to check",
+          "@throws AssertionFailedError Error thrown if the type is abstract"
         ],
         "parameters": [
           {
@@ -9426,8 +9434,10 @@
         "extent": 0,
         "modifier": "public",
         "comments": [
+          "Asserts that the given type is final.",
           "",
-          "@param Progress.Lang.Class the type to check"
+          "@param Progress.Lang.Class the type to check",
+          "@throws AssertionFailedError Error thrown if the type is final"
         ],
         "parameters": [
           {
@@ -9447,8 +9457,10 @@
         "extent": 0,
         "modifier": "public",
         "comments": [
+          "Asserts that the given type is not final.",
           "",
-          "@param Progress.Lang.Class the type to check"
+          "@param Progress.Lang.Class the type to check",
+          "@throws AssertionFailedError Error thrown if the type is final"
         ],
         "parameters": [
           {
@@ -9468,9 +9480,11 @@
         "extent": 0,
         "modifier": "public",
         "comments": [
+          "Asserts that a object is valid and of a particular type",
           "",
           "@param Progress.Lang.Object The Object being checked.",
-          "@param Progress.Lang.Class The type the being checked."
+          "@param Progress.Lang.Class The type the being checked.",
+          "@throws AssertionFailedError Error thrown if the object is not valid and not of particular type."
         ],
         "parameters": [
           {
@@ -9496,10 +9510,12 @@
         "extent": 0,
         "modifier": "public",
         "comments": [
+          "Asserts that a object extent is valid and of a particular type for each array item",
           "",
           "@param Progress.Lang.Object The Object being checked.",
           "@param Progress.Lang.Class The type the being checked.",
-          "@throws AssertionFailedError Error thrown if the object array is not valid any of the array"
+          "@throws AssertionFailedError Error thrown if the object array is not valid any of the array",
+          "item is not of particular type."
         ],
         "parameters": [
           {
@@ -9525,10 +9541,12 @@
         "extent": 0,
         "modifier": "public",
         "comments": [
+          "Asserts that a handle is valid and of a particular datatype",
           "",
           "@param handle The handle being checked.",
           "@param DataTypeEnum The type the handle/variable being checked should be.",
-          "@param character The name of the variable/handle."
+          "@param character The name of the variable/handle.",
+          "@throws AssertionFailedError Error thrown if the handle is not valid or not of a particular datatype."
         ],
         "parameters": [
           {
@@ -9560,9 +9578,11 @@
         "extent": 0,
         "modifier": "public",
         "comments": [
+          "Asserts that a handle is valid and of a particular datatype",
           "",
           "@param handle The handle being checked.",
-          "@param DataTypeEnum The type the handle/variable being checked should be."
+          "@param DataTypeEnum The type the handle/variable being checked should be.",
+          "@throws AssertionFailedError Error thrown if the handle is not valid or not of a particular datatype"
         ],
         "parameters": [
           {
@@ -9588,9 +9608,11 @@
         "extent": 0,
         "modifier": "public",
         "comments": [
+          "Asserts that a object is valid and not of a particular type",
           "",
           "@param Progress.Lang.Object The Object being checked.",
-          "@param Progress.Lang.Class The type the being checked."
+          "@param Progress.Lang.Class The type the being checked.",
+          "@throws AssertionFailedError Error thrown if the object is not valid and of particular type."
         ],
         "parameters": [
           {
@@ -9616,10 +9638,12 @@
         "extent": 0,
         "modifier": "public",
         "comments": [
+          "Asserts that a handle is valid and not of a particular datatype",
           "",
           "@param handle The handle being checked.",
           "@param DataTypeEnum The type the handle/variable being checked should be.",
-          "@param character the identifying name for the AssertionFailedError."
+          "@param character the identifying name for the AssertionFailedError.",
+          "@throws AssertionFailedError Error thrown if the handle is not valid or of a particular datatype"
         ],
         "parameters": [
           {
@@ -9651,9 +9675,11 @@
         "extent": 0,
         "modifier": "public",
         "comments": [
+          "Asserts that a handle is valid and not of a particular datatype",
           "",
           "@param handle The handle being checked.",
-          "@param DataTypeEnum The type the handle/variable being checked should be."
+          "@param DataTypeEnum The type the handle/variable being checked should be.",
+          "@throws AssertionFailedError Error thrown if the handle is not valid or of a particular datatype"
         ],
         "parameters": [
           {
@@ -10142,8 +10168,10 @@
         "extent": 0,
         "modifier": "public",
         "comments": [
+          "Raises an AssertionFailedError.",
           "",
-          "@param mesg the message to be used for the AssertionFailedError"
+          "@param mesg the message to be used for the AssertionFailedError",
+          "@throws AssertionFailedError Error thrown"
         ],
         "parameters": [
           {
@@ -12030,7 +12058,9 @@
         "extent": 0,
         "modifier": "public",
         "comments": [
-          ""
+          "Asserts that last executed statement raised an error message.",
+          "",
+          "@throws AssertionFailedError Error thrown if no error message exists"
         ],
         "parameters": []
       },
@@ -12043,7 +12073,9 @@
         "extent": 0,
         "modifier": "public",
         "comments": [
-          ""
+          "Asserts that last executed statement raised no error message.",
+          "",
+          "@throws AssertionFailedError Error thrown if error message exists"
         ],
         "parameters": []
       },
@@ -12056,7 +12088,9 @@
         "extent": 0,
         "modifier": "public",
         "comments": [
-          ""
+          "Asserts that last executed statement raised an error.",
+          "",
+          "@throws AssertionFailedError Error thrown if no error exists"
         ],
         "parameters": []
       },
@@ -12069,7 +12103,9 @@
         "extent": 0,
         "modifier": "public",
         "comments": [
-          ""
+          "Asserts that last executed statement raised no error.",
+          "",
+          "@throws AssertionFailedError Error thrown if error exists"
         ],
         "parameters": []
       }
@@ -12120,8 +12156,10 @@
         "extent": 0,
         "modifier": "public",
         "comments": [
+          "Asserts that a folder exists.",
           "",
-          "@param character The name of the directory being checked"
+          "@param character The name of the directory being checked",
+          "@throws AssertionFailedError Error thrown if the file does not exist"
         ],
         "parameters": [
           {
@@ -12141,8 +12179,10 @@
         "extent": 0,
         "modifier": "public",
         "comments": [
+          "Asserts that a folder does not exist.",
           "",
-          "@param character The name of the directory being checked"
+          "@param character The name of the directory being checked",
+          "@throws AssertionFailedError Error thrown if the file does not exist"
         ],
         "parameters": [
           {
@@ -12162,8 +12202,10 @@
         "extent": 0,
         "modifier": "public",
         "comments": [
+          "Asserts that a file exists.",
           "",
-          "@param character The name of the file being checked"
+          "@param character The name of the file being checked",
+          "@throws AssertionFailedError Error thrown if the file does not exist"
         ],
         "parameters": [
           {
@@ -12183,8 +12225,10 @@
         "extent": 0,
         "modifier": "public",
         "comments": [
+          "Asserts that a file does not exist.",
           "",
-          "@param character The name of the file being checked"
+          "@param character The name of the file being checked",
+          "@throws AssertionFailedError Error thrown if the file does exist"
         ],
         "parameters": [
           {
@@ -12204,8 +12248,10 @@
         "extent": 0,
         "modifier": "public",
         "comments": [
+          "Asserts that a file exists in propath.",
           "",
-          "@param character The name of the file being checked"
+          "@param character The name of the file being checked",
+          "@throws AssertionFailedError Error thrown if the file does not exist"
         ],
         "parameters": [
           {
@@ -12263,11 +12309,13 @@
         "extent": 0,
         "modifier": "public",
         "comments": [
+          "Asserts that a JSON object has a specific number of properties",
           "",
           "@param JsonObject The JSON object being checked",
           "@param integer The number of properties it must have",
           "@throws AssertionFailedError Error thrown if the JSON object is not valid",
-          "@throws AssertionFailedError Error thrown if the property count is negative"
+          "@throws AssertionFailedError Error thrown if the property count is negative",
+          "@throws AssertionFailedError Error thrown if the number of properties is not equal to the count"
         ],
         "parameters": [
           {
@@ -12293,9 +12341,11 @@
         "extent": 0,
         "modifier": "public",
         "comments": [
+          "Asserts that a Json object has a particularly-named property (of any type).",
           "",
           "@param JsonObject The JSON object being checked",
-          "@param character The name of the property being checked"
+          "@param character The name of the property being checked",
+          "@throws AssertionFailedError Error thrown if the property does not exist"
         ],
         "parameters": [
           {
@@ -12321,9 +12371,11 @@
         "extent": 0,
         "modifier": "public",
         "comments": [
+          "Asserts that a the value of a property is null",
           "",
           "@param JsonObject The JSON object being checked",
-          "@param character The name of the property being checked"
+          "@param character The name of the property being checked",
+          "@throws AssertionFailedError Error thrown if the property does not exist"
         ],
         "parameters": [
           {
@@ -12349,9 +12401,11 @@
         "extent": 0,
         "modifier": "public",
         "comments": [
+          "Asserts that an array extent value is null",
           "",
           "@param JsonArray The JSON object being checked",
-          "@param integer The index being checked"
+          "@param integer The index being checked",
+          "@throws AssertionFailedError Error thrown if the property does not exist"
         ],
         "parameters": [
           {
@@ -12377,9 +12431,11 @@
         "extent": 0,
         "modifier": "public",
         "comments": [
+          "Asserts that an array extent value is null",
           "",
           "@param JsonArray The JSON object being checked",
-          "@param integer The index being checked"
+          "@param integer The index being checked",
+          "@throws AssertionFailedError Error thrown if the property does not exist"
         ],
         "parameters": [
           {
@@ -12405,10 +12461,12 @@
         "extent": 0,
         "modifier": "public",
         "comments": [
+          "Asserts that a JSON Array has a index of a particular type.",
           "",
           "@param JsonArray The JSON object being checked",
           "@param integer The index being checked",
-          "@param JsonDataTypeEnum The data type being checked"
+          "@param JsonDataTypeEnum The data type being checked",
+          "@throws AssertionFailedError Error thrown if the property does not exist"
         ],
         "parameters": [
           {
@@ -12440,9 +12498,11 @@
         "extent": 0,
         "modifier": "public",
         "comments": [
+          "Asserts that a the value of a property is not null",
           "",
           "@param JsonObject The JSON object being checked",
-          "@param character The name of the property being checked"
+          "@param character The name of the property being checked",
+          "@throws AssertionFailedError Error thrown if the property does not exist"
         ],
         "parameters": [
           {
@@ -12468,11 +12528,13 @@
         "extent": 0,
         "modifier": "public",
         "comments": [
+          "Asserts that a JSON Object has a particularly-named property of a",
           "particular type.",
           "",
           "@param JsonObject The JSON object being checked",
           "@param character The name of the property being checked",
-          "@param JsonDataTypeEnum The data type being checked"
+          "@param JsonDataTypeEnum The data type being checked",
+          "@throws AssertionFailedError Error thrown if the property does not exist"
         ],
         "parameters": [
           {
@@ -13429,8 +13491,10 @@
           "- IsFinal/NotFinal",
           "- IsType/NotType",
           "- IsSerializable/NotSerializable",
+          "Asserts that the given type is an interface.",
           "",
-          "@param Progress.Lang.Class the type to check"
+          "@param Progress.Lang.Class the type to check",
+          "@throws AssertionFailedError Error thrown if the type is not an interface"
         ],
         "parameters": [
           {
@@ -13450,8 +13514,10 @@
         "extent": 0,
         "modifier": "public",
         "comments": [
+          "Asserts that the given type is not an interface.",
           "",
-          "@param Progress.Lang.Class the type to check"
+          "@param Progress.Lang.Class the type to check",
+          "@throws AssertionFailedError Error thrown if the type is an interface"
         ],
         "parameters": [
           {
@@ -13471,8 +13537,10 @@
         "extent": 0,
         "modifier": "public",
         "comments": [
+          "Asserts that the given type is an abstract.",
           "",
-          "@param Progress.Lang.Class the type to check"
+          "@param Progress.Lang.Class the type to check",
+          "@throws AssertionFailedError Error thrown if the type is not abstract"
         ],
         "parameters": [
           {
@@ -13492,8 +13560,10 @@
         "extent": 0,
         "modifier": "public",
         "comments": [
+          "Asserts that the given type is not an abstract.",
           "",
-          "@param Progress.Lang.Class the type to check"
+          "@param Progress.Lang.Class the type to check",
+          "@throws AssertionFailedError Error thrown if the type is abstract"
         ],
         "parameters": [
           {
@@ -13513,8 +13583,10 @@
         "extent": 0,
         "modifier": "public",
         "comments": [
+          "Asserts that the given type is final.",
           "",
-          "@param Progress.Lang.Class the type to check"
+          "@param Progress.Lang.Class the type to check",
+          "@throws AssertionFailedError Error thrown if the type is final"
         ],
         "parameters": [
           {
@@ -13534,8 +13606,10 @@
         "extent": 0,
         "modifier": "public",
         "comments": [
+          "Asserts that the given type is not final.",
           "",
-          "@param Progress.Lang.Class the type to check"
+          "@param Progress.Lang.Class the type to check",
+          "@throws AssertionFailedError Error thrown if the type is final"
         ],
         "parameters": [
           {
@@ -13555,9 +13629,11 @@
         "extent": 0,
         "modifier": "public",
         "comments": [
+          "Asserts that a object is valid and of a particular type",
           "",
           "@param Progress.Lang.Object The Object being checked.",
-          "@param Progress.Lang.Class The type the being checked."
+          "@param Progress.Lang.Class The type the being checked.",
+          "@throws AssertionFailedError Error thrown if the object is not valid and not of particular type."
         ],
         "parameters": [
           {
@@ -13583,10 +13659,12 @@
         "extent": 0,
         "modifier": "public",
         "comments": [
+          "Asserts that a object extent is valid and of a particular type for each array item",
           "",
           "@param Progress.Lang.Object The Object being checked.",
           "@param Progress.Lang.Class The type the being checked.",
-          "@throws AssertionFailedError Error thrown if the object array is not valid any of the array"
+          "@throws AssertionFailedError Error thrown if the object array is not valid any of the array",
+          "item is not of particular type."
         ],
         "parameters": [
           {
@@ -13612,10 +13690,12 @@
         "extent": 0,
         "modifier": "public",
         "comments": [
+          "Asserts that a handle is valid and of a particular datatype",
           "",
           "@param handle The handle being checked.",
           "@param DataTypeEnum The type the handle/variable being checked should be.",
-          "@param character The name of the variable/handle."
+          "@param character The name of the variable/handle.",
+          "@throws AssertionFailedError Error thrown if the handle is not valid or not of a particular datatype."
         ],
         "parameters": [
           {
@@ -13647,9 +13727,11 @@
         "extent": 0,
         "modifier": "public",
         "comments": [
+          "Asserts that a handle is valid and of a particular datatype",
           "",
           "@param handle The handle being checked.",
-          "@param DataTypeEnum The type the handle/variable being checked should be."
+          "@param DataTypeEnum The type the handle/variable being checked should be.",
+          "@throws AssertionFailedError Error thrown if the handle is not valid or not of a particular datatype"
         ],
         "parameters": [
           {
@@ -13675,9 +13757,11 @@
         "extent": 0,
         "modifier": "public",
         "comments": [
+          "Asserts that a object is valid and not of a particular type",
           "",
           "@param Progress.Lang.Object The Object being checked.",
-          "@param Progress.Lang.Class The type the being checked."
+          "@param Progress.Lang.Class The type the being checked.",
+          "@throws AssertionFailedError Error thrown if the object is not valid and of particular type."
         ],
         "parameters": [
           {
@@ -13703,10 +13787,12 @@
         "extent": 0,
         "modifier": "public",
         "comments": [
+          "Asserts that a handle is valid and not of a particular datatype",
           "",
           "@param handle The handle being checked.",
           "@param DataTypeEnum The type the handle/variable being checked should be.",
-          "@param character the identifying name for the AssertionFailedError."
+          "@param character the identifying name for the AssertionFailedError.",
+          "@throws AssertionFailedError Error thrown if the handle is not valid or of a particular datatype"
         ],
         "parameters": [
           {
@@ -13738,9 +13824,11 @@
         "extent": 0,
         "modifier": "public",
         "comments": [
+          "Asserts that a handle is valid and not of a particular datatype",
           "",
           "@param handle The handle being checked.",
-          "@param DataTypeEnum The type the handle/variable being checked should be."
+          "@param DataTypeEnum The type the handle/variable being checked should be.",
+          "@throws AssertionFailedError Error thrown if the handle is not valid or of a particular datatype"
         ],
         "parameters": [
           {
@@ -13845,8 +13933,10 @@
         "extent": 0,
         "modifier": "public",
         "comments": [
+          "Factory method for creating a ByteBucket.",
           "",
-          "@param integer  The initial size of the array (ie how many extents)"
+          "@param integer  The initial size of the array (ie how many extents)",
+          "@param int64 The size of each memptr in the array"
         ],
         "parameters": [
           {
@@ -13872,7 +13962,9 @@
         "extent": 0,
         "modifier": "public",
         "comments": [
-          ""
+          "Factory method for creating a ByteBucket.",
+          "",
+          "@param int64 The size of  memptr to store bytes"
         ],
         "parameters": [
           {
@@ -13891,6 +13983,9 @@
         "static": true,
         "extent": 0,
         "modifier": "public",
+        "comments": [
+          "Factory method for creating a ByteBucket."
+        ],
         "parameters": []
       },
       {
@@ -13901,6 +13996,10 @@
         "static": false,
         "extent": 0,
         "modifier": "public",
+        "comments": [
+          "Clears/resets the ByteBucket. Does not de-allocate the memory, just the",
+          "various pointers/counters/cursors."
+        ],
         "parameters": []
       },
       {
@@ -13912,7 +14011,9 @@
         "extent": 0,
         "modifier": "public",
         "comments": [
-          ""
+          "Default object initialization",
+          "",
+          "Clears and resizes the bucket's internals to the initial size (num records)"
         ],
         "parameters": []
       },
@@ -13924,6 +14025,9 @@
         "static": false,
         "extent": 0,
         "modifier": "public",
+        "comments": [
+          "Destroy/Shutdown/Anti-Initializer"
+        ],
         "parameters": []
       },
       {
@@ -13935,9 +14039,11 @@
         "extent": 0,
         "modifier": "public",
         "comments": [
+          "Resizes the internal 'array' of records.",
           "We can shrink down the number of rows, but not smaller than the",
           "bucket's size.",
-          ""
+          "",
+          "@param integer The new size (number of extents) for the array"
         ],
         "parameters": [
           {
@@ -13957,9 +14063,11 @@
         "extent": 0,
         "modifier": "public",
         "comments": [
+          "Resizes the internal 'array' of records.",
           "We can shrink down the number of rows, but not smaller than the",
           "bucket's size in bytes.",
-          ""
+          "",
+          "@param integer The new size (number of records) for the internal structure"
         ],
         "parameters": [
           {
@@ -13979,9 +14087,11 @@
         "extent": 0,
         "modifier": "public",
         "comments": [
+          "Copies all of the bytes from a memptr into this bucket. The",
           "caller is responsible for cleaning up the memptr.",
           "",
-          "@param int64 The pointer to memory represented by a memptr (via get-pointer-value)."
+          "@param int64 The pointer to memory represented by a memptr (via get-pointer-value).",
+          "@param int64 The size of the memptr represented by the pointer value."
         ],
         "parameters": [
           {
@@ -14007,7 +14117,9 @@
         "extent": 0,
         "modifier": "public",
         "comments": [
-          ""
+          "Copies all of the bytes from a String object (longchar) into this bucket.",
+          "",
+          "@param String The longchar containing the source data."
         ],
         "parameters": [
           {
@@ -14027,7 +14139,9 @@
         "extent": 0,
         "modifier": "public",
         "comments": [
-          ""
+          "Copies all of the bytes from a longchar into this bucket.",
+          "",
+          "@param longchar The longchar containing the source data"
         ],
         "parameters": [
           {
@@ -14051,8 +14165,10 @@
           "since": "11.7.3"
         },
         "comments": [
+          "Copies all of the bytes from a longchar into this bucket.",
           "",
-          "@param longchar The longchar containing the source data"
+          "@param longchar The longchar containing the source data",
+          "@param longchar The target codepage used to write data into the bucket. Defaults to UTF-8"
         ],
         "parameters": [
           {
@@ -14078,8 +14194,10 @@
         "extent": 0,
         "modifier": "public",
         "comments": [
+          "Copies all of the bytes from a longchar into this bucket.",
           "",
-          "@param longchar The longchar containing the source data"
+          "@param longchar The longchar containing the source data",
+          "@param character The target codepage used to write data into the bucket. Defaults to UTF-8"
         ],
         "parameters": [
           {
@@ -14105,8 +14223,10 @@
         "extent": 0,
         "modifier": "public",
         "comments": [
+          "Copies all of the bytes from a Memptr instance into this bucket. The",
           "caller is responsible for cleaning up the memptr.",
-          ""
+          "",
+          "@param OpenEdge.Core.Memptr The Memptr instance containing the data."
         ],
         "parameters": [
           {
@@ -14126,8 +14246,10 @@
         "extent": 0,
         "modifier": "public",
         "comments": [
+          "Copies all of the bytes from a ByteBucket instance into this bucket. The",
           "caller is responsible for cleaning up the source ByteBucket.",
-          ""
+          "",
+          "@param ByteBucket The ByteBucket instance containing the data."
         ],
         "parameters": [
           {
@@ -14147,8 +14269,10 @@
         "extent": 0,
         "modifier": "public",
         "comments": [
+          "Copies all of the bytes from a memptr (primitive) into this bucket. The",
           "caller is responsible for cleaning up the memptr.",
-          ""
+          "",
+          "@param memptr The memptr containing the data."
         ],
         "parameters": [
           {
@@ -14168,8 +14292,10 @@
         "extent": 0,
         "modifier": "public",
         "comments": [
+          "Returns a byte at the current position , and increments the",
           "position marker.",
-          ""
+          "",
+          "@return integer The byte value at the current position"
         ],
         "parameters": []
       },
@@ -14182,9 +14308,11 @@
         "extent": 0,
         "modifier": "public",
         "comments": [
+          "Returns a byte at the specified position, and increments the",
           "position marker.",
           "",
-          "@param int64 The position at which to return the byte."
+          "@param int64 The position at which to return the byte.",
+          "@return integer The byte value at the current position"
         ],
         "parameters": [
           {
@@ -14204,10 +14332,12 @@
         "extent": 0,
         "modifier": "public",
         "comments": [
+          "Returns a string/character representation a particular number of bytes,",
           "from a given start position.",
           "",
           "@param int64 The start potision",
-          "@param int64 The size of the data (in bytes) to return"
+          "@param int64 The size of the data (in bytes) to return",
+          "@return longchar The character/string data requested"
         ],
         "parameters": [
           {
@@ -14233,11 +14363,13 @@
         "extent": 0,
         "modifier": "public",
         "comments": [
+          "Returns a string/character representation a particular number of bytes,",
           "from a given start position.",
           "",
           "@param  int64 The start potision",
           "@param  int64 The size of the data (in bytes) to return",
-          "@param  character The target codepage for the character data"
+          "@param  character The target codepage for the character data",
+          "@return longchar The character/string data requested"
         ],
         "parameters": [
           {
@@ -14269,12 +14401,14 @@
         "extent": 0,
         "modifier": "public",
         "comments": [
+          "Returns a string/character representation a particular number of bytes,",
           "from a given start position.",
           "",
           "@param  int64 The start potision",
           "@param  int64 The size of the data (in bytes) to return",
           "@param  character The source codepage for the character data",
-          "@param  character The target codepage for the character data"
+          "@param  character The target codepage for the character data",
+          "@return longchar The character/string data requested"
         ],
         "parameters": [
           {
@@ -14312,9 +14446,11 @@
         "extent": 0,
         "modifier": "public",
         "comments": [
+          "Returns a string/character representation a particular number of bytes,",
           "from the current Position.",
           "",
-          "@param int64 The size of the data (in bytes) to return"
+          "@param int64 The size of the data (in bytes) to return",
+          "@return longchar The character/string data requested"
         ],
         "parameters": [
           {
@@ -14334,7 +14470,9 @@
         "extent": 0,
         "modifier": "public",
         "comments": [
-          ""
+          "Returns a string/character representation of the entire set of bytes.",
+          "",
+          "@return longchar The character/string data requested"
         ],
         "parameters": []
       },
@@ -14347,7 +14485,9 @@
         "extent": 0,
         "modifier": "public",
         "comments": [
-          ""
+          "Returns the entire contents of this bucket as a Memptr instance.",
+          "",
+          "@return Memptr The complete bucket data"
         ],
         "parameters": []
       },
@@ -14360,9 +14500,11 @@
         "extent": 0,
         "modifier": "public",
         "comments": [
+          "Returns a Memptr instance containing the specified number of bytes,",
           "starting at the current Position.",
           "",
-          "@param int64 The number of bytes to return"
+          "@param int64 The number of bytes to return",
+          "@return Memptr The complete bucket data"
         ],
         "parameters": [
           {
@@ -14382,10 +14524,12 @@
         "extent": 0,
         "modifier": "public",
         "comments": [
+          "Returns a Memptr instance containing the specified number of bytes,",
           "starting at the specified postition.",
           "",
           "@param int64 The starting position",
-          "@param int64 The number of bytes to return"
+          "@param int64 The number of bytes to return",
+          "@return Memptr The complete bucket data"
         ],
         "parameters": [
           {
@@ -14421,8 +14565,10 @@
         "extent": 0,
         "modifier": "public",
         "comments": [
+          "Returns a hash of the current contents of the memptr. This can be used",
           "for comparing memptr values quickly.",
-          ""
+          "",
+          "@return raw The hashed value of the memptr."
         ],
         "parameters": []
       },
@@ -14435,9 +14581,11 @@
         "extent": 0,
         "modifier": "public",
         "comments": [
+          "Returns a hash of the current contents of the memptr. This can be used",
           "for comparing memptr values quickly.",
           "",
-          "@param HashAlgorithmEnum The algorithm to use for the message"
+          "@param HashAlgorithmEnum The algorithm to use for the message",
+          "@return raw The hashed value of the memptr."
         ],
         "parameters": [
           {
@@ -14457,8 +14605,10 @@
         "extent": 0,
         "modifier": "public",
         "comments": [
+          "Returns the index of a string in the bytebucket's data.",
           "",
-          "@param longchar The search string. Must be non-unknown."
+          "@param longchar The search string. Must be non-unknown.",
+          "@return int64 The 1-based index of the start of the search string. Returns 0 if the search string cannot be found"
         ],
         "parameters": [
           {
@@ -14478,9 +14628,11 @@
         "extent": 0,
         "modifier": "public",
         "comments": [
+          "Returns the index of a string in the bytebucket's data.",
           "",
           "@param longchar The search string. Must be non-unknown.",
-          "@param int64 The position to start searching at. Must be 1 or greater. If > the bytes written, returns 0."
+          "@param int64 The position to start searching at. Must be 1 or greater. If > the bytes written, returns 0.",
+          "@return int64 The 1-based index of the start of the search string. Returns 0 if the search string cannot be found"
         ],
         "parameters": [
           {
@@ -14574,6 +14726,9 @@
         "static": false,
         "extent": 0,
         "modifier": "public",
+        "comments": [
+          "Constructor for a ByteBucket. Defaults to 0 memptr size"
+        ],
         "parameters": []
       },
       {
@@ -14584,6 +14739,10 @@
         "static": false,
         "extent": 0,
         "modifier": "public",
+        "comments": [
+          "Constructor for a ByteBucket",
+          "@param int64 the intial size of memptr to store bytes"
+        ],
         "parameters": [
           {
             "name": "piDefaultCapacity",
@@ -14602,8 +14761,10 @@
         "extent": 0,
         "modifier": "public",
         "comments": [
+          "Constructor for a ByteBucket",
           "@deprecated(since='12.0':u).",
-          "@param integer  The initial size of the array (ie how many extents)"
+          "@param integer  The initial size of the array (ie how many extents)",
+          "@param int64 the intial size of  memptr to store bytes"
         ],
         "parameters": [
           {
@@ -14629,6 +14790,7 @@
         "extent": 0,
         "modifier": "public",
         "comments": [
+          "Constructor for a ByteBucket",
           "",
           "@param integer The initial size of the bucket (ie how many 32k rows)",
           "@deprecated(since='12.0':u)."
@@ -14650,6 +14812,9 @@
         "static": true,
         "extent": 0,
         "modifier": "private",
+        "comments": [
+          "Constructor for a ByteBucket. Defaults to 0 memptr size"
+        ],
         "parameters": []
       }
     ],
@@ -14658,22 +14823,35 @@
       {
         "name": "Position",
         "type": "64",
-        "modifier": "public"
+        "modifier": "public",
+        "comments": [
+          "The current read position"
+        ]
       },
       {
         "name": "DefaultCapacity",
         "type": "64",
-        "modifier": "public"
+        "modifier": "public",
+        "comments": [
+          "The initial size of the memptr that are held in the Bucket"
+        ]
       },
       {
         "name": "Size",
         "type": "64",
-        "modifier": "public"
+        "modifier": "public",
+        "comments": [
+          "Returns the size of the data in the bucket"
+        ]
       },
       {
         "name": "Value",
         "type": "M",
-        "modifier": "public"
+        "modifier": "public",
+        "comments": [
+          "A memptr value with the complete contents of the ByteBucket (bytes actually written)",
+          "The value SHOULD be assigned to another variable, since it is cleaned up in the getter"
+        ]
       },
       {
         "name": "PointerValue",
@@ -14953,8 +15131,10 @@
         "extent": 0,
         "modifier": "protected",
         "comments": [
+          "Recalculates the Size of this collections.",
           "",
-          "Used particularly by Lists since there are operations"
+          "Used particularly by Lists since there are operations",
+          "like Remove() that are index-based and not item-based."
         ],
         "parameters": []
       }
@@ -15200,7 +15380,9 @@
         "extent": 0,
         "modifier": "public",
         "comments": [
-          ""
+          "Appends an unknown value to the array",
+          "",
+          "@return logical True if the operation succeeded."
         ],
         "parameters": []
       },
@@ -16829,7 +17011,9 @@
         "extent": 0,
         "modifier": "public",
         "comments": [
-          ""
+          "Appends an unknown value element to the set if not already present",
+          "",
+          "@return logical True if the operation succeeded."
         ],
         "parameters": []
       },
@@ -16842,8 +17026,10 @@
         "extent": 0,
         "modifier": "public",
         "comments": [
+          "Appends the specified element to list if not already present",
           "",
-          "@param Object The element to add to the collection"
+          "@param Object The element to add to the collection",
+          "@return logical True if the operation succeeded."
         ],
         "parameters": [
           {
@@ -16863,8 +17049,10 @@
         "extent": 0,
         "modifier": "public",
         "comments": [
+          "Appends all of the elements in the specified collection",
           "",
-          "@param ICollection A collection of elements to add to the collection"
+          "@param ICollection A collection of elements to add to the collection",
+          "@return logical True if the operation succeeded."
         ],
         "parameters": [
           {
@@ -16884,8 +17072,10 @@
         "extent": 0,
         "modifier": "public",
         "comments": [
+          "Adds an array of elements to the collection",
           "",
-          "@param Object[] An array of elements to add to the collection"
+          "@param Object[] An array of elements to add to the collection",
+          "@return logical True if the operation succeeded."
         ],
         "parameters": [
           {
@@ -16904,6 +17094,9 @@
         "static": false,
         "extent": 0,
         "modifier": "public",
+        "comments": [
+          "Removes all of the elements from this list"
+        ],
         "parameters": []
       },
       {
@@ -16915,9 +17108,11 @@
         "extent": 0,
         "modifier": "public",
         "comments": [
+          "Check whether the colleciton contains at least one object",
           "that matches the passed in object.",
           "",
-          "@param Object The object"
+          "@param Object The object",
+          "@return logical Returns true if the object is in the collection"
         ],
         "parameters": [
           {
@@ -16937,9 +17132,11 @@
         "extent": 0,
         "modifier": "public",
         "comments": [
+          "Returns true if this list contains all of the elements of the",
           "specified collection.",
           "",
-          "@param ICollection The collection of obejcts to check"
+          "@param ICollection The collection of obejcts to check",
+          "@return logical True if all the elements match"
         ],
         "parameters": [
           {
@@ -16959,7 +17156,9 @@
         "extent": 0,
         "modifier": "public",
         "comments": [
-          ""
+          "Indicates whether this collection has any elements.",
+          "",
+          "@return logical True if the collection is empty."
         ],
         "parameters": []
       },
@@ -16972,8 +17171,10 @@
         "extent": 0,
         "modifier": "public",
         "comments": [
+          "Removes the first occurrence in this list of the specified element",
           "",
-          "@param Object The"
+          "@param Object The",
+          "@return logical True if the operation succeded."
         ],
         "parameters": [
           {
@@ -16993,9 +17194,11 @@
         "extent": 0,
         "modifier": "public",
         "comments": [
+          "Removes from this list all the elements that are contained in the",
           "specified collection (optional operation).",
           "",
-          "@param ICollection The collection to remove."
+          "@param ICollection The collection to remove.",
+          "@return logical True if the operation succeeded."
         ],
         "parameters": [
           {
@@ -17015,9 +17218,11 @@
         "extent": 0,
         "modifier": "public",
         "comments": [
+          "Retains only the elements in this list that are contained in the",
           "specified collection (optional operation).",
           "",
-          "@param ICollection The collection to retain"
+          "@param ICollection The collection to retain",
+          "@return Logical True if the object changed"
         ],
         "parameters": [
           {
@@ -17037,8 +17242,10 @@
         "extent": 0,
         "modifier": "public",
         "comments": [
+          "Returns the contents of the collection as temp-table. This is a shallow",
           "copy of the collection - basically a new set of references is created.",
-          ""
+          "",
+          "@param output table-handle The collection as a temp-table"
         ],
         "parameters": [
           {
@@ -17058,7 +17265,9 @@
         "extent": -32767,
         "modifier": "public",
         "comments": [
-          ""
+          "Returns the contents of the collection as an array of objects.",
+          "",
+          "@return Object[] The collection returnes as an object array"
         ],
         "parameters": []
       }
@@ -17069,7 +17278,10 @@
       {
         "name": "Size",
         "type": "I",
-        "modifier": "public"
+        "modifier": "public",
+        "comments": [
+          "Returns the number of elements in this list."
+        ]
       }
     ],
     "tables": []
@@ -17094,7 +17306,9 @@
         "extent": 0,
         "modifier": "public",
         "comments": [
-          ""
+          "Returns an iterator object.",
+          "",
+          "@param IIterator"
         ],
         "parameters": []
       }
@@ -17124,7 +17338,9 @@
         "extent": 0,
         "modifier": "public",
         "comments": [
-          ""
+          "Indicates whether there's another element",
+          "",
+          "@return Logical Trues if the iterator has another element"
         ],
         "parameters": []
       },
@@ -17137,8 +17353,10 @@
         "extent": 0,
         "modifier": "public",
         "comments": [
+          "Returns the next object in the iterator. Next being the next object",
           "at the iterator's current position.",
-          ""
+          "",
+          "@return Object The object at the 'next' position."
         ],
         "parameters": []
       },
@@ -17151,7 +17369,9 @@
         "extent": 0,
         "modifier": "public",
         "comments": [
-          ""
+          "Removes an entry from the iterator.",
+          "",
+          "@return logical True if the operation succeeeded."
         ],
         "parameters": []
       }
@@ -17184,9 +17404,11 @@
         "extent": 0,
         "modifier": "public",
         "comments": [
+          "Inserts the specified element at the specified position in this list.",
           "",
           "@param integer  The position at which to insert the object",
-          "@param Object   The object to add"
+          "@param Object   The object to add",
+          "@return Logical Returns true if the operation succeeded"
         ],
         "parameters": [
           {
@@ -17234,6 +17456,10 @@
         "static": false,
         "extent": 0,
         "modifier": "public",
+        "comments": [
+          "Appends all the elements in the array this list, optionally",
+          "at the specified position."
+        ],
         "parameters": [
           {
             "name": "piIndex",
@@ -17258,8 +17484,10 @@
         "extent": 0,
         "modifier": "public",
         "comments": [
+          "Returns the element at the specified position in this list.",
           "",
-          "@param integer The index of the object to return"
+          "@param integer The index of the object to return",
+          "@return Object  The object returned."
         ],
         "parameters": [
           {
@@ -17279,9 +17507,11 @@
         "extent": 0,
         "modifier": "public",
         "comments": [
+          "Returns the index in this list of the first occurrence of the specified",
           "element, or 0 if this list does not contain this element.",
           "",
-          "@param Object   The object to check."
+          "@param Object   The object to check.",
+          "@return integer The index of the passed-in object"
         ],
         "parameters": [
           {
@@ -17311,9 +17541,11 @@
         "extent": 0,
         "modifier": "public",
         "comments": [
+          "Returns a list iterator of the elements in this list (in proper sequence),",
           "starting at the specified position in this list.",
           "",
-          "@param integer The starting position for the new iterator"
+          "@param integer The starting position for the new iterator",
+          "@return IListIterator The ordered iterator"
         ],
         "parameters": [
           {
@@ -17333,9 +17565,11 @@
         "extent": 0,
         "modifier": "public",
         "comments": [
+          "Returns the index in this list of the last occurrence of the",
           "specified element, or 0 if this list does not contain this element.",
           "",
-          "@param Object The object to check"
+          "@param Object The object to check",
+          "@return integer The index of the last occurrence of the object"
         ],
         "parameters": [
           {
@@ -17355,8 +17589,10 @@
         "extent": 0,
         "modifier": "public",
         "comments": [
+          "Removes the element at the specified position in this list",
           "",
-          "@param integer The index to remove"
+          "@param integer The index to remove",
+          "@return Object The object that was removed."
         ],
         "parameters": [
           {
@@ -17376,10 +17612,12 @@
         "extent": 0,
         "modifier": "public",
         "comments": [
+          "Replaces the element at the specified position in this list with the",
           "specified element",
           "",
           "@param integer The position to add",
-          "@param Object The object to add to the List"
+          "@param Object The object to add to the List",
+          "@return Object The object that was replaced/removed from the List"
         ],
         "parameters": [
           {
@@ -17405,10 +17643,12 @@
         "extent": 0,
         "modifier": "public",
         "comments": [
+          "Returns a view of the portion of this list between the specified",
           "fromIndex, inclusive, and toIndex, exclusive.",
           "",
           "@param integer The starting position for the new List (included)",
-          "@param integer The end position for the new List (excluded)"
+          "@param integer The end position for the new List (excluded)",
+          "@return IList  The new List"
         ],
         "parameters": [
           {
@@ -17453,7 +17693,9 @@
         "extent": 0,
         "modifier": "public",
         "comments": [
-          ""
+          "Returns the next elements' index.",
+          "",
+          "Return integer The index of the next element"
         ],
         "parameters": []
       },
@@ -17466,7 +17708,9 @@
         "extent": 0,
         "modifier": "public",
         "comments": [
-          ""
+          "Indicates whether there's a previous element.",
+          "",
+          "@return logical True if there is a previous element"
         ],
         "parameters": []
       },
@@ -17479,7 +17723,9 @@
         "extent": 0,
         "modifier": "public",
         "comments": [
-          ""
+          "Returns the previous element",
+          "",
+          "@return Object"
         ],
         "parameters": []
       },
@@ -17492,7 +17738,9 @@
         "extent": 0,
         "modifier": "public",
         "comments": [
-          ""
+          "Returns the index of the previous item.",
+          "",
+          "Return integer The index of the previous element"
         ],
         "parameters": []
       }
@@ -17684,7 +17932,9 @@
         "extent": 0,
         "modifier": "public",
         "comments": [
-          ""
+          "Removes the mappings for all key from this map if it is present (optional operation).",
+          "",
+          "@param ICollection A collection of keys to remove"
         ],
         "parameters": [
           {
@@ -17791,8 +18041,10 @@
         "extent": 0,
         "modifier": "public",
         "comments": [
+          "Add an object to the collection.",
           "",
-          "@param {&ValueType} The object to add to the collection"
+          "@param {&ValueType} The object to add to the collection",
+          "@return logical True if the operation succeeded."
         ],
         "parameters": [
           {
@@ -17812,8 +18064,10 @@
         "extent": 0,
         "modifier": "public",
         "comments": [
+          "Add a collection of objects to the collection.",
           "",
-          "@param {&CollectionType} The collection to add to the collection"
+          "@param {&CollectionType} The collection to add to the collection",
+          "@return logical True if the operation succeeded."
         ],
         "parameters": [
           {
@@ -17833,8 +18087,10 @@
         "extent": 0,
         "modifier": "public",
         "comments": [
+          "Add an array of objects to the collection.",
           "",
-          "@param {&CollectionType}[] The array to add to the collection"
+          "@param {&CollectionType}[] The array to add to the collection",
+          "@return logical True if the operation succeeded."
         ],
         "parameters": [
           {
@@ -17854,8 +18110,10 @@
         "extent": 0,
         "modifier": "public",
         "comments": [
+          "Remove an object from the collection.",
           "",
-          "@param {&ValueType} The object to remove from the collection"
+          "@param {&ValueType} The object to remove from the collection",
+          "@return logical True if the operation succeeded."
         ],
         "parameters": [
           {
@@ -17909,8 +18167,10 @@
         "extent": 0,
         "modifier": "public",
         "comments": [
+          "Determine whether an object is in the collection.",
           "",
-          "@param {&ValueType} The object to check in the collection"
+          "@param {&ValueType} The object to check in the collection",
+          "@return logical True if the operation succeeded."
         ],
         "parameters": [
           {
@@ -17940,8 +18200,10 @@
         "extent": 0,
         "modifier": "public",
         "comments": [
+          "Appends the specified element to list if not already present",
           "",
-          "@param longchar The element to add to the collection"
+          "@param longchar The element to add to the collection",
+          "@return logical True if the operation succeeded."
         ],
         "parameters": [
           {
@@ -17961,8 +18223,10 @@
         "extent": 0,
         "modifier": "public",
         "comments": [
+          "Adds an array of elements to the collection",
           "",
-          "@param longchar[] An array of elements to add to the collection"
+          "@param longchar[] An array of elements to add to the collection",
+          "@return logical True if the operation succeeded."
         ],
         "parameters": [
           {
@@ -17982,9 +18246,11 @@
         "extent": 0,
         "modifier": "public",
         "comments": [
+          "Check whether the colleciton contains at least one object",
           "that matches the passed in object.",
           "",
-          "@param Object The object"
+          "@param Object The object",
+          "@return logical Returns true if the object is in the collection"
         ],
         "parameters": [
           {
@@ -18004,8 +18270,10 @@
         "extent": 0,
         "modifier": "public",
         "comments": [
+          "Removes the first occurrence in this list of the specified element",
           "",
-          "@param Object The"
+          "@param Object The",
+          "@return logical True if the operation succeded."
         ],
         "parameters": [
           {
@@ -18043,6 +18311,9 @@
         "static": false,
         "extent": 0,
         "modifier": "public",
+        "comments": [
+          "Associates the specified value with the specified key in this map (optional operation)."
+        ],
         "parameters": [
           {
             "name": "poKey",
@@ -18066,6 +18337,9 @@
         "static": false,
         "extent": 0,
         "modifier": "public",
+        "comments": [
+          "Removes the mapping for this key from this map if it is present (optional operation)."
+        ],
         "parameters": [
           {
             "name": "poKey",
@@ -18083,6 +18357,9 @@
         "static": false,
         "extent": 0,
         "modifier": "public",
+        "comments": [
+          "Returns true if this map contains a mapping for the specified key."
+        ],
         "parameters": [
           {
             "name": "poKey",
@@ -18100,6 +18377,9 @@
         "static": false,
         "extent": 0,
         "modifier": "public",
+        "comments": [
+          "Returns true if this map maps one or more keys to the specified value."
+        ],
         "parameters": [
           {
             "name": "poValue",
@@ -18117,6 +18397,9 @@
         "static": false,
         "extent": 0,
         "modifier": "public",
+        "comments": [
+          "Returns the value to which this map maps the specified key."
+        ],
         "parameters": [
           {
             "name": "poKey",
@@ -18134,6 +18417,9 @@
         "static": false,
         "extent": 0,
         "modifier": "public",
+        "comments": [
+          "Adds all data from the input map into this map"
+        ],
         "parameters": [
           {
             "name": "poMap",
@@ -18152,9 +18438,11 @@
         "extent": 0,
         "modifier": "public",
         "comments": [
+          "Adds an entry to the map",
           "",
           "@param character The key value",
-          "@param longchar The value"
+          "@param longchar The value",
+          "@return longchar The value added (may be blank or unknown)"
         ],
         "parameters": [
           {
@@ -18180,8 +18468,10 @@
         "extent": 0,
         "modifier": "public",
         "comments": [
+          "Retrieves the value for a particular key",
           "",
-          "@param character The key value"
+          "@param character The key value",
+          "@return longchar The associated value"
         ],
         "parameters": [
           {
@@ -18201,8 +18491,10 @@
         "extent": 0,
         "modifier": "public",
         "comments": [
+          "Removes the value for a particular key",
           "",
-          "@param character The key value"
+          "@param character The key value",
+          "@return longchar The associated value"
         ],
         "parameters": [
           {
@@ -18222,8 +18514,10 @@
         "extent": 0,
         "modifier": "public",
         "comments": [
+          "Indicates whether a map exists for this key",
           "",
-          "@param character the key value"
+          "@param character the key value",
+          "@return logical True if this key exists"
         ],
         "parameters": [
           {
@@ -18261,6 +18555,9 @@
         "static": false,
         "extent": 0,
         "modifier": "public",
+        "comments": [
+          "Associates the specified value with the specified key in this map (optional operation)."
+        ],
         "parameters": [
           {
             "name": "poKey",
@@ -18284,6 +18581,9 @@
         "static": false,
         "extent": 0,
         "modifier": "public",
+        "comments": [
+          "Removes the mapping for this key from this map if it is present (optional operation)."
+        ],
         "parameters": [
           {
             "name": "poKey",
@@ -18301,6 +18601,9 @@
         "static": false,
         "extent": 0,
         "modifier": "public",
+        "comments": [
+          "Returns true if this map contains a mapping for the specified key."
+        ],
         "parameters": [
           {
             "name": "poKey",
@@ -18318,6 +18621,9 @@
         "static": false,
         "extent": 0,
         "modifier": "public",
+        "comments": [
+          "Returns true if this map maps one or more keys to the specified value."
+        ],
         "parameters": [
           {
             "name": "poValue",
@@ -18335,6 +18641,9 @@
         "static": false,
         "extent": 0,
         "modifier": "public",
+        "comments": [
+          "Returns the value to which this map maps the specified key."
+        ],
         "parameters": [
           {
             "name": "poKey",
@@ -18352,6 +18661,9 @@
         "static": false,
         "extent": 0,
         "modifier": "public",
+        "comments": [
+          "Adds all data from the input map into this map"
+        ],
         "parameters": [
           {
             "name": "poMap",
@@ -18370,9 +18682,11 @@
         "extent": 0,
         "modifier": "public",
         "comments": [
+          "Adds an entry to the map",
           "",
           "@param character The key value",
-          "@param longchar The value"
+          "@param longchar The value",
+          "@return longchar The value added (may be blank or unknown)"
         ],
         "parameters": [
           {
@@ -18398,8 +18712,10 @@
         "extent": 0,
         "modifier": "public",
         "comments": [
+          "Retrieves the value for a particular key",
           "",
-          "@param character The key value"
+          "@param character The key value",
+          "@return longchar The associated value"
         ],
         "parameters": [
           {
@@ -18419,8 +18735,10 @@
         "extent": 0,
         "modifier": "public",
         "comments": [
+          "Removes the value for a particular key",
           "",
-          "@param character The key value"
+          "@param character The key value",
+          "@return longchar The associated value"
         ],
         "parameters": [
           {
@@ -18440,8 +18758,10 @@
         "extent": 0,
         "modifier": "public",
         "comments": [
+          "Indicates whether a map exists for this key",
           "",
-          "@param character the key value"
+          "@param character the key value",
+          "@return logical True if this key exists"
         ],
         "parameters": [
           {
@@ -18461,9 +18781,11 @@
         "extent": 0,
         "modifier": "public",
         "comments": [
+          "Indicates whether there is at least one value represented",
           "by the parameter in the map.",
           "",
-          "@param longchar The value"
+          "@param longchar The value",
+          "@return logical True if there is at least one entry with this value"
         ],
         "parameters": [
           {
@@ -18895,6 +19217,10 @@
         "static": false,
         "extent": 0,
         "modifier": "public",
+        "comments": [
+          "Removes the first node, and replaces it with the next in the list.",
+          "Equivalent to a stack pop."
+        ],
         "parameters": []
       },
       {
@@ -18906,8 +19232,10 @@
         "extent": 0,
         "modifier": "public",
         "comments": [
+          "Adds a Node in the first position. Will move the linked list along.",
           "The new node cannot have a valid Next property.",
-          ""
+          "",
+          "@param {&NodeType} The node to insert."
         ],
         "parameters": [
           {
@@ -18927,7 +19255,9 @@
         "extent": 0,
         "modifier": "public",
         "comments": [
-          ""
+          "Adds a Node at the end of the list.",
+          "",
+          "@param {&NodeType} The node to insert."
         ],
         "parameters": [
           {
@@ -18947,8 +19277,10 @@
         "extent": 0,
         "modifier": "public",
         "comments": [
+          "Adds a Node after another specified Node.",
           "",
-          "@param {&NodeType} The node to insert the new node after."
+          "@param {&NodeType} The node to insert the new node after.",
+          "@param {&NodeType} The new node to insert."
         ],
         "parameters": [
           {
@@ -18974,8 +19306,10 @@
         "extent": 0,
         "modifier": "public",
         "comments": [
+          "Removes a Node after another specified Node. Ensures the list is still",
           "linked.",
-          ""
+          "",
+          "@param {&NodeType} The node to insert the new node after."
         ],
         "parameters": [
           {
@@ -19006,6 +19340,10 @@
         "static": false,
         "extent": 0,
         "modifier": "public",
+        "comments": [
+          "Constructor",
+          "@param  {&NodeType} The first node this list is managing"
+        ],
         "parameters": [
           {
             "name": "poNode",
@@ -19031,7 +19369,10 @@
       {
         "name": "First",
         "type": "OpenEdge.Core.Collections.ListNode",
-        "modifier": "public"
+        "modifier": "public",
+        "comments": [
+          "The first node in this list"
+        ]
       }
     ],
     "tables": []
@@ -19063,10 +19404,12 @@
         "extent": 0,
         "modifier": "public",
         "comments": [
+          "Inserts the specified element at the specified position in this list.",
           "",
           "@param integer  The position at which to insert the object",
           "@param Object   The object to add",
-          "@return Logical Returns true if the operation succeeded"
+          "@return Logical Returns true if the operation succeeded",
+          "@throws Progress.Lang.SysError(18193)"
         ],
         "parameters": [
           {
@@ -19092,8 +19435,10 @@
         "extent": 0,
         "modifier": "public",
         "comments": [
+          "Appends the specified element to list",
           "",
-          "@param Object The element to add to the collection"
+          "@param Object The element to add to the collection",
+          "@return logical True if the operation succeeded."
         ],
         "parameters": [
           {
@@ -19113,7 +19458,9 @@
         "extent": 0,
         "modifier": "public",
         "comments": [
-          ""
+          "Appends an unknown value element to the list",
+          "",
+          "@return logical True if the operation succeeded."
         ],
         "parameters": []
       },
@@ -19126,11 +19473,13 @@
         "extent": 0,
         "modifier": "public",
         "comments": [
+          "Adds all of the input collection to the current list.",
           "Items from the input collection as added to the END of",
           "the current list.",
           "To prepend items, call AddAll(1, ICollection)",
           "",
-          "@param OpenEdge.Core.Collections.ICollection The collection to add."
+          "@param OpenEdge.Core.Collections.ICollection The collection to add.",
+          "@return logical TRUE if items were added (ie the input collection has at least one item)"
         ],
         "parameters": [
           {
@@ -19150,10 +19499,12 @@
         "extent": 0,
         "modifier": "public",
         "comments": [
+          "Adds all of the input collection to the current list, starting at the",
           "index given (ie the index passed is the first item)",
           "",
           "@param integer The index from which to add. Must be non-zero and positive",
-          "@param OpenEdge.Core.Collections.ICollection The collection to add"
+          "@param OpenEdge.Core.Collections.ICollection The collection to add",
+          "@return logical TRUE if items were added (ie the input collection has at least one item)"
         ],
         "parameters": [
           {
@@ -19179,8 +19530,10 @@
         "extent": 0,
         "modifier": "public",
         "comments": [
+          "Adds an array of elements to the collection",
           "",
-          "@param Object[] An array of elements to add to the collection"
+          "@param Object[] An array of elements to add to the collection",
+          "@return logical True if the operation succeeded."
         ],
         "parameters": [
           {
@@ -19200,9 +19553,11 @@
         "extent": 0,
         "modifier": "public",
         "comments": [
+          "Returns true if this list contains all of the elements of the",
           "specified collection.",
           "",
-          "@param OpenEdge.Core.Collections.ICollection The collection of obejcts to check"
+          "@param OpenEdge.Core.Collections.ICollection The collection of obejcts to check",
+          "@return logical True if all the elements match"
         ],
         "parameters": [
           {
@@ -19222,9 +19577,11 @@
         "extent": 0,
         "modifier": "public",
         "comments": [
+          "Check whether the collection contains at least one object",
           "that matches the passed in object.",
           "",
-          "@param Object The object"
+          "@param Object The object",
+          "@return logical Returns true if the object is in the collection"
         ],
         "parameters": [
           {
@@ -19244,8 +19601,10 @@
         "extent": 0,
         "modifier": "public",
         "comments": [
+          "Returns the contents of the collection as temp-table. This is a shallow",
           "copy of the collection - basically a new set of references is created.",
-          ""
+          "",
+          "@param output table-handle The collection as a temp-table"
         ],
         "parameters": [
           {
@@ -19265,9 +19624,11 @@
         "extent": 0,
         "modifier": "public",
         "comments": [
+          "Removes from this list all the elements that are contained in the",
           "specified collection (optional operation).",
           "",
-          "@param OpenEdge.Core.Collections.ICollection The collection to remove."
+          "@param OpenEdge.Core.Collections.ICollection The collection to remove.",
+          "@return logical True if the operation succeeded."
         ],
         "parameters": [
           {
@@ -19287,9 +19648,11 @@
         "extent": 0,
         "modifier": "public",
         "comments": [
+          "Retains only the elements in this list that are contained in the",
           "specified collection (optional operation).",
           "",
-          "@param OpenEdge.Core.Collections.ICollection The collection to retain"
+          "@param OpenEdge.Core.Collections.ICollection The collection to retain",
+          "@return Logical True if the object changed"
         ],
         "parameters": [
           {
@@ -19308,6 +19671,9 @@
         "static": false,
         "extent": 0,
         "modifier": "public",
+        "comments": [
+          "Removes all of the elements from this list"
+        ],
         "parameters": []
       },
       {
@@ -19319,7 +19685,9 @@
         "extent": -32767,
         "modifier": "public",
         "comments": [
-          ""
+          "Returns the contents of the collection as an array of objects.",
+          "",
+          "@return Object[] The collection returnes as an object array"
         ],
         "parameters": []
       },
@@ -19332,7 +19700,9 @@
         "extent": 0,
         "modifier": "public",
         "comments": [
-          ""
+          "Indicates whether this collection has any elements.",
+          "",
+          "@return logical True if the collection is empty."
         ],
         "parameters": []
       },
@@ -19345,8 +19715,10 @@
         "extent": 0,
         "modifier": "public",
         "comments": [
+          "Adds an array of elements to the collection",
           "",
-          "@param Object[] An array of elements to add to the collection"
+          "@param Object[] An array of elements to add to the collection",
+          "@return logical True if the operation succeeded."
         ],
         "parameters": [
           {
@@ -19406,9 +19778,11 @@
         "extent": 0,
         "modifier": "public",
         "comments": [
+          "Returns the index in this list of the first occurrence of the specified",
           "element, or 0 if this list does not contain this element.",
           "",
-          "@param Object   The object to check."
+          "@param Object   The object to check.",
+          "@return integer The index of the passed-in object"
         ],
         "parameters": [
           {
@@ -19448,9 +19822,11 @@
         "extent": 0,
         "modifier": "public",
         "comments": [
+          "Returns a list iterator of the elements in this list (in proper sequence),",
           "starting at the specified position in this list.",
           "",
-          "@param integer The starting position for the new iterator"
+          "@param integer The starting position for the new iterator",
+          "@return IListIterator The ordered iterator"
         ],
         "parameters": [
           {
@@ -19470,9 +19846,11 @@
         "extent": 0,
         "modifier": "public",
         "comments": [
+          "Returns the index in this list of the last occurrence of the",
           "specified element, or 0 if this list does not contain this element.",
           "",
-          "@param Object The object to check"
+          "@param Object The object to check",
+          "@return integer The index of the last occurrence of the object"
         ],
         "parameters": [
           {
@@ -19492,8 +19870,10 @@
         "extent": 0,
         "modifier": "public",
         "comments": [
+          "Removes the first occurrence in this list of the specified element",
           "",
-          "@param Object The"
+          "@param Object The",
+          "@return logical True if the operation succeded."
         ],
         "parameters": [
           {
@@ -19513,9 +19893,11 @@
         "extent": 0,
         "modifier": "public",
         "comments": [
+          "Removes an item at the given index",
           "",
           "@param integer The index to remove. Must be between 1 and the size of the List",
-          "@return Progress.Lang.Object The item that was removed."
+          "@return Progress.Lang.Object The item that was removed.",
+          "@throws Progress.Lang.SysError(18193)"
         ],
         "parameters": [
           {
@@ -19535,11 +19917,13 @@
         "extent": 0,
         "modifier": "public",
         "comments": [
+          "Replaces the element at the specified position in this list with the",
           "specified element",
           "",
           "@param integer The position to add",
           "@param Object The object to add to the List",
-          "@return Object The object that was replaced/removed from the List"
+          "@return Object The object that was replaced/removed from the List",
+          "@throws Progress.Lang.SysError(18193)"
         ],
         "parameters": [
           {
@@ -19631,7 +20015,10 @@
       {
         "name": "Size",
         "type": "I",
-        "modifier": "public"
+        "modifier": "public",
+        "comments": [
+          "Returns the number of elements in this list."
+        ]
       }
     ],
     "tables": []
@@ -19659,7 +20046,9 @@
         "extent": 0,
         "modifier": "public",
         "comments": [
-          ""
+          "Indicates whether there's a previous element.",
+          "",
+          "@return logical True if there is a previous element"
         ],
         "parameters": []
       },
@@ -19672,7 +20061,9 @@
         "extent": 0,
         "modifier": "public",
         "comments": [
-          ""
+          "Returns the previous element",
+          "",
+          "@return Object"
         ],
         "parameters": []
       },
@@ -19685,7 +20076,9 @@
         "extent": 0,
         "modifier": "public",
         "comments": [
-          ""
+          "Returns the index of the previous item.",
+          "",
+          "@return integer The index of the previous element"
         ],
         "parameters": []
       },
@@ -19698,7 +20091,9 @@
         "extent": 0,
         "modifier": "public",
         "comments": [
-          ""
+          "Returns the next elements' index.",
+          "",
+          "@return integer The index of the next element"
         ],
         "parameters": []
       },
@@ -19711,7 +20106,9 @@
         "extent": 0,
         "modifier": "public",
         "comments": [
-          ""
+          "Indicates whether there's another element",
+          "",
+          "@return Logical Trues if the iterator has another element"
         ],
         "parameters": []
       },
@@ -19724,8 +20121,10 @@
         "extent": 0,
         "modifier": "public",
         "comments": [
+          "Returns the next object in the iterator. Next being the next object",
           "at the iterator's current position.",
-          ""
+          "",
+          "@return Object The object at the 'next' position."
         ],
         "parameters": []
       },
@@ -19738,7 +20137,9 @@
         "extent": 0,
         "modifier": "public",
         "comments": [
-          ""
+          "Removes an entry from the iterator.",
+          "",
+          "@return logical True if the operation succeeeded."
         ],
         "parameters": []
       }
@@ -20035,7 +20436,9 @@
         "extent": 0,
         "modifier": "public",
         "comments": [
-          ""
+          "Removes the mappings for all key from this map if it is present (optional operation).",
+          "",
+          "@param ICollection A collection of keys to remove"
         ],
         "parameters": [
           {
@@ -20792,8 +21195,10 @@
         "extent": 0,
         "modifier": "public",
         "comments": [
+          "Adds an array of elements to the collection",
           "",
-          "@param Object[] An array of elements to add to the collection"
+          "@param Object[] An array of elements to add to the collection",
+          "@return logical True if the operation succeeded."
         ],
         "parameters": [
           {
@@ -20812,6 +21217,9 @@
         "static": false,
         "extent": 0,
         "modifier": "public",
+        "comments": [
+          "Removes all of the elements from this list"
+        ],
         "parameters": []
       },
       {
@@ -20823,9 +21231,11 @@
         "extent": 0,
         "modifier": "public",
         "comments": [
+          "Check whether the collection contains at least one object",
           "that matches the passed in object.",
           "",
-          "@param Object The object"
+          "@param Object The object",
+          "@return logical Returns true if the object is in the collection"
         ],
         "parameters": [
           {
@@ -20845,9 +21255,11 @@
         "extent": 0,
         "modifier": "public",
         "comments": [
+          "Returns true if this list contains all of the elements of the",
           "specified collection.",
           "",
-          "@param OpenEdge.Core.Collections.ICollection The collection of obejcts to check"
+          "@param OpenEdge.Core.Collections.ICollection The collection of obejcts to check",
+          "@return logical True if all the elements match"
         ],
         "parameters": [
           {
@@ -20867,7 +21279,9 @@
         "extent": 0,
         "modifier": "public",
         "comments": [
-          ""
+          "Appends an unknown value element to the set if not already present",
+          "",
+          "@return logical True if the operation succeeded."
         ],
         "parameters": []
       },
@@ -20880,8 +21294,10 @@
         "extent": 0,
         "modifier": "public",
         "comments": [
+          "Appends the specified element to the set if not already present",
           "",
-          "@param Object The element to add to the collection (may not be an unknown value)"
+          "@param Object The element to add to the collection (may not be an unknown value)",
+          "@return logical True if the operation succeeded."
         ],
         "parameters": [
           {
@@ -20901,11 +21317,13 @@
         "extent": 0,
         "modifier": "public",
         "comments": [
+          "Adds all of the input collection to the current list.",
           "Items from the input collection as added to the END of",
           "the current list.",
           "To prepend items, call AddAll(1, ICollection)",
           "",
-          "@param OpenEdge.Core.Collections.ICollection The collection to add."
+          "@param OpenEdge.Core.Collections.ICollection The collection to add.",
+          "@return logical TRUE if items were added (ie the input collection has at least one item)"
         ],
         "parameters": [
           {
@@ -20942,7 +21360,9 @@
         "extent": 0,
         "modifier": "public",
         "comments": [
-          ""
+          "Indicates whether this collection has any elements.",
+          "",
+          "@return logical True if the collection is empty."
         ],
         "parameters": []
       },
@@ -20965,8 +21385,10 @@
         "extent": 0,
         "modifier": "public",
         "comments": [
+          "Removes the occurrence in this Set of the specified element",
           "",
-          "@param Object The object to remove"
+          "@param Object The object to remove",
+          "@return logical True if the operation succeded."
         ],
         "parameters": [
           {
@@ -20986,9 +21408,11 @@
         "extent": 0,
         "modifier": "public",
         "comments": [
+          "Removes from this Set all the elements that are contained in the",
           "specified collection (optional operation).",
           "",
-          "@param OpenEdge.Core.Collections.ICollection The collection to remove."
+          "@param OpenEdge.Core.Collections.ICollection The collection to remove.",
+          "@return logical True if the operation succeeded."
         ],
         "parameters": [
           {
@@ -21008,11 +21432,13 @@
         "extent": 0,
         "modifier": "public",
         "comments": [
+          "Retains only the elements in this Set that are contained in the",
           "specified collection (optional operation).",
           "",
           "This method creates a UNION of the input collection and this Set.",
           "",
-          "@param OpenEdge.Core.Collections.ICollection The collection to retain"
+          "@param OpenEdge.Core.Collections.ICollection The collection to retain",
+          "@return Logical True if the object changed"
         ],
         "parameters": [
           {
@@ -21032,7 +21458,9 @@
         "extent": -32767,
         "modifier": "public",
         "comments": [
-          ""
+          "Returns the contents of the collection as an array of objects.",
+          "",
+          "@return Object[] The collection returnes as an object array"
         ],
         "parameters": []
       },
@@ -21045,8 +21473,10 @@
         "extent": 0,
         "modifier": "public",
         "comments": [
+          "Returns the contents of the collection as temp-table. This is a shallow",
           "copy of the collection - basically a new set of references is created.",
-          ""
+          "",
+          "@param output table-handle The collection as a temp-table"
         ],
         "parameters": [
           {
@@ -21092,7 +21522,10 @@
       {
         "name": "Size",
         "type": "I",
-        "modifier": "public"
+        "modifier": "public",
+        "comments": [
+          "Returns the number of elements in this list."
+        ]
       }
     ],
     "tables": []
@@ -21399,7 +21832,9 @@
         "type": "B",
         "modifier": "public",
         "comments": [
-          "but as of 10.2B performance is better when using logical variables."
+          "NOTE/ the expand/shrink behaviour could be handled with an enumeration,",
+          "but as of 10.2B performance is better when using logical variables.",
+          ""
         ]
       },
       {
@@ -21518,8 +21953,10 @@
         "extent": 0,
         "modifier": "public",
         "comments": [
+          "Add an object to the collection.",
           "",
-          "@param {&ValueType} The object to add to the collection"
+          "@param {&ValueType} The object to add to the collection",
+          "@return logical True if the operation succeeded."
         ],
         "parameters": [
           {
@@ -21539,8 +21976,10 @@
         "extent": 0,
         "modifier": "public",
         "comments": [
+          "Add an array of objects to the collection.",
           "",
-          "@param {&CollectionType}[] The array to add to the collection"
+          "@param {&CollectionType}[] The array to add to the collection",
+          "@return logical True if the operation succeeded."
         ],
         "parameters": [
           {
@@ -21560,8 +21999,10 @@
         "extent": 0,
         "modifier": "public",
         "comments": [
+          "Remove an object from the collection.",
           "",
-          "@param {&ValueType} The object to remove from the collection"
+          "@param {&ValueType} The object to remove from the collection",
+          "@return logical True if the operation succeeded."
         ],
         "parameters": [
           {
@@ -21581,8 +22022,10 @@
         "extent": 0,
         "modifier": "public",
         "comments": [
+          "Add a collection of objects to the collection.",
           "",
-          "@param {&CollectionType} The collection to add to the collection"
+          "@param {&CollectionType} The collection to add to the collection",
+          "@return logical True if the operation succeeded."
         ],
         "parameters": [
           {
@@ -21636,8 +22079,10 @@
         "extent": 0,
         "modifier": "public",
         "comments": [
+          "Determine whether an object is in the collection.",
           "",
-          "@param {&ValueType} The object to check in the collection"
+          "@param {&ValueType} The object to check in the collection",
+          "@return logical True if the operation succeeded."
         ],
         "parameters": [
           {
@@ -21667,8 +22112,10 @@
         "extent": 0,
         "modifier": "public",
         "comments": [
+          "Appends the specified element to list if not already present",
           "",
-          "@param longchar The element to add to the collection"
+          "@param longchar The element to add to the collection",
+          "@return logical True if the operation succeeded."
         ],
         "parameters": [
           {
@@ -21688,8 +22135,10 @@
         "extent": 0,
         "modifier": "public",
         "comments": [
+          "[SLOW: O(n)] Adds an array of elements to the collection.",
           "",
-          "@param longchar[] An array of elements to add to the collection"
+          "@param longchar[] An array of elements to add to the collection",
+          "@return logical True if the operation succeeded."
         ],
         "parameters": [
           {
@@ -21709,9 +22158,11 @@
         "extent": 0,
         "modifier": "public",
         "comments": [
+          "Check whether the colleciton contains at least one object",
           "that matches the passed in object.",
           "",
-          "@param Object The object"
+          "@param Object The object",
+          "@return logical Returns true if the object is in the collection"
         ],
         "parameters": [
           {
@@ -21731,8 +22182,10 @@
         "extent": 0,
         "modifier": "public",
         "comments": [
+          "Removes the first occurrence in this list of the specified element",
           "",
-          "@param Object The"
+          "@param Object The",
+          "@return logical True if the operation succeded."
         ],
         "parameters": [
           {
@@ -23222,11 +23675,13 @@
         "extent": 0,
         "modifier": "public",
         "comments": [
+          "This method changes a type description or 'mask' if it's an array to",
           "return the base datatype and the word Extent, otherwise it returns",
           "the datatype enetered.  This allows the user to find out if a particular",
           "datatype is an array or not through the isArray method.",
           "",
-          "@param DataTypeEnum The ABL data type"
+          "@param DataTypeEnum The ABL data type",
+          "@return Character The mask of the data type."
         ],
         "parameters": [
           {
@@ -23246,8 +23701,10 @@
         "extent": 0,
         "modifier": "public",
         "comments": [
+          "Check to see if the data type is a primitive datatype.",
           "",
-          "@param DataTypeEnum The ABL data type"
+          "@param DataTypeEnum The ABL data type",
+          "@return logical Is the datatype a primitive."
         ],
         "parameters": [
           {
@@ -23267,10 +23724,12 @@
         "extent": 0,
         "modifier": "public",
         "comments": [
+          "Check to see if the data type is an array so user knows how to handle extents.",
           "e.g. CharacterArray - Character is primitive, but the array type makes it so",
           "the user must handle the extents to get the character data.",
           "",
-          "@param DataTypeEnum The ABL data type"
+          "@param DataTypeEnum The ABL data type",
+          "@return logical Is the datatype an array."
         ],
         "parameters": [
           {
@@ -23290,12 +23749,14 @@
         "extent": 0,
         "modifier": "public",
         "comments": [
+          "Mapping from ABL data type to XML Schema supported data types. Taken from",
           "the Working With XML book from the documentation set.",
           "",
           "Note that the converse is not supported, since there are multiple ABL types",
           "that map to a single XML schema type.",
           "",
-          "@param DataTypeEnum The ABL data type"
+          "@param DataTypeEnum The ABL data type",
+          "@return character The XML data type."
         ],
         "parameters": [
           {
@@ -24674,7 +25135,9 @@
         "type": "OpenEdge.Core.EventArgs",
         "modifier": "public",
         "comments": [
-          "to pass nulls around (ie we can depend on there always being"
+          "A single instance of this class so that we don't have",
+          "to pass nulls around (ie we can depend on there always being",
+          "a value if we so desire)."
         ]
       }
     ],
@@ -24710,12 +25173,14 @@
         "extent": 0,
         "modifier": "public",
         "comments": [
+          "Returns a logical value indicating whether the folder can be created.",
           "",
           "If any of the parent folders are not directories or are not writable, then",
           "return FALSE.",
           "",
           "Otherwise return TRUE.",
-          ""
+          "",
+          "@return logical TRUE if the folder can be created, FALSE otherwise"
         ],
         "parameters": []
       },
@@ -24728,13 +25193,15 @@
         "extent": 0,
         "modifier": "public",
         "comments": [
+          "Returns a logical value indicating whether the file can be created.",
           "",
           "If the Name already exists (as any type), then FALSE is returned.",
           "If the Folder exists, and is either a FILE or not writable, then FALSE is returned.",
           "If the Folder does not exist, then return the value of the CanCreateFolder() method.",
           "",
           "Otherwise return TRUE.",
-          ""
+          "",
+          "@return logical TRUE if the file can be created, FALSE otherwise"
         ],
         "parameters": []
       },
@@ -24807,11 +25274,13 @@
         "extent": 0,
         "modifier": "public",
         "comments": [
+          "Returns the absolute path.",
           "",
           "If the path does not exist on this host, the unknown value is returned.",
           "For Windows, any short paths - like C:\\PROGRA~1 - are converted into their long paths - C:\\Program Files.",
           "Backslashes are converted to /",
-          ""
+          "",
+          "@return character An absolute (file system) representation of this path"
         ],
         "parameters": []
       },
@@ -24824,7 +25293,9 @@
         "extent": 0,
         "modifier": "public",
         "comments": [
-          ""
+          "Returns the absolute file name of this object, if the file exists. Resolved using FILE-INFO",
+          "",
+          "@param character An absolute path. If the file does not exist, or cannot be resolved, the unknown value is returned"
         ],
         "parameters": []
       },
@@ -24847,9 +25318,11 @@
         "extent": 0,
         "modifier": "public",
         "comments": [
+          "Returns the absolute path (folder) of this object, if it exists. Resolved using FILE-INFO.",
           "This may differ from the folder's AbsolutePath() when the file has a relative path, if the (relative) folder",
           "appears more than once in PROPATH.",
-          ""
+          "",
+          "@param character An absolute path. If the file does not exist, or cannot be resolved, the unknown value is returned"
         ],
         "parameters": []
       },
@@ -25009,8 +25482,10 @@
         "extent": 0,
         "modifier": "public",
         "comments": [
+          "Returns the absolute path. If the path does not exist on this host, or the file on this host is not",
           "the correct type, the unknown value is returned.",
-          ""
+          "",
+          "@return character An absolute (file system) representation of this path"
         ],
         "parameters": []
       },
@@ -25274,11 +25749,13 @@
         "extent": 0,
         "modifier": "public",
         "comments": [
+          "Returns the absolute path.",
           "",
           "If the path does not exist on this host, the unknown value is returned.",
           "For Windows, any short paths - like C:\\PROGRA~1 - are converted into their long paths - C:\\Program Files.",
           "Backslashes are are converted to /",
-          ""
+          "",
+          "@return character An absolute (file system) representation of this path"
         ],
         "parameters": []
       },
@@ -25922,6 +26399,7 @@
         "extent": 0,
         "modifier": "public",
         "comments": [
+          "Returns a formatted string representation of an IoMode, specific to",
           "the parameter type (ParamList, DYN-CALL etc).",
           "",
           "Defaults to a simple stringification of the enum.",
@@ -25929,7 +26407,8 @@
           "@param IOModeEnum The enumeration to format",
           "@param character The parameter type. Typically a type name (like Progress.Lang.ParameterList);",
           "if unknown or empty, the default format is used.",
-          "@return character A formated string value of the enumeration"
+          "@return character A formated string value of the enumeration",
+          "@throws AssertionFailedError Thrown when an invalid enum is passed in"
         ],
         "parameters": [
           {
@@ -27787,7 +28266,9 @@
         "extent": 0,
         "modifier": "public",
         "comments": [
-          ""
+          "Returns the pointer value of the current memptr.",
+          "",
+          "@param int64 The pointer to memory represented by this memptr"
         ],
         "parameters": []
       },
@@ -27799,6 +28280,10 @@
         "static": false,
         "extent": 0,
         "modifier": "public",
+        "comments": [
+          "Clears/resets the current memptr. Clears the memory and resets it to",
+          "its former size."
+        ],
         "parameters": []
       },
       {
@@ -27810,8 +28295,10 @@
         "extent": 0,
         "modifier": "public",
         "comments": [
+          "Returns a hash of the current contents of the memptr. This can be used",
           "for comparing memptr values quickly.",
-          ""
+          "",
+          "@return raw The hashed value of the memptr."
         ],
         "parameters": []
       },
@@ -27824,9 +28311,11 @@
         "extent": 0,
         "modifier": "public",
         "comments": [
+          "Returns a hash of the current contents of the memptr. This can be used",
           "for comparing memptr values quickly.",
           "",
-          "@param HashAlgorithmEnum The algorithm to use for the message"
+          "@param HashAlgorithmEnum The algorithm to use for the message",
+          "@return raw The hashed value of the memptr."
         ],
         "parameters": [
           {
@@ -27846,8 +28335,10 @@
         "extent": 0,
         "modifier": "public",
         "comments": [
+          "Returns a byte at the specified position",
           "",
-          "@param int64 The position at which to return the byte."
+          "@param int64 The position at which to return the byte.",
+          "@return integer The byte value at the current position"
         ],
         "parameters": [
           {
@@ -27867,9 +28358,11 @@
         "extent": 0,
         "modifier": "public",
         "comments": [
+          "Returns a string/character representation from a given start position,",
           "for the remainder of the data.",
           "",
-          "@param  int64 The start potision"
+          "@param  int64 The start potision",
+          "@return longchar The character/string data requested"
         ],
         "parameters": [
           {
@@ -27889,10 +28382,12 @@
         "extent": 0,
         "modifier": "public",
         "comments": [
+          "Returns a string/character representation a particular number of bytes,",
           "from a given start position.",
           "",
           "@param  int64 The start potision",
-          "@param  int64 The size of the data (in bytes) to return"
+          "@param  int64 The size of the data (in bytes) to return",
+          "@return longchar The character/string data requested"
         ],
         "parameters": [
           {
@@ -27918,11 +28413,13 @@
         "extent": 0,
         "modifier": "public",
         "comments": [
+          "Returns a string/character representation a particular number of bytes,",
           "from a given start position.",
           "",
           "@param  int64 The start potision",
           "@param  int64 The size of the data (in bytes) to return",
-          "@param  character The target codepage for the character data"
+          "@param  character The target codepage for the character data",
+          "@return longchar The character/string data requested"
         ],
         "parameters": [
           {
@@ -27954,12 +28451,14 @@
         "extent": 0,
         "modifier": "public",
         "comments": [
+          "Returns a string/character representation a particular number of bytes,",
           "from a given start position.",
           "",
           "@param  int64 The start potision",
           "@param  int64 The size of the data (in bytes) to return",
           "@param  character The source codepage for the character data",
-          "@param  character The target codepage for the character data"
+          "@param  character The target codepage for the character data",
+          "@return longchar The character/string data requested"
         ],
         "parameters": [
           {
@@ -27997,9 +28496,11 @@
         "extent": 0,
         "modifier": "public",
         "comments": [
+          "Returns a Memptr instance containing the specified number of bytes,",
           "starting at the current Position.",
           "",
-          "@param int64 The number of bytes to return"
+          "@param int64 The number of bytes to return",
+          "@return Memptr The complete data"
         ],
         "parameters": [
           {
@@ -28019,10 +28520,12 @@
         "extent": 0,
         "modifier": "public",
         "comments": [
+          "Returns a Memptr instance containing the specified number of bytes,",
           "starting at the specified postition.",
           "",
           "@param int64 The starting position",
-          "@param int64 The number of bytes to return"
+          "@param int64 The number of bytes to return",
+          "@return Memptr The complete bucket data"
         ],
         "parameters": [
           {
@@ -28048,9 +28551,11 @@
         "extent": 0,
         "modifier": "public",
         "comments": [
+          "Copies all of the bytes from a memptr into this memptr. The",
           "caller is responsible for cleaning up the memptr.",
           "",
-          "@param int64 The pointer to memory represented by a memptr (via get-pointer-value)."
+          "@param int64 The pointer to memory represented by a memptr (via get-pointer-value).",
+          "@param int64 The size of the memptr represented by the pointer value."
         ],
         "parameters": [
           {
@@ -28076,8 +28581,10 @@
         "extent": 0,
         "modifier": "public",
         "comments": [
+          "Copies all of the bytes from a memptr (primitive) into this bucket. The",
           "caller is responsible for cleaning up the memptr.",
-          ""
+          "",
+          "@param memptr The memptr containing the data."
         ],
         "parameters": [
           {
@@ -28097,7 +28604,9 @@
         "extent": 0,
         "modifier": "public",
         "comments": [
-          ""
+          "Copies all of the bytes from a raw into this memptr.",
+          "",
+          "@param raw The raw variable containing the source data"
         ],
         "parameters": [
           {
@@ -28116,6 +28625,10 @@
         "static": false,
         "extent": 0,
         "modifier": "public",
+        "comments": [
+          "Debug/dump of the contents of this object on a per-byte basic. COPY-LOB",
+          "can also be used for debug purposes (COPY-LOB objMemptr:Value TO FILE)."
+        ],
         "parameters": []
       },
       {
@@ -28193,8 +28706,10 @@
         "extent": 0,
         "modifier": "public",
         "comments": [
+          "Constructor.",
           "",
-          "@param int64 The pointer to memory represented by a memptr (via get-pointer-value)."
+          "@param int64 The pointer to memory represented by a memptr (via get-pointer-value).",
+          "@param int64 The size of the memptr represented by the pointer value."
         ],
         "parameters": [
           {
@@ -28220,7 +28735,9 @@
         "extent": 0,
         "modifier": "public",
         "comments": [
-          ""
+          "Constructor.",
+          "",
+          "@param int64 The size of the memptr to be created."
         ],
         "parameters": [
           {
@@ -28239,6 +28756,9 @@
         "static": false,
         "extent": 0,
         "modifier": "public",
+        "comments": [
+          "Deep copy/clone of the input memptr. Caller is responsible for cleanup."
+        ],
         "parameters": [
           {
             "name": "pmValue",
@@ -28256,6 +28776,9 @@
         "static": false,
         "extent": 0,
         "modifier": "public",
+        "comments": [
+          "Deep copy/clone of the input memptr."
+        ],
         "parameters": [
           {
             "name": "prValue",
@@ -28281,22 +28804,35 @@
       {
         "name": "AutoDestroy",
         "type": "B",
-        "modifier": "public"
+        "modifier": "public",
+        "comments": [
+          "Indicates whether the memptr will be destroyed/cleared when this object",
+          "is destroyed. Default is TRUE."
+        ]
       },
       {
         "name": "ExternalAllocation",
         "type": "B",
-        "modifier": "public"
+        "modifier": "public",
+        "comments": [
+          "indicates whether the memory is being managed by"
+        ]
       },
       {
         "name": "Value",
         "type": "M",
-        "modifier": "public"
+        "modifier": "public",
+        "comments": [
+          "A public representation of the memptr."
+        ]
       },
       {
         "name": "Size",
         "type": "64",
-        "modifier": "public"
+        "modifier": "public",
+        "comments": [
+          "The size of the current memptr"
+        ]
       },
       {
         "name": "PointerValue",
@@ -28306,7 +28842,10 @@
       {
         "name": "Empty",
         "type": "OpenEdge.Core.Memptr",
-        "modifier": "public"
+        "modifier": "public",
+        "comments": [
+          "Returns a new, empty/null Memptr"
+        ]
       }
     ],
     "tables": []
@@ -29436,6 +29975,9 @@
         "static": false,
         "extent": 0,
         "modifier": "protected",
+        "comments": [
+          "Use this method for setting initial or default values, or other similar actions"
+        ],
         "parameters": []
       },
       {
@@ -29447,8 +29989,10 @@
         "extent": 0,
         "modifier": "public",
         "comments": [
+          "Returns the Options as a formatted string for use by the server to connect.",
           "This may be the the ABL CONNECT statement or some other parameter.",
-          ""
+          "",
+          "@return character A useable string of connection parameters."
         ],
         "parameters": []
       },
@@ -29461,10 +30005,12 @@
         "extent": 0,
         "modifier": "public",
         "comments": [
+          "Returns the Options as a formatted string for use by the server to connect.",
           "This may be the the ABL CONNECT statement or some other parameter.",
           "",
           "@param character The format mask to use. Overrides the mask",
-          "specified by the property."
+          "specified by the property.",
+          "@return character A useable string of connection parameters."
         ],
         "parameters": [
           {
@@ -29484,10 +30030,12 @@
         "extent": 0,
         "modifier": "public",
         "comments": [
+          "Returns the Options as a formatted string for use by the server to connect.",
           "This may be the the ABL CONNECT statement or some other parameter.",
           "",
           "@param FormatMaskEnum The format mask to use. Overrides the mask",
-          "specified by the property."
+          "specified by the property.",
+          "@return character A useable string of connection parameters."
         ],
         "parameters": [
           {
@@ -29507,11 +30055,13 @@
         "extent": 0,
         "modifier": "public",
         "comments": [
+          "Returns the Options as a formatted string for use by the server to connect.",
           "This may be the the ABL CONNECT statement or some other parameter.",
           "",
           "@param JsonObject Options in JSON format.",
           "@param character The format mask to use.",
-          ""
+          "",
+          "@return character A useable string of connection parameters."
         ],
         "parameters": [
           {
@@ -29537,10 +30087,12 @@
         "extent": 0,
         "modifier": "private",
         "comments": [
+          "Shadow constructor for this class. Used instead of a real constructor since some transformations",
           "have to happen before its called, and since a constructor must be invoked first via SUPER or THIS-OBJECT,",
           "there's no room for those transformations.",
           "",
-          "@param JsonObject     The options in JSON form"
+          "@param JsonObject     The options in JSON form",
+          "@param FormatMaskEnum The Format mask to use for this connection."
         ],
         "parameters": [
           {
@@ -29621,7 +30173,10 @@
       {
         "name": "Options",
         "type": "Progress.Json.ObjectModel.JsonObject",
-        "modifier": "protected"
+        "modifier": "protected",
+        "comments": [
+          "A set of options for a Server Connection"
+        ]
       },
       {
         "name": "ResolvedOptions",
@@ -29633,7 +30188,9 @@
         "type": "OpenEdge.Core.ServerConnection.FormatMaskEnum",
         "modifier": "public",
         "comments": [
-          "the ABL SUBSTITUTE function. It can include up to 9 substitutions (&1-&9)"
+          "The FormatMask property contains a mask to be used together with",
+          "the ABL SUBSTITUTE function. It can include up to 9 substitutions (&1-&9)",
+          "and should also include any key/value pair separators (space, usually)."
         ]
       }
     ],
@@ -29761,8 +30318,10 @@
         "extent": 0,
         "modifier": "public",
         "comments": [
+          "Returns an actual format mask for an enumeration",
           "",
-          "@param FormatMaskEnum The format mask type to return the mask for"
+          "@param FormatMaskEnum The format mask type to return the mask for",
+          "@return character The format mask"
         ],
         "parameters": [
           {
@@ -29820,8 +30379,10 @@
         "extent": 0,
         "modifier": "public",
         "comments": [
+          "Returns the Options as a formatted string for use by the server to connect.",
           "This may be the the ABL CONNECT statement or some other parameter.",
-          ""
+          "",
+          "@return character A useable string of connection parameters."
         ],
         "parameters": []
       },
@@ -29834,10 +30395,12 @@
         "extent": 0,
         "modifier": "public",
         "comments": [
+          "Returns the Options as a formatted string for use by the server to connect.",
           "This may be the the ABL CONNECT statement or some other parameter.",
           "",
           "@param character The format mask to use. Typically overrides the mask",
-          "specified by the property."
+          "specified by the property.",
+          "@return character A useable string of connection parameters."
         ],
         "parameters": [
           {
@@ -29857,10 +30420,12 @@
         "extent": 0,
         "modifier": "public",
         "comments": [
+          "Returns the Options as a formatted string for use by the server to connect.",
           "This may be the the ABL CONNECT statement or some other parameter.",
           "",
           "@param FormatMaskEnum The format mask to use. Overrides the mask",
-          "specified by the property."
+          "specified by the property.",
+          "@return character A useable string of connection parameters."
         ],
         "parameters": [
           {
@@ -29880,7 +30445,9 @@
         "type": "OpenEdge.Core.ServerConnection.FormatMaskEnum",
         "modifier": "public",
         "comments": [
-          "the ABL SUBSTITUTE function. It can include up to 9 substitutions (&1-&9)"
+          "The FormatMask property contains a mask to be used together with",
+          "the ABL SUBSTITUTE function. It can include up to 9 substitutions (&1-&9)",
+          "and should also include any key/value pair separators (space, usually)."
         ]
       }
     ],
@@ -29906,7 +30473,9 @@
         "extent": 0,
         "modifier": "public",
         "comments": [
-          "from the Connect/Disconnect pair of methods so that one server can"
+          "Creates a server object (ie this-object:Server). This is separated",
+          "from the Connect/Disconnect pair of methods so that one server can",
+          "be connected and disconnected multiple time."
         ],
         "parameters": []
       },
@@ -29919,7 +30488,9 @@
         "extent": 0,
         "modifier": "public",
         "comments": [
-          "from the Connect/Disconnect pair of methods so that one server can"
+          "Destroys the server object (ie this-object:Server). This is separated",
+          "from the Connect/Disconnect pair of methods so that one server can",
+          "be connected and disconnected multiple time."
         ],
         "parameters": []
       },
@@ -29931,6 +30502,9 @@
         "static": false,
         "extent": 0,
         "modifier": "public",
+        "comments": [
+          "Connect to the server specified, based on the ConnectionParameters"
+        ],
         "parameters": []
       },
       {
@@ -29941,6 +30515,9 @@
         "static": false,
         "extent": 0,
         "modifier": "public",
+        "comments": [
+          "Disconnect from the server, if connected"
+        ],
         "parameters": []
       }
     ],
@@ -29952,18 +30529,26 @@
         "type": "Progress.Lang.Object",
         "modifier": "public",
         "comments": [
-          "(since AppServers have HANDLEs, BPMServers have IBizLogicAPI and databases none.The Object"
+          "A reference to the actual server. The type of this property depends on the server type",
+          "(since AppServers have HANDLEs, BPMServers have IBizLogicAPI and databases none.The Object",
+          "acts as a wrapper for handle-based servers"
         ]
       },
       {
         "name": "ConnectionParameters",
         "type": "OpenEdge.Core.ServerConnection.IConnectionParameters",
-        "modifier": "public"
+        "modifier": "public",
+        "comments": [
+          "Parameters for this connection"
+        ]
       },
       {
         "name": "Connected",
         "type": "B",
-        "modifier": "public"
+        "modifier": "public",
+        "comments": [
+          "Returns true if the server is valid and connected. False otherwise"
+        ]
       }
     ],
     "tables": []
@@ -29998,9 +30583,11 @@
         "extent": 0,
         "modifier": "public",
         "comments": [
+          "Returns the Options as a formatted string for use by the server to connect.",
           "This may be the the ABL CONNECT statement or some other parameter.",
           "",
-          "@param character The format mask to use. This value is IGNORED for this class."
+          "@param character The format mask to use. This value is IGNORED for this class.",
+          "@return character A useable string of connection parameters."
         ],
         "parameters": []
       }
@@ -30066,6 +30653,9 @@
         "static": false,
         "extent": 0,
         "modifier": "public",
+        "comments": [
+          "Connect to the server specified, based on the ConnectionParameters"
+        ],
         "parameters": []
       },
       {
@@ -30076,6 +30666,9 @@
         "static": false,
         "extent": 0,
         "modifier": "public",
+        "comments": [
+          "Disconnect from the server, if connected"
+        ],
         "parameters": []
       },
       {
@@ -30087,7 +30680,9 @@
         "extent": 0,
         "modifier": "public",
         "comments": [
-          "from the Connect/Disconnect pair of methods so that one server can"
+          "Creates a server object (ie this-object:Server). This is separated",
+          "from the Connect/Disconnect pair of methods so that one server can",
+          "be connected and disconnected multiple time."
         ],
         "parameters": []
       },
@@ -30100,7 +30695,9 @@
         "extent": 0,
         "modifier": "public",
         "comments": [
-          "from the Connect/Disconnect pair of methods so that one server can"
+          "Destroys the server object (ie this-object:Server). This is separated",
+          "from the Connect/Disconnect pair of methods so that one server can",
+          "be connected and disconnected multiple time."
         ],
         "parameters": []
       }
@@ -30131,18 +30728,26 @@
         "type": "Progress.Lang.Object",
         "modifier": "public",
         "comments": [
-          "(since AppServers have HANDLEs, BPMServers have IBizLogicAPI and databases none. The Object"
+          "A reference to the actual server. The type of this property depends on the server type",
+          "(since AppServers have HANDLEs, BPMServers have IBizLogicAPI and databases none. The Object",
+          "acts as a wrapper for handle-based servers"
         ]
       },
       {
         "name": "ConnectionParameters",
         "type": "OpenEdge.Core.ServerConnection.IConnectionParameters",
-        "modifier": "public"
+        "modifier": "public",
+        "comments": [
+          "Parameters for this connection"
+        ]
       },
       {
         "name": "Connected",
         "type": "B",
-        "modifier": "public"
+        "modifier": "public",
+        "comments": [
+          "Returns true if the server is valid and connected. False otherwise"
+        ]
       },
       {
         "name": "ServiceName",
@@ -30192,8 +30797,10 @@
         "extent": 0,
         "modifier": "public",
         "comments": [
+          "Returns the Options as a formatted string for use by the server to connect.",
           "This may be the the ABL CONNECT statement or some other parameter.",
-          ""
+          "",
+          "@return character A useable string of connection parameters."
         ],
         "parameters": []
       }
@@ -30239,17 +30846,26 @@
       {
         "name": "ServiceName",
         "type": "C",
-        "modifier": "public"
+        "modifier": "public",
+        "comments": [
+          "The name of the WebService"
+        ]
       },
       {
         "name": "PortName",
         "type": "C",
-        "modifier": "public"
+        "modifier": "public",
+        "comments": [
+          "The name of the (default) Port"
+        ]
       },
       {
         "name": "Operation",
         "type": "C",
-        "modifier": "public"
+        "modifier": "public",
+        "comments": [
+          "The name of the (default) Operation"
+        ]
       }
     ],
     "tables": []
@@ -30274,10 +30890,12 @@
         "extent": 0,
         "modifier": "public",
         "comments": [
+          "Returns the first running persistent procedure instance found",
           "for a given name.",
           "",
           "@param character The (relative) path name for a procedure.",
-          "@return handle The handle to that procedure, if any. Unknown value if"
+          "@return handle The handle to that procedure, if any. Unknown value if",
+          "there's no running instance of that name."
         ],
         "parameters": [
           {
@@ -30297,12 +30915,14 @@
         "extent": 0,
         "modifier": "public",
         "comments": [
+          "Returns all the running persistent procedure instances found",
           "for a given name.",
           "",
           "@param character The (relative) path name for a procedure.",
           "@return handle An array of handles to that procedure, if any.",
           "If there's no running instance of that name, then",
-          "the array has an extent of 1 (one) which contains the"
+          "the array has an extent of 1 (one) which contains the",
+          "unknown value."
         ],
         "parameters": [
           {
@@ -30322,6 +30942,7 @@
         "extent": 0,
         "modifier": "public",
         "comments": [
+          "Resolves a weak reference into an object instance. A weak reference is an int64",
           "representation of an object reference. This method is analogous to the WIDGET-HANDLE()",
           "function.",
           "",
@@ -30329,7 +30950,8 @@
           "Performance of ResolveWeakReference() will probably suck.",
           "An ABL statement \"OBJECT-REFERENCE(int)\" would entirely replace this method.",
           "@param int64 A weak reference to an object.",
-          "@return Object The object instance corresponding to that reference. The unknown value/null"
+          "@return Object The object instance corresponding to that reference. The unknown value/null",
+          "is returned if the referecen cannot be resolved."
         ],
         "parameters": [
           {
@@ -30349,9 +30971,11 @@
         "extent": 0,
         "modifier": "public",
         "comments": [
+          "Returns the first object instance found that is of the type given.",
           "",
           "@param Class The type. This can be a class or an interface.",
-          "@return Object The reference to that type, if any. Unknown value if"
+          "@return Object The reference to that type, if any. Unknown value if",
+          "there's no running instance of that name."
         ],
         "parameters": [
           {
@@ -30371,9 +30995,11 @@
         "extent": 0,
         "modifier": "public",
         "comments": [
+          "Returns all the object instances found that are of the type given.",
           "",
           "@param Class The type. This can be a class or an interface.",
-          "@return Object The reference to that type, if any. Unknown value if"
+          "@return Object The reference to that type, if any. Unknown value if",
+          "there's no running instance of that name."
         ],
         "parameters": [
           {
@@ -30534,6 +31160,9 @@
         "static": false,
         "extent": 0,
         "modifier": "public",
+        "comments": [
+          "Trims whitespace off the contained string"
+        ],
         "parameters": []
       },
       {
@@ -30545,7 +31174,9 @@
         "extent": 0,
         "modifier": "public",
         "comments": [
-          ""
+          "Trims the specified character off the contained string",
+          "",
+          "@param character The non-null character to trim"
         ],
         "parameters": [
           {
@@ -30602,9 +31233,11 @@
         "extent": 0,
         "modifier": "public",
         "comments": [
+          "Splits the value of this string into an array based on",
           "a specified delimiter",
           "",
-          "@param character A delimter used to split the string"
+          "@param character A delimter used to split the string",
+          "@return Array  An array object of strings"
         ],
         "parameters": [
           {
@@ -30624,9 +31257,11 @@
         "extent": 0,
         "modifier": "public",
         "comments": [
+          "Splits the value of this string into an array based on",
           "multiple delimiters from the input character extent array.",
           "",
-          "@param character[] A character extent that holds multiple delimters used to split the string"
+          "@param character[] A character extent that holds multiple delimters used to split the string",
+          "@return Array  An array object of strings"
         ],
         "parameters": [
           {
@@ -30646,8 +31281,10 @@
         "extent": 0,
         "modifier": "public",
         "comments": [
+          "Splits the value of this string into an array based on",
           "a default delimiter",
-          ""
+          "",
+          "@return Array  An array object of strings"
         ],
         "parameters": []
       },
@@ -30660,9 +31297,11 @@
         "extent": 0,
         "modifier": "public",
         "comments": [
+          "Splits the value of this string into an array using",
           "a default delmiter",
           "",
-          "@param OpenEdge.Core.String A value to split"
+          "@param OpenEdge.Core.String A value to split",
+          "@return Array  An array object of strings"
         ],
         "parameters": [
           {
@@ -30682,13 +31321,15 @@
         "extent": 0,
         "modifier": "public",
         "comments": [
+          "Splits the value of this string into an array using",
           "a specified delmiter",
           "",
           "If the delimiter does not appear in the string, and the string is not unknown,",
           "then the array has an extent of 1 and contains the string.",
           "",
           "@param OpenEdge.Core.String A value to split",
-          "@param character A delimter used to split the string"
+          "@param character A delimter used to split the string",
+          "@return Array  An array object of strings"
         ],
         "parameters": [
           {
@@ -30714,6 +31355,7 @@
         "extent": 0,
         "modifier": "public",
         "comments": [
+          "Splits the value of this string object into an array using",
           "multiple specified delimiters.",
           "",
           "If all the delimiters in the input character extent do not appear in the string,",
@@ -30721,7 +31363,8 @@
           "contains the String.",
           "",
           "@param OpenEdge.Core.String A value to split",
-          "@param character[] A character extent with mulitple delimiters used to split the string"
+          "@param character[] A character extent with mulitple delimiters used to split the string",
+          "@return Array  An array object of strings"
         ],
         "parameters": [
           {
@@ -30747,9 +31390,11 @@
         "extent": -32767,
         "modifier": "public",
         "comments": [
+          "Splits the value of this string into an array using",
           "a default delmiter",
           "",
-          "@param longchar A value to split"
+          "@param longchar A value to split",
+          "@return character[] An array of strings"
         ],
         "parameters": [
           {
@@ -30769,13 +31414,15 @@
         "extent": -32767,
         "modifier": "public",
         "comments": [
+          "Splits the value of this string into an array using",
           "a specified delimiter.",
           "",
           "If the delimiter does not appear in the string, and the string is not unknown,",
           "then the array has an extent of 1 and contains the string.",
           "",
           "@param longchar A value to split",
-          "@param character A delimter used to split the string"
+          "@param character A delimter used to split the string",
+          "@return character[] An array of strings"
         ],
         "parameters": [
           {
@@ -30801,6 +31448,7 @@
         "extent": -32767,
         "modifier": "public",
         "comments": [
+          "Splits the value of this string into a character extent using",
           "multiple specified delimiters.",
           "",
           "If all the delimiters in the input character extent do not appear in the longchar var,",
@@ -30808,7 +31456,8 @@
           "and contains the longchar in character[1].",
           "",
           "@param longchar A value to split",
-          "@param character[] A character extent with mulitple delimiters used to split the string"
+          "@param character[] A character extent with mulitple delimiters used to split the string",
+          "@return character[] An extent array of longchar values"
         ],
         "parameters": [
           {
@@ -30834,9 +31483,11 @@
         "extent": 0,
         "modifier": "public",
         "comments": [
+          "Joins an array's contents into a delimited string",
           "",
           "@param Array An array object containing of OpenEdge.Core.String objects",
-          "@param character The delimiter used to join them"
+          "@param character The delimiter used to join them",
+          "@return OpenEdge.Core.String A single, delimited string object"
         ],
         "parameters": [
           {
@@ -30862,9 +31513,11 @@
         "extent": 0,
         "modifier": "public",
         "comments": [
+          "Joins an array's contents into a delimited string",
           "",
           "@param OpenEdge.Core.String[] An array of OpenEdge.Core.String objects to join",
-          "@param character The delimiter used to join them"
+          "@param character The delimiter used to join them",
+          "@return OpenEdge.Core.String A single, delimited string object"
         ],
         "parameters": [
           {
@@ -30890,9 +31543,11 @@
         "extent": 0,
         "modifier": "public",
         "comments": [
+          "Joins an array's contents into a delimited string",
           "",
           "@param character[] An array of character values to join",
-          "@param character The delimiter used to join them"
+          "@param character The delimiter used to join them",
+          "@return longchar A single, delimited string"
         ],
         "parameters": [
           {
@@ -30918,7 +31573,9 @@
         "extent": 0,
         "modifier": "public",
         "comments": [
-          ""
+          "Returns a string value for this object",
+          "",
+          "@return character A string representation of this object. May be truncated."
         ],
         "parameters": []
       },
@@ -31168,12 +31825,19 @@
       {
         "name": "Value",
         "type": "LC",
-        "modifier": "public"
+        "modifier": "public",
+        "comments": [
+          "Contains the actual string value. Marked as NON-SERIALIZABLE since the actual value is derived,",
+          "and stored in the private mUTF8Value variable"
+        ]
       },
       {
         "name": "Size",
         "type": "64",
-        "modifier": "public"
+        "modifier": "public",
+        "comments": [
+          "Returns the size of the contained string, in characters"
+        ]
       }
     ],
     "tables": []
@@ -31216,7 +31880,10 @@
       {
         "name": "Value",
         "type": "LC",
-        "modifier": "public"
+        "modifier": "public",
+        "comments": [
+          "(mandatory) The LONGCHAR array held by this holder class"
+        ]
       }
     ],
     "tables": []
@@ -31384,11 +32051,13 @@
         "extent": 0,
         "modifier": "protected",
         "comments": [
+          "Registers an error's texts. Works on last-in-wins basis,",
           "so if an error text is registered multiple times, the last",
           "one wins.",
           "",
           "@param Progress.Lang.Class The application error type",
-          "@param character The short message"
+          "@param character The short message",
+          "@param lonchar The complete, long error description"
         ],
         "parameters": [
           {
@@ -31430,8 +32099,10 @@
         "extent": 0,
         "modifier": "public",
         "comments": [
+          "Returns the resolved/substituted short message for the error. Note",
           "that this excludes the inner error, if any.",
-          ""
+          "",
+          "@return character A resolve string version of the short message."
         ],
         "parameters": []
       },
@@ -31444,8 +32115,10 @@
         "extent": 0,
         "modifier": "public",
         "comments": [
+          "Returns the resolved/substituted message text for the error. Note",
           "that this excludes the inner error, if any.",
-          ""
+          "",
+          "@return longchar A resolved version of the error message."
         ],
         "parameters": []
       },
@@ -32217,7 +32890,9 @@
         "extent": 0,
         "modifier": "public",
         "comments": [
-          ""
+          "Converts an ABL datetime into a correct ISO date.",
+          "",
+          "@return character An ISO date."
         ],
         "parameters": []
       },
@@ -32230,8 +32905,10 @@
         "extent": 0,
         "modifier": "public",
         "comments": [
+          "Converts an ABL datetime into a correct ISO date.",
           "",
-          "@param date The date value to convert"
+          "@param date The date value to convert",
+          "@return character An ISO date."
         ],
         "parameters": [
           {
@@ -32251,8 +32928,10 @@
         "extent": 0,
         "modifier": "public",
         "comments": [
+          "Converts an ABL datetime into a correct ISO date.",
           "",
-          "@param datetime The date value to convert"
+          "@param datetime The date value to convert",
+          "@return character An ISO date."
         ],
         "parameters": [
           {
@@ -32272,8 +32951,10 @@
         "extent": 0,
         "modifier": "public",
         "comments": [
+          "Converts an ABL datetime into a correct ISO date.",
           "",
-          "@param datetime-tz The date value to convert"
+          "@param datetime-tz The date value to convert",
+          "@return character An ISO date."
         ],
         "parameters": [
           {
@@ -32293,10 +32974,12 @@
         "extent": 0,
         "modifier": "public",
         "comments": [
+          "Converts an ISO date into an ABL DATE. The ISO-DATE()",
           "requires the session's date format to be YMD before",
           "performing the conversion; this method wraps that.",
           "",
-          "@param character An ISO date"
+          "@param character An ISO date",
+          "@return datetime-tz The date value to convert."
         ],
         "parameters": [
           {
@@ -32316,10 +32999,12 @@
         "extent": 0,
         "modifier": "public",
         "comments": [
+          "Converts an ISO date into an ABL DATETIME. The ISO-DATE()",
           "requires the session's date format to be YMD before",
           "performing the conversion; this method wraps that.",
           "",
-          "@param character An ISO date"
+          "@param character An ISO date",
+          "@return datetime The date value to convert."
         ],
         "parameters": [
           {
@@ -32339,10 +33024,12 @@
         "extent": 0,
         "modifier": "public",
         "comments": [
+          "Converts an ISO date into an ABL DATETIME-TZ. The ISO-DATE()",
           "requires the session's date format to be YMD before",
           "performing the conversion; this method wraps that.",
           "",
-          "@param character An ISO date"
+          "@param character An ISO date",
+          "@return datetime-tz The date value to convert."
         ],
         "parameters": [
           {
@@ -32379,6 +33066,7 @@
         "extent": 0,
         "modifier": "public",
         "comments": [
+          "Converts an HTTP 'sane date' into an ABL DATETIME-TZ. The HTTP date is",
           "defined at http://www.w3.org/Protocols/rfc2616/rfc2616-sec3.html#sec3.3",
           "",
           "One of the following formats will be used:",
@@ -32386,7 +33074,8 @@
           "Sunday, 06-Nov-94 08:49:37 GMT ; RFC 850, obsoleted by RFC 1036",
           "Sun Nov  6 08:49:37 1994       ; ANSI C's asctime() format",
           "",
-          "@param character An ISO date"
+          "@param character An ISO date",
+          "@return datetime-tz The date value to convert."
         ],
         "parameters": [
           {
@@ -32406,12 +33095,14 @@
         "extent": 0,
         "modifier": "public",
         "comments": [
+          "Converts an ABL date into an HTTP 'sane date', according to RFC 822, as",
           "defined at http://www.w3.org/Protocols/rfc2616/rfc2616-sec3.html#sec3.3",
           "",
           "One of the following formats will be used:",
           "Sun, 06 Nov 1994 08:49:37 GMT  ; RFC 822, updated by RFC 1123",
           "",
-          "@param character An ISO date"
+          "@param character An ISO date",
+          "@return datetime-tz The date value to convert."
         ],
         "parameters": [
           {
@@ -32431,11 +33122,13 @@
         "extent": 0,
         "modifier": "public",
         "comments": [
+          "Converts this TimeStamp into an HTTP 'sane date', according to RFC 822, as",
           "defined at http://www.w3.org/Protocols/rfc2616/rfc2616-sec3.html#sec3.3",
           "",
           "One of the following formats will be used:",
           "Sun, 06 Nov 1994 08:49:37 GMT  ; RFC 822, updated by RFC 1123",
-          ""
+          "",
+          "@return datetime-tz The date value to convert."
         ],
         "parameters": []
       },
@@ -33069,9 +33762,11 @@
         "extent": 0,
         "modifier": "public",
         "comments": [
+          "Registers type for a key",
           "",
           "@param Progress.Lang.Class The key of the type to register",
-          "@param Class The type of the writer used to process that type"
+          "@param Class The type of the writer used to process that type",
+          "@return logical True if the type was previously registered"
         ],
         "parameters": [
           {
@@ -33097,9 +33792,11 @@
         "extent": 0,
         "modifier": "public",
         "comments": [
+          "Registers type for a key",
           "",
           "@param Progress.Lang.Enum The key of the type to register",
-          "@param Class The type of the writer used to process that type"
+          "@param Class The type of the writer used to process that type",
+          "@return logical True if the type was previously registered"
         ],
         "parameters": [
           {
@@ -33125,9 +33822,11 @@
         "extent": 0,
         "modifier": "public",
         "comments": [
+          "Registers type for a key",
           "",
           "@param character The key of the type to register",
-          "@param character The type of the writer used to process that type"
+          "@param character The type of the writer used to process that type",
+          "@return logical True if the type was previously registered"
         ],
         "parameters": [
           {
@@ -33153,9 +33852,11 @@
         "extent": 0,
         "modifier": "public",
         "comments": [
+          "Registers type for a key",
           "",
           "@param character The key of the type to register",
-          "@param Class The type of the writer used to process that type"
+          "@param Class The type of the writer used to process that type",
+          "@return logical True if the type was previously registered"
         ],
         "parameters": [
           {
@@ -33181,8 +33882,10 @@
         "extent": 0,
         "modifier": "public",
         "comments": [
+          "Deregisters a content type writer",
           "",
-          "@param character The name of the content type to register"
+          "@param character The name of the content type to register",
+          "@return logical True if the content type was previously registered"
         ],
         "parameters": [
           {
@@ -33202,8 +33905,10 @@
         "extent": 0,
         "modifier": "public",
         "comments": [
+          "Indicates whether a key is registered or not.",
           "",
-          "@param Progress.Lang.Class The name of the key"
+          "@param Progress.Lang.Class The name of the key",
+          "@return logical True if the content type is registered"
         ],
         "parameters": [
           {
@@ -33223,8 +33928,10 @@
         "extent": 0,
         "modifier": "public",
         "comments": [
+          "Indicates whether a key is registered or not.",
           "",
-          "@param Progress.Lang.Enum The name of the key"
+          "@param Progress.Lang.Enum The name of the key",
+          "@return logical True if the content type is registered"
         ],
         "parameters": [
           {
@@ -33244,8 +33951,10 @@
         "extent": 0,
         "modifier": "public",
         "comments": [
+          "Indicates whether a content type is registered or not.",
           "",
-          "@param character The name of the content type to register"
+          "@param character The name of the content type to register",
+          "@return logical True if the content type is registered"
         ],
         "parameters": [
           {
@@ -33265,8 +33974,10 @@
         "extent": 0,
         "modifier": "public",
         "comments": [
+          "Returns a registered type, if it exists. returns null otherwise.",
           "",
-          "@param  Progress.Lang.Class  The name of the key"
+          "@param  Progress.Lang.Class  The name of the key",
+          "@return Progress.Lang.Class A valid value if it exists. Null otherwise ."
         ],
         "parameters": [
           {
@@ -33286,8 +33997,10 @@
         "extent": 0,
         "modifier": "public",
         "comments": [
+          "Returns a registered type, if it exists. returns null otherwise.",
           "",
-          "@param  Progress.Lang.Enum The name of the key"
+          "@param  Progress.Lang.Enum The name of the key",
+          "@return Progress.Lang.Class A valid value if it exists. Null otherwise ."
         ],
         "parameters": [
           {
@@ -33307,8 +34020,10 @@
         "extent": 0,
         "modifier": "public",
         "comments": [
+          "Returns a registered type, if it exists. returns null otherwise.",
           "",
-          "@param character The name of the content type to register"
+          "@param character The name of the content type to register",
+          "@return Progress.Lang.Class A valid value if it exists. Null otherwise ."
         ],
         "parameters": [
           {
@@ -33327,6 +34042,9 @@
         "static": false,
         "extent": 0,
         "modifier": "public",
+        "comments": [
+          "Clears all the entries from this registry"
+        ],
         "parameters": []
       },
       {
@@ -33338,7 +34056,9 @@
         "extent": -32767,
         "modifier": "public",
         "comments": [
-          ""
+          "Returns an array of the key names in this registry.",
+          "",
+          "@return character[] The key values. Indeterminate array if empty."
         ],
         "parameters": []
       }
@@ -33352,6 +34072,9 @@
         "static": false,
         "extent": 0,
         "modifier": "public",
+        "comments": [
+          "Default constructor"
+        ],
         "parameters": []
       },
       {
@@ -33363,9 +34086,11 @@
         "extent": 0,
         "modifier": "public",
         "comments": [
+          "Constructor",
           "",
           "Creates clone of the input registry into the current one.",
-          ""
+          "",
+          "@param BuilderRegistry THe source registry"
         ],
         "parameters": [
           {
@@ -33385,8 +34110,10 @@
         "extent": 0,
         "modifier": "public",
         "comments": [
+          "Constructor",
           "",
-          "@param Progress.Lang.Class The type that the registered value must conform to"
+          "@param Progress.Lang.Class The type that the registered value must conform to",
+          "(via IsA() )."
         ],
         "parameters": [
           {
@@ -33405,6 +34132,9 @@
         "static": true,
         "extent": 0,
         "modifier": "private",
+        "comments": [
+          "Default constructor"
+        ],
         "parameters": []
       }
     ],
@@ -33418,7 +34148,10 @@
       {
         "name": "ValueType",
         "type": "Progress.Lang.Class",
-        "modifier": "public"
+        "modifier": "public",
+        "comments": [
+          "(optional) The type of the registered Type (defaults to PLO)"
+        ]
       }
     ],
     "tables": [
@@ -33448,6 +34181,9 @@
         "static": false,
         "extent": 0,
         "modifier": "protected",
+        "comments": [
+          "Clears all options for this builder"
+        ],
         "parameters": []
       },
       {
@@ -33459,9 +34195,11 @@
         "extent": 0,
         "modifier": "protected",
         "comments": [
+          "Stores an numeric value as an option",
           "",
           "@param character The option name",
-          "@param Object the value"
+          "@param Object the value",
+          "@return logical True is the option was overwritten"
         ],
         "parameters": [
           {
@@ -33487,8 +34225,10 @@
         "extent": 0,
         "modifier": "protected",
         "comments": [
+          "Returns an option's object value",
           "",
-          "@param character The option name"
+          "@param character The option name",
+          "@return Object the value"
         ],
         "parameters": [
           {
@@ -33508,8 +34248,10 @@
         "extent": 0,
         "modifier": "protected",
         "comments": [
+          "Returns an option's decimal value",
           "",
-          "@param character The option name"
+          "@param character The option name",
+          "@return decimal the value"
         ],
         "parameters": [
           {
@@ -33529,8 +34271,10 @@
         "extent": -32767,
         "modifier": "protected",
         "comments": [
+          "Returns an option's character array value",
           "",
-          "@param character The option name"
+          "@param character The option name",
+          "@return character[] the value"
         ],
         "parameters": [
           {
@@ -33550,8 +34294,10 @@
         "extent": 0,
         "modifier": "protected",
         "comments": [
+          "Returns an option's character value",
           "",
-          "@param character The option name"
+          "@param character The option name",
+          "@return character the value"
         ],
         "parameters": [
           {
@@ -33571,8 +34317,10 @@
         "extent": 0,
         "modifier": "protected",
         "comments": [
+          "Returns an option's longchar value",
           "",
-          "@param character The option name"
+          "@param character The option name",
+          "@return longchar the value"
         ],
         "parameters": [
           {
@@ -33592,8 +34340,10 @@
         "extent": 0,
         "modifier": "protected",
         "comments": [
+          "Returns an option's logical value",
           "",
-          "@param character The option name"
+          "@param character The option name",
+          "@return logical the value"
         ],
         "parameters": [
           {
@@ -33613,8 +34363,10 @@
         "extent": 0,
         "modifier": "protected",
         "comments": [
+          "Returns an option's datetime value",
           "",
-          "@param character The option name"
+          "@param character The option name",
+          "@return datetime-tz the value"
         ],
         "parameters": [
           {
@@ -33634,10 +34386,12 @@
         "extent": 0,
         "modifier": "protected",
         "comments": [
+          "Internal helper method to perform the find. This method attempts to find a record using",
           "the input buffer.",
           "",
           "@param buffer    The buffer of the ConfigOption table.",
-          "@param character The config name"
+          "@param character The config name",
+          "@return logical True if a config record was found."
         ],
         "parameters": [
           {
@@ -33663,8 +34417,10 @@
         "extent": 0,
         "modifier": "protected",
         "comments": [
+          "Checks whether a config option already exists",
           "",
-          "@param  character The option name"
+          "@param  character The option name",
+          "@return logical True if the named configuration option exists"
         ],
         "parameters": [
           {
@@ -33684,7 +34440,9 @@
         "extent": 0,
         "modifier": "protected",
         "comments": [
-          ""
+          "Removes an option",
+          "",
+          "@param character The option name"
         ],
         "parameters": [
           {
@@ -33704,9 +34462,11 @@
         "extent": 0,
         "modifier": "protected",
         "comments": [
+          "Stores an object value as an option",
           "",
           "@param Progress.Lang>Class The option name (as a type)",
-          "@param Object the value"
+          "@param Object the value",
+          "@return logical True is the option was overwritten"
         ],
         "parameters": [
           {
@@ -33732,9 +34492,11 @@
         "extent": 0,
         "modifier": "protected",
         "comments": [
+          "Stores an object value as an option",
           "",
           "@param character The option name",
-          "@param Object the value"
+          "@param Object the value",
+          "@return logical True is the option was overwritten"
         ],
         "parameters": [
           {
@@ -33760,9 +34522,11 @@
         "extent": 0,
         "modifier": "protected",
         "comments": [
+          "Stores a logical value as an option",
           "",
           "@param character The option name",
-          "@param logical the value"
+          "@param logical the value",
+          "@return logical True is the option was overwritten"
         ],
         "parameters": [
           {
@@ -33788,9 +34552,11 @@
         "extent": 0,
         "modifier": "protected",
         "comments": [
+          "Stores a datetime-tzvalue as an option",
           "",
           "@param character The option name",
-          "@param datetime-tz the value"
+          "@param datetime-tz the value",
+          "@return logical True is the option was overwritten"
         ],
         "parameters": [
           {
@@ -33816,9 +34582,11 @@
         "extent": 0,
         "modifier": "protected",
         "comments": [
+          "Stores an value as an option",
           "",
           "@param character The option name",
-          "@param character the value"
+          "@param character the value",
+          "@return logical True is the option was overwritten"
         ],
         "parameters": [
           {
@@ -33844,9 +34612,11 @@
         "extent": 0,
         "modifier": "protected",
         "comments": [
+          "Stores an value as an option",
           "",
           "@param character The option name",
-          "@param character the value"
+          "@param character the value",
+          "@return logical True is the option was overwritten"
         ],
         "parameters": [
           {
@@ -33872,8 +34642,10 @@
         "extent": 0,
         "modifier": "protected",
         "comments": [
+          "Appends a character value to an array (convenience)",
           "",
-          "@param character The option name"
+          "@param character The option name",
+          "@param character the value"
         ],
         "parameters": [
           {
@@ -34335,7 +35107,9 @@
         "modifier": "private",
         "noundo": true,
         "comments": [
-          "Copyright (c) 2022 by Progress Software Corporation. All rights reserved."
+          "*********************************************",
+          "Copyright (c) 2022 by Progress Software Corporation. All rights reserved.",
+          "***********************************************"
         ]
       },
       {
@@ -34510,13 +35284,15 @@
         "extent": 0,
         "modifier": "public",
         "comments": [
+          "Return a ceiling value (a always-round-up value).",
           "",
           "So,",
           "2.1 returns 3",
           "1.9 returns 2",
           "5.0 returns 5",
           "",
-          "@param decimal  The value to adjust"
+          "@param decimal  The value to adjust",
+          "@return integer The ceiling value"
         ],
         "parameters": [
           {
@@ -34536,8 +35312,10 @@
         "extent": 0,
         "modifier": "public",
         "comments": [
+          "Converts hex to integer values",
           "",
-          "@param character A hex value"
+          "@param character A hex value",
+          "@return int64 The integer representation of that hex value."
         ],
         "parameters": [
           {
@@ -34557,8 +35335,10 @@
         "extent": 0,
         "modifier": "public",
         "comments": [
+          "Converts hex to integer values",
           "",
-          "@param character A hex value"
+          "@param character A hex value",
+          "@return integer The integer representation of that hex value."
         ],
         "parameters": [
           {
@@ -34578,9 +35358,11 @@
         "extent": 0,
         "modifier": "public",
         "comments": [
+          "Converts an exponent (123e4) value into a decimal using a exponent",
           "base of 10.",
           "",
-          "@param character The exponent value"
+          "@param character The exponent value",
+          "@param decimal The converted value"
         ],
         "parameters": [
           {
@@ -34600,13 +35382,15 @@
         "extent": 0,
         "modifier": "public",
         "comments": [
+          "Converts an exponent (123e4) value into a decimal.",
           "The format is",
           "nnn[.nnn]e[-]nnn",
           "<base>e<exponent>",
           "The <exponent> is raised as a power of the exponent-base.",
           "",
           "@param character The exponent value",
-          "@param integer The exponent base. Must be a positive value (>0)"
+          "@param integer The exponent base. Must be a positive value (>0)",
+          "@param decimal The converted value"
         ],
         "parameters": [
           {
@@ -34632,11 +35416,13 @@
         "extent": 0,
         "modifier": "public",
         "comments": [
+          "Converts an integer to a padded hex value",
           "",
           "@param integer An integer value",
           "@param integer The total length of the hex value. If the length of the hex value is larger than this,",
           "use the value as-is. If the length of the hex value is les, pad with leading zeros to make",
-          "the link. Negative numbers will always be at least 8 characters long, and padded with F's."
+          "the link. Negative numbers will always be at least 8 characters long, and padded with F's.",
+          "@return character A hex value"
         ],
         "parameters": [
           {
@@ -34662,11 +35448,13 @@
         "extent": 0,
         "modifier": "public",
         "comments": [
+          "Converts a 64-bit integer to a padded hax value",
           "",
           "@param int64   An integer value",
           "@param integer The total length of the hex value. If the length of the hex value is larger than this,",
           "use the value as-is. If the length of the hex value is les, pad with leading zeros to make",
-          "the link. Negative numbers will always be at least 8 characters long, and padded with F's."
+          "the link. Negative numbers will always be at least 8 characters long, and padded with F's.",
+          "@return character A hex value"
         ],
         "parameters": [
           {
@@ -34692,12 +35480,14 @@
         "extent": 0,
         "modifier": "public",
         "comments": [
+          "Converts an integer to a hex value.",
           "",
           "If the integer value is negative, then the hex value is padded with up to 7 F's, for a",
           "length of 8 characters. Positive integer values are returned wihtout any padding. Zero is '0'.",
           "The unknown value returns an empty string.",
           "",
-          "@param integer An integer value."
+          "@param integer An integer value.",
+          "@return character A hex value."
         ],
         "parameters": [
           {
@@ -34717,12 +35507,14 @@
         "extent": 0,
         "modifier": "public",
         "comments": [
+          "Converts an integer to a hex value.",
           "",
           "If the integer value is negative, then the hex value is padded with up to 7 F's, for a",
           "length of 8 characters. Positive integer values are returned wihtout any padding. Zero is '0'.",
           "The unknown value returns an empty string.",
           "",
-          "@param integer An integer value."
+          "@param integer An integer value.",
+          "@return character A hex value."
         ],
         "parameters": [
           {
@@ -35255,8 +36047,10 @@
         "extent": -32767,
         "modifier": "private",
         "comments": [
+          "Splits a .-delimited token argument into an array",
           "",
-          "@param character the token argument to return"
+          "@param character the token argument to return",
+          "@return character[] An array of character. If the input arg is empty/null we return a [1] array"
         ],
         "parameters": [
           {
@@ -35470,12 +36264,14 @@
         "extent": 0,
         "modifier": "public",
         "comments": [
+          "Attempts to decode a previously-encoded string. By default 4-character hex values are",
           "used, for escape sequences like U+ or \\u . If the escape sequence has a terminator - like \\U{&1}",
           "- then the length of the hex value is determined using the mask.",
           "",
           "@param longchar The encoded string",
           "@param character The escape sequence, by default U+ but for JSON may need to be \\u .",
-          "May include &1 for more complex sequences (like Swift's \\u{&1} )"
+          "May include &1 for more complex sequences (like Swift's \\u{&1} )",
+          "@return longchar A decoded UTF-8 string"
         ],
         "parameters": [
           {
@@ -35771,7 +36567,11 @@
       {
         "name": "AutoDestroy",
         "type": "B",
-        "modifier": "public"
+        "modifier": "public",
+        "comments": [
+          "Indicates whether the handle will be destroyed/cleared when this object",
+          "is destroyed. Default is FALSE."
+        ]
       }
     ],
     "tables": []
@@ -35881,6 +36681,9 @@
         "static": false,
         "extent": 0,
         "modifier": "public",
+        "comments": [
+          "Process various XML tokens."
+        ],
         "parameters": []
       },
       {
@@ -36074,6 +36877,9 @@
         "static": false,
         "extent": 0,
         "modifier": "public",
+        "comments": [
+          "Process notations and unparsed entities."
+        ],
         "parameters": [
           {
             "name": "pcName",
@@ -36783,9 +37589,11 @@
         "extent": 0,
         "modifier": "public",
         "comments": [
+          "Writes a value to the output destination. This method defaults to",
           "writing characters.",
           "",
-          "@param longchar The value being written."
+          "@param longchar The value being written.",
+          "@return logical Whether the operation succeeded or not."
         ],
         "parameters": [
           {
@@ -36805,12 +37613,14 @@
         "extent": 0,
         "modifier": "public",
         "comments": [
+          "Writes a value to the output destination. This method simply writes",
           "the value for the given type, using the correct WRITE-* call.",
           "",
           "There's a WriteFragment() method which deals with a noderef handle.",
           "",
           "@param SaxWriterDataTypeEnum The element type",
-          "@param longchar The value being written."
+          "@param longchar The value being written.",
+          "@return logical Whether the operation succeeded or not."
         ],
         "parameters": [
           {
@@ -36836,8 +37646,10 @@
         "extent": 0,
         "modifier": "public",
         "comments": [
+          "Writes a fragment's values from a specified XML node ref",
           "",
-          "@param handle The valid XML node-ref handle containing the fragment"
+          "@param handle The valid XML node-ref handle containing the fragment",
+          "@return logical Whether the operation succeeded or not."
         ],
         "parameters": [
           {
@@ -36857,8 +37669,10 @@
         "extent": 0,
         "modifier": "public",
         "comments": [
+          "Writes a fragment's values from a specified XML node ref",
           "",
-          "@param longchar The longchar containing the fragment"
+          "@param longchar The longchar containing the fragment",
+          "@return logical Whether the operation succeeded or not."
         ],
         "parameters": [
           {
@@ -37186,37 +38000,58 @@
       {
         "name": "WriteStatus",
         "type": "OpenEdge.Core.XML.SaxWriteStatusEnum",
-        "modifier": "public"
+        "modifier": "public",
+        "comments": [
+          "(derived) Maps to SAX-WRITER WRITE-STATUS attribute. See the ABL documentation for more details."
+        ]
       },
       {
         "name": "Encoding",
         "type": "C",
-        "modifier": "public"
+        "modifier": "public",
+        "comments": [
+          "Maps to SAX-WRITER ENCODING attribute. See the ABL documentation for more details."
+        ]
       },
       {
         "name": "IsFormatted",
         "type": "B",
-        "modifier": "public"
+        "modifier": "public",
+        "comments": [
+          "Maps to SAX-WRITER FORMATTED attribute. See the ABL documentation for more details."
+        ]
       },
       {
         "name": "IsFragment",
         "type": "B",
-        "modifier": "public"
+        "modifier": "public",
+        "comments": [
+          "Maps to SAX-WRITER FRAGMENT attribute. See the ABL documentation for more details."
+        ]
       },
       {
         "name": "IsStandalone",
         "type": "B",
-        "modifier": "public"
+        "modifier": "public",
+        "comments": [
+          "Maps to SAX-WRITER STANDALONE attribute. See the ABL documentation for more details."
+        ]
       },
       {
         "name": "IsStrict",
         "type": "B",
-        "modifier": "public"
+        "modifier": "public",
+        "comments": [
+          "Maps to SAX-WRITER STRICT attribute. See the ABL documentation for more details."
+        ]
       },
       {
         "name": "Version",
         "type": "C",
-        "modifier": "public"
+        "modifier": "public",
+        "comments": [
+          "Maps to SAX-WRITER VERSION attribute. See the ABL documentation for more details."
+        ]
       }
     ],
     "tables": []
@@ -37533,7 +38368,9 @@
         "extent": 0,
         "modifier": "public",
         "comments": [
-          ""
+          "Performs implementation-specific filtering for a logger type",
+          "",
+          "@param LogEvent The log event to filter."
         ],
         "parameters": [
           {
@@ -37570,8 +38407,10 @@
         "extent": 0,
         "modifier": "public",
         "comments": [
+          "Returns log writer build for a logging type",
           "",
-          "@param  P.L.Class The Filter type for which to build the logger"
+          "@param  P.L.Class The Filter type for which to build the logger",
+          "@return LogFilterBuilder The entity writer builder to use"
         ],
         "parameters": [
           {
@@ -37591,8 +38430,10 @@
         "extent": 0,
         "modifier": "public",
         "comments": [
+          "Returns log writer build for a logging type",
           "",
-          "@param  character The Filter type for which to build the logger"
+          "@param  character The Filter type for which to build the logger",
+          "@return LogFilterBuilder The entity writer builder to use"
         ],
         "parameters": [
           {
@@ -37612,6 +38453,7 @@
         "extent": 0,
         "modifier": "public",
         "comments": [
+          "Returns log writer build for a logging type.",
           "",
           "To find a filter builder,",
           "i.   Look in the registry for the filter type. If not found,",
@@ -37619,7 +38461,8 @@
           "iii. Use this type (LogFilterBuilder)",
           "",
           "@param  character The Filter type for which to build the logger",
-          "@param  BuilderRegistry A registry of Filter writers to user"
+          "@param  BuilderRegistry A registry of Filter writers to user",
+          "@return LogFilterBuilder The entity writer builder to use"
         ],
         "parameters": [
           {
@@ -37645,8 +38488,10 @@
         "extent": 0,
         "modifier": "public",
         "comments": [
+          "Adds or overwrites an option for the logger filter.",
           "",
-          "@param  JsonObject The Filter options (can be anything)"
+          "@param  JsonObject The Filter options (can be anything)",
+          "@return LogFilterBuilder This builder object."
         ],
         "parameters": [
           {
@@ -37666,9 +38511,11 @@
         "extent": 0,
         "modifier": "public",
         "comments": [
+          "Adds or overwrites an option for the logger filter.",
           "",
           "@param  character The name of the option",
-          "@param  character The value of the option (can be anything)"
+          "@param  character The value of the option (can be anything)",
+          "@return LogFilterBuilder This builder object."
         ],
         "parameters": [
           {
@@ -37694,9 +38541,11 @@
         "extent": 0,
         "modifier": "public",
         "comments": [
+          "Adds or overwrites an option for the logger filter.",
           "",
           "@param  character The name of the option",
-          "@param  Object The value of the option (can be anything)"
+          "@param  Object The value of the option (can be anything)",
+          "@return LogFilterBuilder This builder object."
         ],
         "parameters": [
           {
@@ -37722,9 +38571,11 @@
         "extent": 0,
         "modifier": "public",
         "comments": [
+          "Adds or overwrites an option for the logger filter.",
           "",
           "@param  character The name of the option",
-          "@param  int64 The value of the option (can be anything)"
+          "@param  int64 The value of the option (can be anything)",
+          "@return LogFilterBuilder This builder object."
         ],
         "parameters": [
           {
@@ -37750,9 +38601,11 @@
         "extent": 0,
         "modifier": "public",
         "comments": [
+          "Adds or overwrites an option for the logger filter.",
           "",
           "@param  character The name of the option",
-          "@param  decimal The value of the option (can be anything)"
+          "@param  decimal The value of the option (can be anything)",
+          "@return LogFilterBuilder This builder object."
         ],
         "parameters": [
           {
@@ -37778,9 +38631,11 @@
         "extent": 0,
         "modifier": "public",
         "comments": [
+          "Adds or overwrites an option for the logger filter.",
           "",
           "@param  character The name of the option",
-          "@param  logical The value of the option (can be anything)"
+          "@param  logical The value of the option (can be anything)",
+          "@return LogFilterBuilder This builder object."
         ],
         "parameters": [
           {
@@ -37806,8 +38661,10 @@
         "extent": 0,
         "modifier": "public",
         "comments": [
+          "Sets the output destination",
           "",
-          "@param  character The filename to write to"
+          "@param  character The filename to write to",
+          "@return LogFilterBuilder This builder object."
         ],
         "parameters": [
           {
@@ -37827,8 +38684,10 @@
         "extent": 0,
         "modifier": "public",
         "comments": [
+          "Sets the output destination",
           "",
-          "@param  JsonArray The object to write into to"
+          "@param  JsonArray The object to write into to",
+          "@return LogFilterBuilder This builder object."
         ],
         "parameters": [
           {
@@ -37848,8 +38707,10 @@
         "extent": 0,
         "modifier": "public",
         "comments": [
+          "Indicates whether to append to the log",
           "",
-          "@param  character The filename to write to"
+          "@param  character The filename to write to",
+          "@return LogFilterBuilder This builder object."
         ],
         "parameters": [
           {
@@ -37869,8 +38730,10 @@
         "extent": 0,
         "modifier": "public",
         "comments": [
+          "Sets the output destination",
           "",
-          "@param  FileOutputStream The filename to write to"
+          "@param  FileOutputStream The filename to write to",
+          "@return LogFilterBuilder This builder object."
         ],
         "parameters": [
           {
@@ -37890,8 +38753,10 @@
         "extent": 0,
         "modifier": "public",
         "comments": [
+          "Sets the output destination",
           "",
-          "@param  OutputStream The filename to write to"
+          "@param  OutputStream The filename to write to",
+          "@return LogFilterBuilder This builder object."
         ],
         "parameters": [
           {
@@ -37911,8 +38776,10 @@
         "extent": 0,
         "modifier": "public",
         "comments": [
+          "Sets a format string for a filter",
           "",
-          "@param  character The filename to write to"
+          "@param  character The filename to write to",
+          "@return LogFilterBuilder This builder object."
         ],
         "parameters": [
           {
@@ -37932,8 +38799,10 @@
         "extent": 0,
         "modifier": "public",
         "comments": [
+          "Sets the logging level for the logger",
           "",
-          "@param  BuilderRegistry The registry containing the map of log writers"
+          "@param  BuilderRegistry The registry containing the map of log writers",
+          "@return LogFilterBuilder This builder object."
         ],
         "parameters": [
           {
@@ -37953,10 +38822,12 @@
         "extent": 0,
         "modifier": "protected",
         "comments": [
+          "Returns a filter writer from a registry; either the optional one set via loggerFilterRegistry or",
           "the default LoggerFilterRegistry:Registry. It's the caller's responsibility to invoke and",
           "use the filter type returned.",
           "",
-          "@param character The filter type name"
+          "@param character The filter type name",
+          "@return Progress.Lang.Class The type of the filter writer."
         ],
         "parameters": [
           {
@@ -38012,12 +38883,18 @@
       {
         "name": "Filter",
         "type": "OpenEdge.Logging.Filter.ILoggerFilter",
-        "modifier": "public"
+        "modifier": "public",
+        "comments": [
+          "The filter being built"
+        ]
       },
       {
         "name": "FilterType",
         "type": "C",
-        "modifier": "public"
+        "modifier": "public",
+        "comments": [
+          "(mandatory) The Filter type for which we want to log"
+        ]
       }
     ],
     "tables": []
@@ -38041,6 +38918,10 @@
         "static": false,
         "extent": 0,
         "modifier": "public",
+        "comments": [
+          "Removes the first node, and replaces it with the next in the list.",
+          "Equivalent to a stack pop."
+        ],
         "parameters": []
       },
       {
@@ -38052,8 +38933,10 @@
         "extent": 0,
         "modifier": "public",
         "comments": [
+          "Adds a Node in the first position. Will move the linked list along.",
           "The new node cannot have a valid Next property.",
-          ""
+          "",
+          "@param {&NodeType} The node to insert."
         ],
         "parameters": [
           {
@@ -38073,7 +38956,9 @@
         "extent": 0,
         "modifier": "public",
         "comments": [
-          ""
+          "Adds a Node at the end of the list.",
+          "",
+          "@param {&NodeType} The node to insert."
         ],
         "parameters": [
           {
@@ -38093,8 +38978,10 @@
         "extent": 0,
         "modifier": "public",
         "comments": [
+          "Adds a Node after another specified Node.",
           "",
-          "@param {&NodeType} The node to insert the new node after."
+          "@param {&NodeType} The node to insert the new node after.",
+          "@param {&NodeType} The new node to insert."
         ],
         "parameters": [
           {
@@ -38120,8 +39007,10 @@
         "extent": 0,
         "modifier": "public",
         "comments": [
+          "Removes a Node after another specified Node. Ensures the list is still",
           "linked.",
-          ""
+          "",
+          "@param {&NodeType} The node to insert the new node after."
         ],
         "parameters": [
           {
@@ -38141,7 +39030,9 @@
         "extent": 0,
         "modifier": "public",
         "comments": [
-          ""
+          "Performs implementation-specific filtering for a logger type",
+          "",
+          "@param LogMessage The message to log."
         ],
         "parameters": [
           {
@@ -38172,6 +39063,10 @@
         "static": false,
         "extent": 0,
         "modifier": "public",
+        "comments": [
+          "Constructor",
+          "@param  {&NodeType} The first node this list is managing"
+        ],
         "parameters": [
           {
             "name": "poNode",
@@ -38197,7 +39092,10 @@
       {
         "name": "First",
         "type": "OpenEdge.Logging.Filter.LoggerFilterNode",
-        "modifier": "public"
+        "modifier": "public",
+        "comments": [
+          "The first node in this list"
+        ]
       }
     ],
     "tables": []
@@ -38269,7 +39167,9 @@
         "extent": 0,
         "modifier": "public",
         "comments": [
-          ""
+          "Performs implementation-specific filtering for a logger type",
+          "",
+          "@param LogMessage The message to log."
         ],
         "parameters": [
           {
@@ -38319,7 +39219,9 @@
         "extent": 0,
         "modifier": "public",
         "comments": [
-          ""
+          "Performs implementation-specific filtering for a logger type",
+          "",
+          "@param LogEvent The current log event to filter"
         ],
         "parameters": [
           {
@@ -38425,7 +39327,9 @@
         "extent": 0,
         "modifier": "public",
         "comments": [
-          ""
+          "Performs implementation-specific filtering for a logger type",
+          "",
+          "@param LogMessage The message to log."
         ],
         "parameters": [
           {
@@ -38505,7 +39409,9 @@
         "extent": 0,
         "modifier": "public",
         "comments": [
-          ""
+          "Performs implementation-specific filtering for a logger type",
+          "",
+          "@param LogMessage The message to log."
         ],
         "parameters": [
           {
@@ -38584,7 +39490,9 @@
         "extent": 0,
         "modifier": "public",
         "comments": [
-          ""
+          "Performs implementation-specific filtering for a logger type",
+          "",
+          "@param LogMessage The message to log."
         ],
         "parameters": [
           {
@@ -38691,7 +39599,9 @@
         "extent": 0,
         "modifier": "public",
         "comments": [
-          ""
+          "Performs implementation-specific filtering for a logger type",
+          "",
+          "@param LogEvent The current log event to filter"
         ],
         "parameters": [
           {
@@ -38763,7 +39673,9 @@
         "extent": 0,
         "modifier": "public",
         "comments": [
-          ""
+          "Performs implementation-specific filtering for a logger type",
+          "",
+          "@param LogMessage The message to log."
         ],
         "parameters": [
           {
@@ -38819,7 +39731,9 @@
         "extent": 0,
         "modifier": "public",
         "comments": [
-          ""
+          "Performs implementation-specific filtering for a logger type",
+          "",
+          "@param LogMessage The message to log."
         ],
         "parameters": [
           {
@@ -38869,7 +39783,9 @@
         "extent": 0,
         "modifier": "public",
         "comments": [
-          ""
+          "Performs implementation-specific filtering for a logger type",
+          "",
+          "@param LogEvent The current log event to filter"
         ],
         "parameters": [
           {
@@ -38916,6 +39832,9 @@
         "static": false,
         "extent": 0,
         "modifier": "public",
+        "comments": [
+          "FATAL *"
+        ],
         "parameters": [
           {
             "name": "pcMessage",
@@ -39048,6 +39967,9 @@
         "static": false,
         "extent": 0,
         "modifier": "public",
+        "comments": [
+          "ERROR *"
+        ],
         "parameters": [
           {
             "name": "pcMessage",
@@ -39180,6 +40102,9 @@
         "static": false,
         "extent": 0,
         "modifier": "public",
+        "comments": [
+          "WARN *"
+        ],
         "parameters": [
           {
             "name": "pcMessage",
@@ -39312,6 +40237,9 @@
         "static": false,
         "extent": 0,
         "modifier": "public",
+        "comments": [
+          "INFO *"
+        ],
         "parameters": [
           {
             "name": "pcMessage",
@@ -39444,6 +40372,9 @@
         "static": false,
         "extent": 0,
         "modifier": "public",
+        "comments": [
+          "DEBUG *"
+        ],
         "parameters": [
           {
             "name": "pcMessage",
@@ -39576,6 +40507,9 @@
         "static": false,
         "extent": 0,
         "modifier": "public",
+        "comments": [
+          "TRACE *"
+        ],
         "parameters": [
           {
             "name": "pcMessage",
@@ -39910,8 +40844,10 @@
         "type": "OpenEdge.Core.Util.BuilderRegistry",
         "modifier": "private",
         "comments": [
+          "Registry for mapping builder types to their implementations",
           "",
-          "This is the registry of LogFilterBuilders and not the registry of"
+          "This is the registry of LogFilterBuilders and not the registry of",
+          "log writers."
         ]
       },
       {
@@ -40148,7 +41084,9 @@
         "extent": 0,
         "modifier": "private",
         "comments": [
-          ""
+          "Adds initial values into the registry",
+          "",
+          "@param BuilderRegistry The registry to populate"
         ],
         "parameters": [
           {
@@ -40187,7 +41125,10 @@
       {
         "name": "Registry",
         "type": "OpenEdge.Core.Util.BuilderRegistry",
-        "modifier": "public"
+        "modifier": "public",
+        "comments": [
+          "Registry for mapping build types to their implementations"
+        ]
       }
     ],
     "tables": []
@@ -40958,6 +41899,9 @@
         "static": false,
         "extent": 0,
         "modifier": "public",
+        "comments": [
+          "FATAL *"
+        ],
         "parameters": [
           {
             "name": "pcMessage",
@@ -41090,6 +42034,9 @@
         "static": false,
         "extent": 0,
         "modifier": "public",
+        "comments": [
+          "ERROR *"
+        ],
         "parameters": [
           {
             "name": "pcMessage",
@@ -41222,6 +42169,9 @@
         "static": false,
         "extent": 0,
         "modifier": "public",
+        "comments": [
+          "WARN *"
+        ],
         "parameters": [
           {
             "name": "pcMessage",
@@ -41354,6 +42304,9 @@
         "static": false,
         "extent": 0,
         "modifier": "public",
+        "comments": [
+          "INFO *"
+        ],
         "parameters": [
           {
             "name": "pcMessage",
@@ -41486,6 +42439,9 @@
         "static": false,
         "extent": 0,
         "modifier": "public",
+        "comments": [
+          "DEBUG *"
+        ],
         "parameters": [
           {
             "name": "pcMessage",
@@ -41618,6 +42574,9 @@
         "static": false,
         "extent": 0,
         "modifier": "public",
+        "comments": [
+          "TRACE *"
+        ],
         "parameters": [
           {
             "name": "pcMessage",
@@ -41916,8 +42875,10 @@
         "extent": 0,
         "modifier": "public",
         "comments": [
+          "Returns a logger (ILogWriter).",
           "",
-          "@param P.L.Class The typename for which to find a logger"
+          "@param P.L.Class The typename for which to find a logger",
+          "@return ILogWriter An instance of the default logger"
         ],
         "parameters": [
           {
@@ -41937,8 +42898,10 @@
         "extent": 0,
         "modifier": "public",
         "comments": [
+          "Returns a logger (ILogWriter).",
           "",
-          "@param handle The procedure for which to find a logger"
+          "@param handle The procedure for which to find a logger",
+          "@return ILogWriter An instance of the default logger"
         ],
         "parameters": [
           {
@@ -41958,8 +42921,10 @@
         "extent": 0,
         "modifier": "public",
         "comments": [
+          "Returns a logger (ILogWriter)",
           "",
-          "@param character The logger name"
+          "@param character The logger name",
+          "@return ILogWriter An instance of the default logger"
         ],
         "parameters": [
           {
@@ -42337,7 +43302,9 @@
         "type": "OpenEdge.Core.Util.BuilderRegistry",
         "modifier": "public",
         "comments": [
-          ""
+          "Registry for mapping builder types to their implementations",
+          "",
+          "This is the registry of LoggerBuilders"
         ]
       }
     ],
@@ -42369,7 +43336,9 @@
         "extent": 0,
         "modifier": "private",
         "comments": [
-          ""
+          "Adds initial values into the registry",
+          "",
+          "@param BuilderRegistry The registry to populate"
         ],
         "parameters": [
           {
@@ -42483,7 +43452,10 @@
       {
         "name": "Registry",
         "type": "OpenEdge.Core.Util.BuilderRegistry",
-        "modifier": "public"
+        "modifier": "public",
+        "comments": [
+          "Registry for mapping build types to their implementations"
+        ]
       }
     ],
     "tables": []
@@ -42921,6 +43893,9 @@
         "static": false,
         "extent": 0,
         "modifier": "public",
+        "comments": [
+          "FATAL *"
+        ],
         "parameters": [
           {
             "name": "pcMessage",
@@ -43053,6 +44028,9 @@
         "static": false,
         "extent": 0,
         "modifier": "public",
+        "comments": [
+          "ERROR *"
+        ],
         "parameters": [
           {
             "name": "pcMessage",
@@ -43185,6 +44163,9 @@
         "static": false,
         "extent": 0,
         "modifier": "public",
+        "comments": [
+          "WARN *"
+        ],
         "parameters": [
           {
             "name": "pcMessage",
@@ -43317,6 +44298,9 @@
         "static": false,
         "extent": 0,
         "modifier": "public",
+        "comments": [
+          "INFO *"
+        ],
         "parameters": [
           {
             "name": "pcMessage",
@@ -43449,6 +44433,9 @@
         "static": false,
         "extent": 0,
         "modifier": "public",
+        "comments": [
+          "DEBUG *"
+        ],
         "parameters": [
           {
             "name": "pcMessage",
@@ -43581,6 +44568,9 @@
         "static": false,
         "extent": 0,
         "modifier": "public",
+        "comments": [
+          "TRACE *"
+        ],
         "parameters": [
           {
             "name": "pcMessage",
@@ -43777,9 +44767,11 @@
         "extent": 0,
         "modifier": "protected",
         "comments": [
+          "Returns a filter writer from a registry; either the optional one set via loggerFilterRegistry or",
           "the default LoggerFilterRegistry:Registry. It's the caller's responsibility to invoke and",
           "use the filter type returned.",
-          ""
+          "",
+          "@return Progress.Lang.Class The type of the filter writer."
         ],
         "parameters": [
           {
@@ -43972,7 +44964,9 @@
         "extent": 0,
         "modifier": "public",
         "comments": [
-          ""
+          "Performs implementation-specific filtering for a logger type",
+          "",
+          "@param LogMessage The message to log."
         ],
         "parameters": [
           {
@@ -44061,7 +45055,9 @@
         "extent": 0,
         "modifier": "public",
         "comments": [
-          ""
+          "Performs implementation-specific filtering for a logger type",
+          "",
+          "@param LogMessage The message to log."
         ],
         "parameters": [
           {
@@ -44112,7 +45108,9 @@
         "extent": 0,
         "modifier": "public",
         "comments": [
-          ""
+          "Performs implementation-specific filtering for a logger type",
+          "",
+          "@param LogEvent The event to log."
         ],
         "parameters": [
           {
@@ -44213,7 +45211,9 @@
         "extent": 0,
         "modifier": "public",
         "comments": [
-          ""
+          "Performs implementation-specific filtering for a logger type",
+          "",
+          "@param LogMessage The message to log."
         ],
         "parameters": [
           {

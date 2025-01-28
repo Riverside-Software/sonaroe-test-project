@@ -1,3 +1,5 @@
+@Library('newcold') _
+
 pipeline {
   agent none
   options {
@@ -11,6 +13,8 @@ pipeline {
     stage ('Build') {
       agent { label 'Linux-Office03' }
       steps {
+        def xx = checkoutCode('foo', 'bar')
+ 	echo "Output: ${xx}"
         checkout([$class: 'GitSCM', branches: scm.branches, extensions: scm.extensions + [[$class: 'CleanCheckout']], userRemoteConfigs: scm.userRemoteConfigs])
         checkout([$class: 'GitSCM', branches: scm.branches, extensions: scm.extensions + [[$class: 'CleanCheckout']], userRemoteConfigs: [[credentialsId: scm.userRemoteConfigs.credentialsId[0], url: scm.userRemoteConfigs.url[0], refspec: '+refs/heads/main:refs/remotes/origin/main']] ])
         script {

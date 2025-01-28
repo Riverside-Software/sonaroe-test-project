@@ -17,8 +17,6 @@ pipeline {
           def xx = checkoutCode('foo', 'bar')
           echo "Output: ${xx}"
         }
-        checkout([$class: 'GitSCM', branches: scm.branches, extensions: scm.extensions + [[$class: 'CleanCheckout']], userRemoteConfigs: scm.userRemoteConfigs])
-        checkout([$class: 'GitSCM', branches: scm.branches, extensions: scm.extensions + [[$class: 'CleanCheckout']], userRemoteConfigs: [[credentialsId: scm.userRemoteConfigs.credentialsId[0], url: scm.userRemoteConfigs.url[0], refspec: '+refs/heads/main:refs/remotes/origin/main']] ])
         script {
           dockerBuild('docker.rssw.eu/progress/dlc:12.8', 'build')
         }

@@ -29,7 +29,7 @@
       "inherits": "default",
       "value": {
         "dbConnections": [
-          { "name": "sports", "connect": "-db db/sp2kcont -ld sports -RO", "schemaFile": "dump/sports.df", "aliases": [ "foo", "bar"] }
+          { "name": "sports", "connect": "-db sports -H dbserver -S 12345", "schemaFile": "dump/sports.df", "aliases": [ "foo", "bar"] }
         ]
       }
     }

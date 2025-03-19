@@ -13,6 +13,17 @@
       "localRoot": "${workspaceFolder}"
     },
     {
+      "name": "Attach to PASOE (container)",
+      "type": "abl",
+      "request": "attach",
+      "mode": "pasoe",
+      "hostname": "pasoe",
+      "port": 8810,
+      "appName": "pasoe1",
+      "password": "",
+      "localRoot": "${workspaceFolder}"
+    },
+    {
       "name": "Attach to AVM",
       "type": "abl",
       "request": "attach",

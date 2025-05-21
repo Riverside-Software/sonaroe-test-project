@@ -17,7 +17,21 @@
     { "name": "sports", "connect": "-db db/sp2k -ld sports -RO", "schemaFile": "dump/sports.df", "aliases": [ "foo", "bar"] }
   ],
   "profiles": [
-    { 
+    {
+      "name": "OE-11.7",
+      "inherits": "default",
+      "value": {
+        "oeversion": "11.7"
+      }
+    },
+    {
+      "name": "OE-12.2",
+      "inherits": "default",
+      "value": {
+        "oeversion": "12.2"
+      }
+    },
+    {
       "name": "GUI-Mode",
       "inherits": "default",
       "value": {

@@ -1,4 +1,4 @@
 {
-    "sonarQubeUri": "https://sonar3.riverside-software.fr",
+    "sonarQubeUri": "https://sonar.riverside-software.fr",
     "projectKey": "RSSW:TestProject"
 }

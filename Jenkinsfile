@@ -38,6 +38,8 @@ pipeline {
       }
     }
 
+  }
+
     post {
         success {
             office365ConnectorSend 
@@ -46,6 +48,5 @@ pipeline {
         }
     }
 
-  }
 }
 

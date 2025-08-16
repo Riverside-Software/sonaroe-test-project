@@ -43,9 +43,8 @@ pipeline {
     post {
         success {
 script{
-            office365ConnectorSend 
-                factDefinitions: [[name: "fact1", template: "content of fact1"],
-                                  [name: "fact2", template: "content of fact2"]]
+            office365ConnectorSend (
+                message: 'test')
         }
     }}
 

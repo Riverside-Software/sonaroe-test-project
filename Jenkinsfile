@@ -27,10 +27,12 @@ pipeline {
         script {
           docker.image('sonarsource/sonar-scanner-cli:latest').inside('') {
             withSonarQubeEnv('RSSW') {
-              if ('main' == env.BRANCH_NAME) {
-                sh "sonar-scanner -Dsonar.branch.name=$BRANCH_NAME"
-              } else {
-                sh "sonar-scanner -Dsonar.pullrequest.branch=$BRANCH_NAME -Dsonar.pullrequest.base=main -Dsonar.pullrequest.key=$BRANCH_NAME"
+              withEnv(["SONAR_USER_HOME=/tmp"]) {
+                if ('main' == env.BRANCH_NAME) {
+                  sh "sonar-scanner -Dsonar.branch.name=$BRANCH_NAME"
+                } else {
+                  sh "sonar-scanner -Dsonar.pullrequest.branch=$BRANCH_NAME -Dsonar.pullrequest.base=main -Dsonar.pullrequest.key=$BRANCH_NAME"
+                }
               }
             }
           }

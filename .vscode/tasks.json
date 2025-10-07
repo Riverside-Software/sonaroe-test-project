@@ -4,13 +4,13 @@
   "version": "2.0.0",
   "tasks": [
     {
-      "label": "GUI Debugger01",
+      "label": "Execute current procedure with debugger",
       "type": "shell",
       "command": "${command:abl.getDlcDirectory}/bin/_progres",
       "args": [
         "-db", "db/sp2k", "-ld", "sports", "-RO",
         "-ininame", "conf/gui.ini",
-        "-p", "debugger01.p",
+        "-p", "${command:abl.getRelativePath}",
         "-nosplash",
         "-debugReady", "3099",
         "-zdlc", "${command:abl.getDlcDirectory}"
@@ -26,7 +26,7 @@
       },
       "options": {
         "env": {
-          
+
         }
       },
       "problemMatcher": []

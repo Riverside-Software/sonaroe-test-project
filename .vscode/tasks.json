@@ -8,7 +8,7 @@
       "type": "shell",
       "command": "${command:abl.getDlcDirectory}/bin/_progres",
       "args": [
-        "-db", "db/sp2k", "-ld", "sports", "-RO",
+        "-db", "target/db/sp2k", "-ld", "sports", "-RO",
         "-ininame", "conf/gui.ini",
         "-p", "${command:abl.getRelativePath}",
         "-nosplash",

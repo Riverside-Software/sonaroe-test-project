@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="utf-8"?>
 
 <!-- Then execute : ant -lib %DLC%\pct\PCT.jar -lib xmltask.jar -DDLC=C:\Progress\OpenEdge-12.8 clean build -->
-<project name="TEST" default="build">
+<project name="SampleProject" default="build">
   <taskdef resource="PCT.properties" />
   <taskdef name="xmltask" classname="com.oopsconsultancy.xmltask.ant.XmlTask" />
 
@@ -9,61 +9,51 @@
   <property name="DLC" value="${env.DLC}" />
 
   <target name="init">
-    <mkdir dir="db" />
-    <mkdir dir="build" />
-    <mkdir dir="profiler" />
-    <mkdir dir="dump" />
+    <mkdir dir="target/db" />
+    <mkdir dir="target/build" />
+    <mkdir dir="target/profiler" />
     <PCTVersion />
     <ProgressVersion dlcHome="${DLC}" fullVersion="dlc.version.full" />
     <echo message="${dlc.version.full}" />
   </target>
 
   <target name="clean">
-    <delete dir="db" />
-    <delete dir="build" />
-    <delete dir="profiler" />
-    <delete dir="test-output" />
+    <delete dir="target/" />
   </target>
 
   <target name="db" depends="init">
-    <sports2000 destDir="db" dbName="sp2k" dlcHome="${DLC}" />
-    <echo file="dump/empty.df" />
+    <sports2000 destDir="target/db" dbName="sp2k" dlcHome="${DLC}" />
   </target>
 
   <target name="build" depends="db">
-    <PCTCompile destdir="build" dlcHome="${DLC}" cpinternal="utf-8" cpstream="utf-8" cpcoll="basic" cpcase="basic" listing="true" relativePaths="true" xmlXref="false" keepXref="true" requireFullKeywords="false" requireFullNames="true" requireFieldQualifiers="true" requireReturnValues="true">
-      <fileset dir="src/classes" includes="**/*.cls" />
-      <fileset dir="src/procedures" includes="**/*.p" />
-      <fileset dir="src/tests" includes="**/*.p,**/*.cls" />
+    <PCTCompile destdir="target/build" dlcHome="${DLC}" cpinternal="utf-8" cpstream="utf-8" cpcoll="basic" cpcase="basic" listing="true" relativePaths="true" xmlXref="false" keepXref="true" requireFullKeywords="false" requireFullNames="true" requireFieldQualifiers="true" requireReturnValues="true">
+      <fileset dir="src/main/abl" includes="**/*.cls,**/*.p,**/*.w" />
       <propath>
-        <pathelement location="src/classes" />
-        <pathelement location="src/procedures" />
-        <pathelement location="src/tests" />
+        <pathelement location="src/main/abl" />
         <pathelement location="${DLC}/tty/netlib/OpenEdge.Net.pl" />
       </propath>
-      <DBConnection dbName="sp2k" dbDir="db" singleUser="true" logicalName="sports">
+      <DBConnection dbName="sp2k" dbDir="target/db" singleUser="true" logicalName="sports">
         <Alias name="sp2k" />
         <Alias name="foobar" />
       </DBConnection>
     </PCTCompile>
 
     <!-- Unit tests -->
-    <mkdir dir="test-output" />
-    <ABLUnit dlcHome="${DLC}" destDir="test-output" failOnError="false" writeLog="true">
-      <fileset dir="src/tests" includes="*.cls" />
+    <mkdir dir="target/test-output" />
+    <ABLUnit dlcHome="${DLC}" destDir="target/test-output" failOnError="false" writeLog="true">
+      <fileset dir="src/test/abl" includes="*.cls" />
       <propath>
-        <pathelement location="build"/>
-        <pathelement location="src/classes" />
-        <pathelement location="src/procedures" />
-        <pathelement location="src/tests" />
+        <pathelement location="target/build"/>
+        <pathelement location="src/main/abl" />
+        <pathelement location="src/test/abl" />
       </propath>
-      <Profiler enabled="true" outputDir="profiler" coverage="true" />
-      <DBConnection dbName="sp2k" dbDir="db" singleUser="true" logicalName="sports">
+      <Profiler enabled="true" outputDir="target/profiler" coverage="true" />
+      <DBConnection dbName="sp2k" dbDir="target/db" singleUser="true" logicalName="sports">
         <Alias name="sp2k" />
         <Alias name="foobar" />
       </DBConnection>
     </ABLUnit>
-    <xmltask source="test-output/results.xml" dest="test-output/sonar.xml">
+    <xmltask source="target/test-output/results.xml" dest="target/test-output/sonar.xml">
       <rename path="//testsuites" to="testExecutions" />
       <attr path="//testExecutions" attr="version" value="1" />
       <rename path="//testsuite" to="file" />
@@ -75,20 +65,20 @@
     </xmltask>
 
     <PCTRun procedure="sample/test1.p" dlcHome="${DLC}">
-      <propath location="build" />
+      <propath location="target/build" />
       <Profiler enabled="true" outputDir="profiler" coverage="true" />
-      <DBConnection dbName="sp2k" dbDir="db" singleUser="true" logicalName="sports">
+      <DBConnection dbName="sp2k" dbDir="target/db" singleUser="true" logicalName="sports">
         <Alias name="sp2k" />
         <Alias name="foobar" />
       </DBConnection>
     </PCTRun>
     <PCTRun procedure="sample/cov.p" dlcHome="${DLC}">
-      <propath location="build" />
-      <Profiler enabled="true" outputDir="profiler" coverage="true" />
+      <propath location="target/build" />
+      <Profiler enabled="true" outputDir="target/profiler" coverage="true" />
     </PCTRun>
     <PCTRun procedure="sample/test20.p" dlcHome="${DLC}">
-      <propath location="build" />
-      <Profiler enabled="true" outputDir="profiler" coverage="true" />
+      <propath location="target/build" />
+      <Profiler enabled="true" outputDir="target/profiler" coverage="true" />
     </PCTRun>
   </target>
 

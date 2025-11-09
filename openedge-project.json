@@ -6,15 +6,16 @@
   "graphicalMode": false,
   "extraParameters": "",
   "buildPath": [
-    { "type": "source", "path": "src/procedures", "excludes": "sample/excl/**" },
-    { "type": "source", "path": "src/classes" },
-    { "type": "propath", "path": "${DLC}/tty/netlib/OpenEdge.Net.pl", "documentation": "doc/netlib.json" },
-    { "type": "propath", "path": "${DLC}/tty/OpenEdge.Core.pl", "documentation": "doc/corelib.json" }
+    { "type": "source", "path": "src/main/abl", "excludes": "sample/excl/**" },
+    { "type": "source", "path": "src/test/abl" },
+    { "type": "propath", "path": "src/main/resources" },
+    { "type": "propath", "path": "${DLC}/tty/netlib/OpenEdge.Net.pl", "documentation": "src/dev/doc/netlib.json" },
+    { "type": "propath", "path": "${DLC}/tty/OpenEdge.Core.pl", "documentation": "src/dev/doc/corelib.json" }
   ],
-  "buildDirectory": "build",
+  "buildDirectory": "target/build",
   "numThreads": 1,
   "dbConnections": [
-    { "name": "sports", "connect": "-db db/sp2k -ld sports -RO", "schemaFile": "dump/sports.df", "aliases": [ "foo", "bar"] }
+    { "name": "sports", "connect": "-db target/db/sp2k -ld sports -RO", "schemaFile": "src/main/df/full/sports.df", "aliases": [ "foo", "bar"] }
   ],
   "profiles": [
     {
@@ -43,7 +44,7 @@
       "inherits": "default",
       "value": {
         "dbConnections": [
-          { "name": "sports", "connect": "-db sports -H dbserver -S 12345", "schemaFile": "dump/sports.df", "aliases": [ "foo", "bar"] }
+          { "name": "sports", "connect": "-db sports -H dbserver -S 12345", "schemaFile": "src/main/df/full/sports.df", "aliases": [ "foo", "bar"] }
         ]
       }
     }

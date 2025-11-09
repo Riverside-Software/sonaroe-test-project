@@ -4,14 +4,15 @@
 .sonarlint
 .proparse
 .settings
-.tokens
-.vscode
-build
-db
-profiler
+.vscode/profile.json
+target/
 sonar-output.txt
 sonarlint-report.txt
-test-output
 *.r
-build.config
-assemblies.xml
+
+# ABLUnit extension
+results.xml
+updates.log
+progress.ini
+dbconn.pf
+ablunit.json

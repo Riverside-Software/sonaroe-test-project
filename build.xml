@@ -66,7 +66,7 @@
 
     <PCTRun procedure="sample/test1.p" dlcHome="${DLC}">
       <propath location="target/build" />
-      <Profiler enabled="true" outputDir="profiler" coverage="true" />
+      <Profiler enabled="true" outputDir="target/profiler" coverage="true" />
       <DBConnection dbName="sp2k" dbDir="target/db" singleUser="true" logicalName="sports">
         <Alias name="sp2k" />
         <Alias name="foobar" />

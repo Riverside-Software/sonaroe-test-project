@@ -1,6 +1,10 @@
 {
-  "[abl]":{
+  "[abl]": {
     "files.encoding": "utf8"
+  },
+  "search.exclude": {
+    "**/.git": true,
+    "**/.builder": true,
   },
   "sonarlint-abl.connectedMode.project": {
     "connectionId": "https-sonar-riverside-software-fr",

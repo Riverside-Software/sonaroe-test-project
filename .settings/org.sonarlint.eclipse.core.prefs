@@ -1,7 +1,7 @@
 autoEnabled=true
 bindingSuggestionsDisabled=false
 eclipse.preferences.version=1
-extraProperties=sonar.oe.propath\=src/procedures,src/classes\r\nsonar.oe.databases\=dump/sports.df\r\nsonar.sources\=src/procedures,src/classes
+extraProperties=sonar.oe.propath\=src/procedures,src/classes\r\nsonar.oe.databases\=src/main/df/full/sports.df\r\nsonar.sources\=src/procedures,src/classes
 idePrefixKey=
 indexingBasedOnEclipsePlugIns=true
 projectKey=RSSW\:TestProject

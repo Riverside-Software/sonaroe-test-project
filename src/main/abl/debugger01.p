@@ -17,6 +17,8 @@ DEF VAR i2  AS INT  NO-UNDO.
 DEF VAR i3 AS INT EXTENT 10 NO-UNDO.
 // Should be caught by SQ secrets sensor
 define variable sqToken as character initial 'squ_30b8185f4f3d94e6c3ab4aa5df39da190533b0ac'.
+var CefSharp.DevTools.Emulation.UserAgentMetadata webView1.
+message webView1:Architecture.
 
 i1 = 1.
 i2 = 10000000.

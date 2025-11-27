@@ -26,11 +26,12 @@
   </target>
 
   <target name="build" depends="db">
+    <PCTDependencies pathId="vscode01" assemblies="." />
     <PCTCompile destdir="target/build" dlcHome="${DLC}" cpinternal="utf-8" cpstream="utf-8" cpcoll="basic" cpcase="basic" listing="true" relativePaths="true" xmlXref="false" keepXref="true" requireFullKeywords="false" requireFullNames="true" requireFieldQualifiers="true" requireReturnValues="true">
       <fileset dir="src/main/abl" includes="**/*.cls,**/*.p,**/*.w" />
       <propath>
         <pathelement location="src/main/abl" />
-        <pathelement location="${DLC}/tty/netlib/OpenEdge.Net.pl" />
+        <path refid="vscode01"/>
       </propath>
       <DBConnection dbName="sp2k" dbDir="target/db" singleUser="true" logicalName="sports">
         <Alias name="sp2k" />
@@ -46,6 +47,7 @@
         <pathelement location="target/build"/>
         <pathelement location="src/main/abl" />
         <pathelement location="src/test/abl" />
+        <path refid="vscode01"/>
       </propath>
       <Profiler enabled="true" outputDir="target/profiler" coverage="true" />
       <DBConnection dbName="sp2k" dbDir="target/db" singleUser="true" logicalName="sports">
@@ -65,7 +67,10 @@
     </xmltask>
 
     <PCTRun procedure="sample/test1.p" dlcHome="${DLC}">
-      <propath location="target/build" />
+      <propath>
+        <pathelement location="target/build" />
+        <path refid="vscode01"/>
+      </propath>
       <Profiler enabled="true" outputDir="target/profiler" coverage="true" />
       <DBConnection dbName="sp2k" dbDir="target/db" singleUser="true" logicalName="sports">
         <Alias name="sp2k" />
@@ -73,11 +78,17 @@
       </DBConnection>
     </PCTRun>
     <PCTRun procedure="sample/cov.p" dlcHome="${DLC}">
-      <propath location="target/build" />
+      <propath>
+        <pathelement location="target/build" />
+        <path refid="vscode01"/>
+      </propath>
       <Profiler enabled="true" outputDir="target/profiler" coverage="true" />
     </PCTRun>
     <PCTRun procedure="sample/test20.p" dlcHome="${DLC}">
-      <propath location="target/build" />
+      <propath>
+        <pathelement location="target/build" />
+        <path refid="vscode01"/>
+      </propath>
       <Profiler enabled="true" outputDir="target/profiler" coverage="true" />
     </PCTRun>
   </target>

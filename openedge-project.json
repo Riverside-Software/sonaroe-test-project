@@ -4,13 +4,17 @@
   "charset": "utf-8",
   "oeversion": "12.8",
   "graphicalMode": false,
-  "extraParameters": "",
+  "extraParameters": "-assemblies .",
   "buildPath": [
     { "type": "source", "path": "src/main/abl", "excludes": "sample/excl/**" },
     { "type": "source", "path": "src/test/abl" },
-    { "type": "propath", "path": "src/main/resources" },
-    { "type": "propath", "path": "${DLC}/tty/netlib/OpenEdge.Net.pl", "documentation": "src/dev/doc/netlib.json" },
-    { "type": "propath", "path": "${DLC}/tty/OpenEdge.Core.pl", "documentation": "src/dev/doc/corelib.json" }
+    { "type": "propath", "path": "src/main/resources" }
+  ],
+  "dependencies": [
+    { "groupId": "com.progress.openedge",  "artifactId": "net", "version" : "12.8.9", "extension": "pl" },
+    { "groupId": "com.progress.openedge", "artifactId": "core", "version" : "12.8.9", "extension": "apl" },
+    { "groupId": "com.progress.openedge", "artifactId": "adecomm", "version" : "12.8.9", "extension": "zip" },
+    { "groupId": "cefsharp", "artifactId": "cefsharp", "version" : "124.3.80", "classifier": "assembly", "extension": "zip" }
   ],
   "buildDirectory": "target/build",
   "numThreads": 1,

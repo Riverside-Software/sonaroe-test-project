@@ -1,0 +1,1 @@
+sonar-scanner -Dsonar.oe.dlc=%DLC% -Dproject.settings=src/dev/sonar/sonar-project.properties -Dsonar.host.url=http://localhost:9000

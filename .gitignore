@@ -1,4 +1,5 @@
 .builder
+.dependencies
 .scannerwork
 .sonar
 .sonarlint

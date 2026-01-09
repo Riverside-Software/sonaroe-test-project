@@ -33,6 +33,13 @@
       }
     },
     {
+      "name": "OE-13.0",
+      "inherits": "default",
+      "value": {
+        "oeversion": "13.0"
+      }
+    },
+    {
       "name": "GUI-Mode",
       "inherits": "default",
       "value": {

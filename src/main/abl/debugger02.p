@@ -10,6 +10,9 @@ define variable oSimple3 as rssw.SimpleObject no-undo.
 define variable hdlArr as handle extent 5 no-undo.
 define variable objArr as rssw.SimpleObject extent 5 no-undo.
 
+define variable x1 as int.
+x1.
+
 define buffer Benefits for Benefits.
 find first Benefits no-lock no-error.
 

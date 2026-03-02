@@ -51,7 +51,7 @@
       "inherits": "default",
       "value": {
         "dbConnections": [
-          { "name": "sports", "connect": "-db sports -H dbserver -S 12345", "schemaFile": "src/main/df/full/sports.df", "aliases": [ "foo", "bar"] }
+          { "name": "sports", "connect": "-db sports2020 -ld sports -H dbserver -S 12345", "schemaFile": "src/main/df/full/sports.df", "aliases": [ "foo", "bar"] }
         ]
       }
     }

@@ -5,16 +5,12 @@
   "forwardPorts": [ "pasoe:8810"],
   "customizations": {
     "vscode": {
-      "extensions": ["RiversideSoftware.openedge-abl-lsp@prerelease"],
+      "extensions": [
+        "RiversideSoftware.openedge-abl-lsp@prerelease",
+        "RiversideSoftware.sonarlint-abl"
+      ],
       "settings": {
-        "extensions.verifySignature": false,
-        "abl.configuration.runtimes": [
-          {
-            "name": "12.8",
-            "path": "/opt/progress/dlc",
-            "default": true
-          }
-        ]
+        "extensions.verifySignature": false
       }
     }
   },

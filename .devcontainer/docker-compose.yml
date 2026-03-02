@@ -21,4 +21,4 @@ services:
     ports:
       - 8810
     volumes:
-      - ../build:/app/pasoe/pasoe1/openedge
+      - ../target/build:/app/pasoe/pasoe1/openedge

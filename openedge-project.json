@@ -5,6 +5,9 @@
   "oeversion": "12.8",
   "graphicalMode": false,
   "extraParameters": "",
+  /* "procedures": [
+    { "name": "src/dev/hooks.p", "mode": "persistent" }
+  ], */
   "buildPath": [
     { "type": "source", "path": "src/main/abl", "excludes": "sample/excl/**" },
     { "type": "source", "path": "src/test/abl" },

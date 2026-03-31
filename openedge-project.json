@@ -13,7 +13,9 @@
     { "type": "source", "path": "src/test/abl" },
     { "type": "propath", "path": "src/main/resources" },
     { "type": "propath", "path": "${DLC}/tty/netlib/OpenEdge.Net.pl", "documentation": "src/dev/doc/netlib.json" },
-    { "type": "propath", "path": "${DLC}/tty/OpenEdge.Core.pl", "documentation": "src/dev/doc/corelib.json" }
+    { "type": "propath", "path": "${DLC}/tty/OpenEdge.Core.pl", "documentation": "src/dev/doc/corelib.json" },
+    { "type": "propath", "path": "${DLC}" },
+    { "type": "speedscript", "path": "src/main/ss", "convert": "target/ss", "build": "target/ssbuild" }
   ],
   "buildDirectory": "target/build",
   "numThreads": 1,

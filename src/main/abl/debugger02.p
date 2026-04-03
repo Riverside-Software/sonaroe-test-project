@@ -28,7 +28,7 @@ oSimple2 = objArr[4].
 
 
 run internalProc1.
-message "Next statement in an include file" view-as alert-box.
+message "Next statement in an include file".
 { debugger02.i World }
 
 oProxy = new OpenEdge.Net.URI('http', "localhost", 1000).

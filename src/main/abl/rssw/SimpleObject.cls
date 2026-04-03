@@ -10,6 +10,10 @@ class rssw.SimpleObject:
    */
   method public void method1(xxx as integer  ) :
     // Nothing
+    def var zz as int.
+    do zz = 1 to 5:
+      log-manager:write-message("In method1").
+    end.
   end.
 
   method public void method1(xxx as integer, yyy as integer) :

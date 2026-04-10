@@ -31,6 +31,31 @@
         }
       },
       "problemMatcher": []
+    },
+    {
+      "label": "Execute current procedure with debugger (TTY)",
+      "type": "shell",
+      "command": "${command:abl.getDlcDirectory}/bin/_progres",
+      "args": [
+        "-db", "target/db/sp2k", "-ld", "sports", "-RO",
+        "-p", "${command:abl.getRelativePath}",
+        "-clientlog", ".builder/run-with-debugger.log",
+        "-nosplash",
+        "-debugReady", "3099",
+        "-zdlc", "${command:abl.getDlcDirectory}"
+      ],
+      "presentation": {
+        "reveal": "silent",
+        "panel": "new",
+        "focus": true,
+        "close": true
+      },
+      "options": {
+        "env": {
+          "PROPATH": "target/build"
+        }
+      },
+      "problemMatcher": []
     }
   ]
 }

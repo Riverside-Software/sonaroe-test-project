@@ -2,36 +2,39 @@
   "version": "0.2.0",
   "configurations": [
     {
-      "name": "Attach to PASOE",
+      "name": "PASOE (local)",
       "type": "abl",
       "request": "attach",
       "mode": "pasoe",
       "hostname": "127.0.0.1",
-      "port": 8891,
+      "port": 8810,
+      "ssl": false,
       "appName": "pasoe1",
       "password": "",
       "localRoot": "${workspaceFolder}"
     },
     {
-      "name": "Attach to PASOE (container)",
+      "name": "PASOE (container)",
       "type": "abl",
       "request": "attach",
       "mode": "pasoe",
       "hostname": "pasoe",
       "port": 8810,
       "appName": "pasoe1",
+      "ssl": false,
       "password": "",
       "localRoot": "${workspaceFolder}"
     },
     {
-      "name": "Attach to AVM",
+      "name": "AVM",
       "type": "abl",
       "request": "attach",
       "hostname": "127.0.0.1",
       "mode": "legacy",
       "port": 3099,
       "localRoot": "${workspaceFolder}",
-      "pause": true
+      "pause": false,
+      "refProjects": []
     },
     {
       "name": "Debug current program / Interactive GUI",
@@ -39,7 +42,7 @@
       "request": "launch",
       "program": "${file}",
       "cwd": "${workspaceFolder}",
-      "graphicalMode": true
+      "graphicalMode": true,
     }
   ]
 }

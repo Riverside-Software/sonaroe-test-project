@@ -11,6 +11,7 @@
         "-db", "target/db/sp2k", "-ld", "sports", "-RO",
         "-ininame", "conf/gui.ini",
         "-p", "${command:abl.getRelativePath}",
+        "-clientlog", ".builder/run-with-debugger.log",
         "-nosplash",
         "-debugReady", "3099",
         "-zdlc", "${command:abl.getDlcDirectory}"

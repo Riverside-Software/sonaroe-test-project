@@ -5,5 +5,5 @@ INTERFACE rssw.pct.ILoadCallback:
     METHOD PUBLIC VOID afterFile(file AS CHARACTER, logger AS rssw.pct.LoadLogger).
     METHOD PUBLIC VOID afterFileList().
     METHOD PUBLIC VOID beforeRefreeze().
-    METHOD PUBLIC VOID afterRefreeze().
+    METHOD PUBLIC VOID afterRefreeze2().
 END INTERFACE.

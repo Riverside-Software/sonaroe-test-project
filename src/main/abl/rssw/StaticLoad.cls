@@ -1,22 +1,25 @@
 block-level on error undo, throw.
 
 class rssw.StaticLoad:
-  define variable lIsInitialized as logical no-undo.
+  define private static variable instance as rssw.StaticLoad no-undo.
 
-  constructor public StaticLoad():
+  constructor private StaticLoad():
     // Nothing
   end constructor.
 
-  method public void LoadEntity():
-    EnsureInitialized().
-    message "StaticLoad".
+  method public static rssw.StaticLoad getInstance():
+    if (instance eq ?) then do:
+      instance = new rssw.StaticLoad().
+    end.
+    return instance.
   end method.
 
-  method private void EnsureInitialized():
-    if not lIsInitialized then
-    do:
-      message "StaticLoad".
-      lIsInitialized = true.
-    end.
+  method public char getFoo():
+    return "foo".
   end method.
+
+  method public char getBar():
+    return "bar".
+  end method.
+
 end class.

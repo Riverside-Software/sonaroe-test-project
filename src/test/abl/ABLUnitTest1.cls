@@ -11,8 +11,8 @@ class ABLUnitTest1:
     run testProfiler.p persistent set xx.
     run test1 in xx.
     delete procedure xx.
-    zzz = new rssw.StaticLoad().
-    zzz:LoadEntity().
+    zzz = rssw.StaticLoad:getInstance().
+    zzz:getBar().
   end method.
 
 end class.
